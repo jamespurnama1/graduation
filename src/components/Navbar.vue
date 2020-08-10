@@ -3,7 +3,7 @@
     <transition name='navbar'>
       <nav>
         <ul>
-          <router-link tag='li' to='/home' class='margin'>What's CoVid-12?</router-link>
+          <router-link tag='li' to='/home' class='margin'>What's COVID-12?</router-link>
           <router-link tag='li' to='/infected' class='margin'>List of Infected</router-link>
           <router-link tag='li' to='/virus' class='margin'>Virus Effect</router-link>
         </ul>
@@ -48,7 +48,8 @@ export default {
 
 <style lang="scss">
 .router-link-exact-active {
-  background-color: white !important;
+  background-color: #ed1c24 !important;
+  color: white !important;
   transition: all 0.25s;
 }
 

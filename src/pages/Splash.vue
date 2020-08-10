@@ -4,7 +4,7 @@
       <img src='@/assets/logo.svg' />
       <div>
         <h1>Oh No!</h1>
-        <h3>You've been infected</h3>
+        <h3>You've been infected with COVID-12</h3>
         <div class='center'>
         <router-link tag='button' to='/home'>HELP</router-link>
         </div>

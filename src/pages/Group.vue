@@ -2,13 +2,22 @@
   <div id="principle" class='page'>
     <full-page ref="fullPage" :options="options" id='fullpage'>
       <div class="section">
-        <Front />
+        <Front :title=title />
       </div>
       <div class="section">
         <Work :title=title.one :subtitle=subtitle.one />
       </div>
       <div class="section">
         <Work :title=title.two :subtitle=subtitle.two />
+      </div>
+      <div class="section">
+        <Work :title=title.three :subtitle=subtitle.three />
+      </div>
+      <div class="section">
+        <Work :title=title.four :subtitle=subtitle.four />
+      </div>
+      <div class="section">
+        <Work :title=title.five :subtitle=subtitle.five />
       </div>
       <div class='section'>
         <Familiar />
@@ -34,16 +43,16 @@ export default {
     return {
       gsap1: new gsap.timeline(), // eslint-disable-line
       title: {
-        one: 'First Work',
-        two: 'Second Work',
-        three: '3. Design should always have a sense of familiarity while keeping its uniqueness.',
-        four: '4. A good design is natural but not fully organic.',
-        five: '5. Less is more. Enough is best.',
-        six: '6. Design is a solution, it should not create problems.',
-        seven: '7. A design should communicate.',
-        eight: '8. Design is an experience.',
-        nine: '9. Design is self explanatory.',
-        ten: '10. Design is not fully subjective.',
+        one: 'Concert in The Clouds',
+        two: 'Tree of Ash',
+        three: "The Tigers That Won't Return",
+        four: 'Eco Pack',
+        five: 'Untold Fact',
+        six: 'Design is a solution, it should not create problems.',
+        seven: 'A design should communicate.',
+        eight: 'Design is an experience.',
+        nine: 'Design is self explanatory.',
+        ten: 'Design is not fully subjective.',
       },
       subtitle: {
         one: 'Every design is meant to be experienced and enjoyed by humans not machine or aliens. So it should be a priority to keep the audience in mind.',
@@ -132,7 +141,7 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 102.1%;
-  transform: translateY(-4.2%);
+  transform: translateY(-2.2%);
 }
 
 #bottom {

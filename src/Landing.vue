@@ -1,7 +1,10 @@
 <template>
   <div class="page">
     <block class='center' id='first'>
+      <div>
+      <h1>What is<br>COVID-12?</h1>
       <img src='@/assets/logo.svg'>
+      </div>
       <p>Favicons are the little icons you see in your browser tab.
         They help you understand which site is which
         when you’re scanning through your browser’s bookmarks and open tabs.
@@ -40,9 +43,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1 {
+  position: absolute;
+    left: 5%;
+    top: 27%;
+    margin: 0;
+    font-size: 6em;
+    white-space: nowrap;
+}
+
 img, p {
   z-index: 1;
   margin: 1em 0;
+}
+
+img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 video{
