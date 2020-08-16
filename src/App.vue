@@ -53,7 +53,7 @@ export default {
 
 .page {
   background-color: white;
-  width: 102.2%;
+  width: 101.2%;
   min-height: 100vh;
   left: 0;
 }

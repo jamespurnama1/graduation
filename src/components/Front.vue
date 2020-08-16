@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>Virus Effect</h1>
+    <h1>Virus Evolution</h1>
     <h3>Group Works</h3>
     <ul>
       <li><a href="#1" rel="noopener"><p>{{ title.one }}</p></a></li>

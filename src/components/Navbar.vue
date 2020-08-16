@@ -4,8 +4,8 @@
       <nav>
         <ul>
           <router-link tag='li' to='/home' class='margin'>What's COVID-12?</router-link>
-          <router-link tag='li' to='/infected' class='margin'>List of Infected</router-link>
-          <router-link tag='li' to='/virus' class='margin'>Virus Effect</router-link>
+          <router-link tag='li' to='/infected' class='margin'>The Outbreak</router-link>
+          <router-link tag='li' to='/virus' class='margin'>Virus Evolution</router-link>
         </ul>
       </nav>
     </transition>

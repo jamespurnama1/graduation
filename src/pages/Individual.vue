@@ -1,7 +1,7 @@
 <template>
   <div class='page'>
     <div class='infected'>
-      <h1>List of Infected</h1>
+      <h1>The Outbreak</h1>
       <p>
         Click to view personal works.
       </p>
