@@ -3,18 +3,14 @@
     <block class='page'>
       <img src='@/assets/logo1.svg' />
       <div>
-        <h1>time remaining</h1>
         <br>
-        <countdown :time='time'>
-          <template slot-scope="props">
-            <h3>
-            {{ props.days }} days,
-            {{ props.hours }} hours,
-            {{ props.minutes }} minutes,
-            {{ props.seconds }} seconds.
-            </h3>
-          </template>
-        </countdown>
+        <h1>OH<br>NO!</h1>
+        <h3>
+          You are infected with COVID-12.
+        </h3>
+        <div class='center'>
+        <router-link tag='button' to='/home'>WHAT?</router-link>
+        </div>
       </div>
     </block>
   </div>
@@ -23,13 +19,6 @@
 <script>
 export default {
   Name: 'About',
-  data() {
-    const now = new Date();
-    const grad = new Date(2020, 8, 12);
-    return {
-      time: grad - now,
-    };
-  },
 };
 </script>
 
@@ -58,7 +47,7 @@ button:hover {
   color: white;
 }
 
-h1, h3, img {
+h3, img {
   margin: 1%;
   text-align: center;
 }
@@ -68,7 +57,7 @@ h1, h3 {
 }
 
 h1 {
-  font-size:10em;
+  font-size:20em;
   line-height: 0.9em;
 }
 

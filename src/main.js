@@ -4,6 +4,7 @@ import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 import Buefy from 'buefy';
 import VueFeather from 'vue-feather';
+import VueCountdown from '@chenfengyuan/vue-countdown';
 import Landing from './Landing.vue';
 import App from './App.vue';
 import Individual from './pages/Individual.vue';
@@ -18,6 +19,7 @@ Vue.use(Vuex);
 Vue.use(VueRouter);
 Vue.use(VueFeather);
 Vue.use(VueFullPage);
+Vue.component(VueCountdown.name, VueCountdown);
 Vue.config.productionTip = false;
 
 const routes = [
