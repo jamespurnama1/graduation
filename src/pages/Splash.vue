@@ -3,12 +3,13 @@
     <block class='page'>
       <img src='@/assets/logo1.svg' />
       <div>
-        <h1>time remaining</h1>
         <br>
         <countdown :time='time'>
           <template slot-scope="props">
+            <h1>
+            {{ props.days }} days
+            </h1>
             <h3>
-            {{ props.days }} days,
             {{ props.hours }} hours,
             {{ props.minutes }} minutes,
             {{ props.seconds }} seconds.
@@ -59,12 +60,13 @@ button:hover {
 }
 
 h1, h3, img {
-  margin: 1%;
+  margin: 3%;
   text-align: center;
 }
 
 h1, h3 {
   color: white;
+  white-space: nowrap;
 }
 
 h1 {
