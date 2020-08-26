@@ -78,4 +78,13 @@ img:hover {
   transform: rotate(360deg);
   transition: 1s ease;
 }
+
+@media screen and (max-width: 480px) {
+  h1{
+    font-size: 4em;
+  }
+  h3{
+    font-size: 1em;
+  }
+}
 </style>
