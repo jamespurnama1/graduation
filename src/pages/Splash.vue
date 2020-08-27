@@ -1,7 +1,7 @@
 <template>
   <div>
-    <block class='page'>
-      <img src='@/assets/logo1.svg' />
+    <div class='block page'>
+      <img src='@/assets/logo.svg' />
       <div>
         <br>
         <countdown :time='time'>
@@ -17,19 +17,29 @@
           </template>
         </countdown>
       </div>
-    </block>
+    </div>
   </div>
 </template>
 
 <script>
+import gsap from 'gsap';
+
 export default {
   Name: 'About',
   data() {
     const now = new Date();
-    const grad = new Date(2020, 8, 12);
+    const grad = new Date('September 12, 2020 18:30:00 GMT+0800');
     return {
       time: grad - now,
     };
+  },
+  mounted() {
+    gsap.to('img', {
+      rotate: '360deg',
+      repeat: -1,
+      duration: 10,
+      ease: 'none',
+    });
   },
 };
 </script>
@@ -60,8 +70,13 @@ button:hover {
 }
 
 h1, h3, img {
-  margin: 3%;
+  margin: 5%;
   text-align: center;
+}
+
+img {
+  width: 30%;
+  margin-left: 0;
 }
 
 h1, h3 {
@@ -74,9 +89,15 @@ h1 {
   line-height: 0.9em;
 }
 
-img:hover {
-  transform: rotate(360deg);
-  transition: 1s ease;
+html, body {
+  background-color: #ed1c24;
+  overflow: hidden;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 @media screen and (max-width: 480px) {

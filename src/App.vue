@@ -82,7 +82,7 @@ main {
   z-index: 1;
 }
 
-block {
+.block {
   display: flex;
   justify-content: center;
   align-items: center;
