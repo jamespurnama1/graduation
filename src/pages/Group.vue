@@ -73,6 +73,14 @@ export default {
     padding-left: 1%;
 }
 
+.projectBar:hover {
+  background-color: black;
+}
+
+.projectBar:hover h3 {
+  color: white;
+}
+
 #titleLogo {
   padding-right: 7%;
   // border-right-style: solid;
