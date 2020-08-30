@@ -1,159 +1,96 @@
 <template>
-  <div id="principle" class='page'>
-    <full-page ref="fullPage" :options="options" id='fullpage'>
-      <div class="section">
-        <Front :title=title />
+  <div class='block page'>
+    <div class='title'>
+      <img class='smallLogo' src='@/assets/logo_red.svg'>
+      <div id='titleLogo'>
+      <h2>The</h2>
+      <h2>Mutation</h2>
       </div>
-      <div class="section">
-        <Work :title=title.one :subtitle=subtitle.one />
+      <div class='verticalLine' />
+      <div style='width: 20%; padding-left: 7%' class='center'>
+      <p>
+        Occurs when the viruses exchange creative info, idea strains
+        and efficiency.
+      </p>
       </div>
-      <div class="section">
-        <Work :title=title.two :subtitle=subtitle.two />
+    </div>
+    <div style='border-color: black; margin: 0' class='line' />
+    <div @click='expand(i)'
+    v-for='(project, i) in projects'
+    class='projectBar'
+    :key='`project${i}`'>
+      <h3>{{ project.title }}</h3>
+      <feather style='margin-left: auto' type='plus' stroke='red' stroke-width='3' />
+      <div v-show='`projects.expand${i}`' class='block'>
       </div>
-      <div class="section">
-        <Work :title=title.three :subtitle=subtitle.three />
-      </div>
-      <div class="section">
-        <Work :title=title.four :subtitle=subtitle.four />
-      </div>
-      <div class="section">
-        <Work :title=title.five :subtitle=subtitle.five />
-      </div>
-      <div class='section'>
-        <Familiar />
-      </div>
-    </full-page>
+    </div>
   </div>
 </template>
 
 <script>
 import { gsap } from 'gsap';
-import Front from '../components/Front.vue';
-import Work from '../components/Work.vue';
-import Familiar from '../components/Familiar.vue';
 
 export default {
   name: 'Principles',
   components: {
-    Front,
-    Work,
-    Familiar,
   },
   data() {
     return {
       gsap1: new gsap.timeline(), // eslint-disable-line
-      title: {
-        one: 'Concert in The Clouds',
-        two: 'Tree of Ash',
-        three: "The Tigers That Won't Return",
-        four: 'Eco Pack',
-        five: 'Untold Fact',
-        six: 'Design is a solution, it should not create problems.',
-        seven: 'A design should communicate.',
-        eight: 'Design is an experience.',
-        nine: 'Design is self explanatory.',
-        ten: 'Design is not fully subjective.',
-      },
-      subtitle: {
-        one: 'Every design is meant to be experienced and enjoyed by humans not machine or aliens. So it should be a priority to keep the audience in mind.',
-        two: 'Adding to human centered design, the form then should be made “ergonomic” for use.',
-        three: 'A familiar design reduces learning curve and gives a better user experience overall.',
-        four: 'It’s a personal preference to copy a design from nature but never to be copied 100%.',
-        five: 'Minimalism destroys not only distinctness in design but also cultural patterns & designer’s background.',
-        six: 'Every design objective is a problem required to be solved not add upon.',
-        seven: 'Whether it communicates little or much, it should reflect a certain message/feeling.',
-        eight: 'Every project should consider the 5 human senses before started.',
-        nine: 'If it requires a really in-depth explanation then it probably didn’t communicate well.',
-        ten: 'There’s such thing as good design in general.',
-      },
+      projects: [
+        { title: 'Concert in The Clouds', members: 'Vianka, Aurelius Kevin, Chaterine', expand: false },
+        { title: "The Tigers That Won't return", members: 'Vianka, Aurelius Kevin, Chaterine', expand: false },
+        { title: 'Untold Fact', members: 'Vianka, Aurelius Kevin, Chaterine', expand: false },
+        { title: 'Tree of Ash', members: 'Vianka, Aurelius Kevin, Chaterine', expand: false },
+        { title: 'Hard Rock', members: 'Vianka, Aurelius Kevin, Chaterine', expand: false },
+        { title: 'Mama Miss U', members: 'Vianka, Aurelius Kevin, Chaterine', expand: false },
+        { title: 'Eco Pack', members: 'Vianka, Aurelius Kevin, Chaterine', expand: false },
+      ],
+      expand1: false,
     };
   },
   methods: {
-    // afterLoad(origin, destination, direction) { // eslint-disable-line
-    //   if (destination.index === 0) {
-    //     this.$set(this.title, 'text', 'Design Philosophies');
-    //     this.$set(this.subtitle, 'text', 'Something went wrong. Please Refresh.');
-    //   }
-    //   if (destination.index === 1) {
-    //     this.$set(this.title, 'text',
-    //     '1. A design at its fundamental should be made for human.');
-    //     this.$set(this.subtitle, 'text', 'Every design is meant
-    //     to be experienced and enjoyed by humans not machine or aliens.
-    //     So it should be a priority to keep the audience in mind.');
-    //   }
-    //   if (destination.index === 2) {
-    //     this.$set(this.title, 'text',
-    //     '2. Form should always compliment function but never be prioritized higher.');
-    //     this.$set(this.subtitle, 'text', 'Adding to human centered design,
-    //     the form then should be made “ergonomic” for use.');
-    //   }
-    // },
-    // startGsap() {
-    //   this.gsap1();
-    // },
-  },
-  mounted() {
-    // function anim() {
-    this.gsap1.to(this.$refs.fullPage,
-      {
-        duration: 4,
-        backgroundColor: 'black',
+    expand() {
+      const bar = document.querySelectorAll('projectBar');
+      console.log(bar);
+      gsap.to(bar, {
+        maxHeight: '100vh',
       });
-    // }
+    },
   },
 };
-
-// Vue.mixin({
-//   created: {
-//     fullpageScroll() {
-
-//     },
-//   },
-//   methods: {
-//     fullpageScroll: function () {
-//       fullpage_api.moveTo(3);
-//     },
-//   },
-// });
 </script>
 
 <style lang="scss" scoped>
-.section {
-  display: block;
-  margin: 7%;
+.projectBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-height: 100px;
+    border: 3px solid black;
+    border-top-style: none;
+    padding-left: 1%;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+#titleLogo {
+  padding-right: 7%;
+  // border-right-style: solid;
+  // border-width: 3px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
+
+h3, p {
   color: black;
-  text-decoration: underline;
+  margin: 0;
 }
 
-#principle {
-  font-family: '35-FTR';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  width: 102.1%;
-  transform: translateY(-2.2%);
+.smallLogo {
+  width: 10%;
+  margin: 0 30px;
 }
 
-#bottom {
-  position: fixed;
-  bottom: 0;
-  color: black;
-}
-
-.fp-tableCell {
- display: flex;
- align-items: center;
- justify-content: center;
+h1, h2 {
+  margin: 0;
 }
 
 </style>

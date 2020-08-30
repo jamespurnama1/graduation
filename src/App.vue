@@ -1,26 +1,33 @@
 <template>
   <div id="app">
+    <navbar style='z-index: 10' />
     <main>
       <transition
         name="fade"
         mode="out-in">
-        <router-view/>
+      <splash style='z-index: 20' v-show='this.$store.state.splash' />
+      </transition>
+      <transition
+        name="fade"
+        mode="out-in">
+        <router-view />
       </transition>
     </main>
-    <Navbar v-if="$route.name !== 'Splash'" />
     <scrollTop v-show='scrollButton' @click.native='scrollToTop(); $refs.fullpage.api.moveTo(3)' />
   </div>
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue';
+import navbar from './components/nav.vue';
 import scrollTop from './components/scrollTop.vue';
+import splash from './pages/splash.vue';
 
 export default {
   name: 'Graduation',
   components: {
-    Navbar,
+    navbar,
     scrollTop,
+    splash,
   },
   data() {
     return {
@@ -48,47 +55,85 @@ export default {
 </script>
 
 <style lang="scss">
-@import './src/styles/buefy.module.scss';
 @import './src/styles/fonts.module.scss';
+@import './src/styles/transitions.module.scss';
 
-.page {
-  background-color: white;
-  width: 101.2%;
-  min-height: 100vh;
-  left: 0;
+.title {
+  position: relative;
+  left: -5%;
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+  flex-wrap: wrap;
 }
 
-.right {
+.line {
+  border-width: 3px;
+  border-bottom-style: solid;
+  border-color: $primary;
+  width: 100%;
+  height: 0;
+  margin: 40px 0;
+}
+
+.verticalLine {
+  position: absolute;
+  border-width: 3px;
+  border-right-style: solid;
+  width: 0;
+  height: 106.5%;
+  right: 38%;
+  top: -5.5%;
+}
+
+.card-list {
+  display: grid;
+  grid-gap: 1em;
+  list-style-type: none;
+  align-items: center;
+  justify-items: center;
+}
+
+.videoMask {
+  overflow: hidden;
+  height: 40vh;
+  width: 40vh;
+}
+
+.photo {
+  width: 100%;
+  transform: translateY(-20%);
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+}
+
+video{
+  width: 70vw;
+  max-height: 70vh;
+  z-index: 0;
+}
+
+.page {
   position: relative;
-  right: 0;
+  top: 7vh;
 }
 
 .bg{
   position: fixed;
-  z-index: -1;
+  z-index: 0;
 }
 
 .clickable {
   cursor: pointer;
 }
 
-button:active {
-  border:none
-}
-
-main {
-  position: relative;
-  width: 94.45vw;
-  z-index: 1;
-}
-
 .block {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 10%;
+  padding: 10px;
   flex-wrap: wrap;
-  height: 90vh;
+  min-height: 100vh;
+  // overflow: hidden;
 }
 
 .center {
@@ -96,8 +141,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 h1 {
@@ -105,32 +148,46 @@ h1 {
   font-weight: 800;
   text-align: left;
   font-size: 10em;
-  color: black;
+  color: $primary;
   font-weight: 700;
   line-height: 0.7em;
   text-indent: -0.2em;
-  margin: 0.2em;
+  margin: 0.2em 0;
+}
+
+h2 {
+  font-family: 'AXIS';
+  font-weight: 800;
+  font-size: 5em;
+  color: $primary;
+  text-decoration: none;
+  margin: 0.2em 0;
 }
 
 h3 {
   font-family: 'AXIS';
   font-weight: 800;
   font-size: 1.5em;
-  color:black;
+  color: $primary;
+  text-decoration: none;
+  margin: 0.2em 0;
+}
+
+a {
   text-decoration: none;
 }
 
 p {
-  width: 40%;
+  font-family: 'AXIS';
+  font-size: 1em;
   color: black;
-  margin-bottom: 1em;
+  text-decoration: none;
 }
 
 html {
   font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #575F6B;
 }
 
 </style>

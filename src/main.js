@@ -1,21 +1,17 @@
-import VueFullPage from 'vue-fullpage.js';
 import Vue from 'vue';
-import Vuex from 'vuex';
+import VueFullPage from 'vue-fullpage.js';
 import VueRouter from 'vue-router';
 import Buefy from 'buefy';
 import VueFeather from 'vue-feather';
 import VueCountdown from '@chenfengyuan/vue-countdown';
-import Landing from './Landing.vue';
+import landing from './landing.vue';
 import App from './App.vue';
-import Individual from './pages/Individual.vue';
-import Splash from './pages/Splash.vue';
-import Group from './pages/Group.vue';
-import Personal from './pages/Personal.vue';
+import Individual from './pages/individual.vue';
+import Group from './pages/group.vue';
+import Personal from './pages/personal.vue';
+import store from './store';
 
-// window.gsap = gsap;
-// Vue.use(gsap);
 Vue.use(Buefy);
-Vue.use(Vuex);
 Vue.use(VueRouter);
 Vue.use(VueFeather);
 Vue.use(VueFullPage);
@@ -23,19 +19,18 @@ Vue.component(VueCountdown.name, VueCountdown);
 Vue.config.productionTip = false;
 
 const routes = [
-  { path: '/home', component: Landing },
-  { name: 'Splash', path: '/', component: Splash },
-  { path: '/infected', component: Individual },
-  { path: '/virus', component: Group },
-  { name: 'weihang', path: '/infected/weihang', component: Personal },
-  { path: '/infected/waiyee', component: Personal },
-  { path: '/infected/anh', component: Personal },
-  { path: '/infected/karmun', component: Personal },
-  { path: '/infected/szechien', component: Personal },
-  { path: '/infected/aurel', component: Personal },
-  { path: '/infected/sam', component: Personal },
-  { path: '/infected/huisan', component: Personal },
-  { path: '/infected/zhijian', component: Personal },
+  { path: '/', component: landing },
+  { path: '/outbreak', component: Individual },
+  { path: '/mutation', component: Group },
+  { name: 'weihang', path: '/outbreak/weihang', component: Personal },
+  { path: '/outbreak/waiyee', component: Personal },
+  { path: '/outbreak/anh', component: Personal },
+  { path: '/outbreak/karmun', component: Personal },
+  { path: '/outbreak/szechien', component: Personal },
+  { path: '/outbreak/aurel', component: Personal },
+  { path: '/outbreak/sam', component: Personal },
+  { path: '/outbreak/huisan', component: Personal },
+  { path: '/outbreak/zhijian', component: Personal },
 ];
 
 const router = new VueRouter({
@@ -46,5 +41,6 @@ const router = new VueRouter({
 
 new Vue({
   router,
+  store,
   render: (h) => h(App),
 }).$mount('#app');

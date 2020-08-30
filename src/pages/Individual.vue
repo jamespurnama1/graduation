@@ -1,24 +1,32 @@
 <template>
   <div class='page'>
-    <div class='infected'>
-      <h1>The Outbreak</h1>
+    <div class='title'>
+      <img class='smallLogo' src='@/assets/logo_red.svg'>
+      <div>
+      <h2>The Outbreak</h2>
       <p>
         Click to view personal works.
       </p>
+      </div>
     </div>
-    <div class='title'>
+    <div style='padding: 0 10vw'>
       <ul :style="gridStyle" class="card-list">
         <li v-for="(user, i) in users" class="card-item" :key='`user${i}`'>
-         <router-link :to="'infected/' + user.photo">
+         <router-link :to="'outbreak/' + user.photo">
+         <div class='videoMask'>
             <video
             :ref='`photo${i++}`'
-            @mouseover='this.play(i)'
-            @mouseleave='this.stop(i)'
+            @mouseover='playVideo(i)'
+            @mouseleave='stopVideo(i)'
             muted
-            class='photo'>
+            preload="auto"
+            autobuffer
+            class='photo'
+            :id='`photo${i++}`'>
             <source :src="require(`@/assets/faces/${user.photo}.mp4`)" >
             </video>
-            <p class='name'>{{ user.name }}</p>
+         </div>
+            <p class='name'>{{i-1}}. {{ user.name }}</p>
           </router-link>
         </li>
       </ul>
@@ -42,9 +50,11 @@ export default {
         { name: 'Zhi Jian', photo: 'zhijian' },
         { name: 'Aurelius Kevin', photo: 'aurel' },
         { name: 'Wei Hang', photo: 'weihang' },
+        { name: 'Hui San', photo: 'huisan' },
+        { name: 'Wai Yee', photo: 'waiyee' },
       ],
       cards: [1, 2, 3, 4],
-      numberOfColumns: 5,
+      numberOfColumns: 3,
     };
   },
   computed: {
@@ -56,14 +66,16 @@ export default {
   },
   methods: {
     playVideo(e) {
-      this.$refs.photo[e].play();
+      const p = document.getElementById(`photo${e - 1}`);
+      p.play();
     },
     stopVideo(e) {
-      this.$refs.photo[e].stop();
+      const p = document.getElementById(`photo${e - 1}`);
+      p.pause();
+      p.currentTime = 0;
     },
   },
   mounted() {
-    console.log(this.$refs);
   },
   // created() {
   //   document.getElementsByTagName('video').onmouseover = function playVideo() { this.play(); };
@@ -77,34 +89,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.title {
-  padding: 5%;
-  width: 90%;
+@import './src/styles/fonts.module.scss';
+
+.name:hover, a:hover .name {
+  color: $primary;
 }
 
-.name {
-  position: absolute;
-  font-family: sans-serif;
-  font-weight: normal;
-  font-size: 0.5em;
+.smallLogo {
+  width: 10%;
+  margin: 0 30px;
 }
 
-.photo{
-  width: 100%;
+h1, h2 {
+  margin: 0;
 }
 
-.infected {
-  display: flex;
-  justify-content: flex-start;
-  padding: 2% 10%;
-  flex-wrap: wrap;
-}
-
-.card-list {
-  display: grid;
-  grid-gap: 1em;
-}
-
-.card-item {
+h3, p {
+  color: black;
+  margin: 0;
 }
 </style>

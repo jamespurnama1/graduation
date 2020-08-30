@@ -3,9 +3,9 @@
     <transition name='navbar'>
       <nav>
         <ul>
-          <router-link tag='li' to='/home' class='margin'>What's COVID-12?</router-link>
-          <router-link tag='li' to='/infected' class='margin'>The Outbreak</router-link>
-          <router-link tag='li' to='/virus' class='margin'>Virus Evolution</router-link>
+          <router-link tag='li' to='/' class='margin'>About Us</router-link>
+          <router-link tag='li' to='/outbreak' class='margin'>The Outbreak</router-link>
+          <router-link tag='li' to='/mutation' class='margin'>The Mutation</router-link>
         </ul>
       </nav>
     </transition>
@@ -39,17 +39,15 @@ export default {
   beforeDestroy() {
     window.removeEventListener('scroll', this.onScroll);
   },
-  computed() {
-    // return this.$route.path;
-  },
 };
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import './src/styles/fonts.module.scss';
+
 .router-link-exact-active {
-  background-color: #ed1c24 !important;
-  color: white !important;
+  color: $primary !important;
   transition: all 0.25s;
 }
 
@@ -57,12 +55,9 @@ export default {
   margin: 0 1em 1em 1em;
   text-decoration: none;
 }
-</style>
 
-<style lang="scss" scoped>
 .navbar {
   position: absolute;
-  right: 5%;
   top: 0;
   z-index: 0;
 }
@@ -70,42 +65,39 @@ export default {
 nav {
   position: fixed;
   min-width: 50px;
-  width: 5vw;
-  height: 100vh;
-  padding-top: 5%;
+  width: 100vw;
+  height: 7vh;
+  background-color: white;
+  border-bottom-style: solid;
+  border-width: 3px;
 }
 
 .logo {
   width: 50px;
-  transform: rotate(-90deg);
 }
 
 ul {
-  transform: rotate(90deg);
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   flex-direction: row;
   align-items: center;
   list-style-type: none;
-  padding: 0;
+  padding: 0 30px;
   position: relative;
 }
 
 li {
-  font-size: 1em;
-  color: #575F6B;
-  margin: 0 10px;
+  font-family: 'AXIS';
+  font-size: 1.3em;
+  color: black;
+  margin: 0 50px;
   text-decoration: none;
   white-space: nowrap;
-  background-color: #D8D9DA;
-  border-radius: 15px 15px 0 0;
-  box-shadow: -3px -3px 20px 0px rgba(36,65,93,0.3);
-  padding: 0.5em 1.2em;
   cursor: pointer;
 }
 
 li:hover {
-  color: #ed1c24;
+  color: $primary;
 }
 
 .slide-enter, .slide-leave-to {
