@@ -101,4 +101,8 @@ h1, h2 {
   margin: 0;
 }
 
+.smallLogo {
+  height: 12vw;
+  width: 12vw;
+}
 </style>

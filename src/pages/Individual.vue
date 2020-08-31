@@ -96,7 +96,8 @@ export default {
 }
 
 .smallLogo {
-  width: 10%;
+  width: 10vw;
+  height: 10vw;
   margin: 0 30px;
 }
 

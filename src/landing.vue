@@ -22,7 +22,7 @@
       </ul>
     </div>
     </div>
-    <div class='block'>
+    <div class='block center'>
       <h1>What is COVID-12</h1>
       <div class='line' />
       <p style='width: 40%; margin-right: auto;'>
@@ -30,7 +30,7 @@
         at The One Academy, a new mind-altering, top-grade virus has just been found.
         It is believed that once released, this virus will impact the world of design greatly.
       </p>
-      <img style='width: 35%; margin: 20px' src='@/assets/logo_red.svg'>
+      <img style='width: 28vw; height: 28vw; margin: 20px' src='@/assets/logo_red.svg'>
       <div class='line' />
       <h3>We are the Covid-12,</h3>
       <h3 style='margin-bottom: 5%'>the Creative Virus 12.</h3>
