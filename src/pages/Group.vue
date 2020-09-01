@@ -58,9 +58,6 @@ export default {
   methods: {
     expand(e) {
       const expanded = document.querySelector('.expanded');
-      if (expanded != null) {
-        expanded.classList.remove('expanded');
-      }
       const bar = document.getElementById(`project${e}`);
       const projectBar = document.getElementById(`projectBar${e}`);
       // const scroll = bar.offsetTop;
@@ -71,7 +68,15 @@ export default {
         bar.classList.add('expanded');
         projectBar.classList.remove('black');
       }
-      // window.scrollTop();
+      if (expanded != null) {
+        expanded.classList.remove('expanded');
+      }
+      // const offset = topBar + (0.23 * window.innerHeight);
+      setTimeout(() => {
+        // projectBar.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+        // const topBar = bar.getBoundingClientRect().top;
+        // window.scrollTo({ behavior: 'smooth', top: topBar });
+      }, 500);
     },
   },
 };
