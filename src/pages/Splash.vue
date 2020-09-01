@@ -127,19 +127,6 @@ h2 {
   border: solid 3px white;
 }
 
-button {
-  font-family: 'AXIS';
-  padding: 0 10px;
-  color: white;
-  background-color: $primary;
-  border: solid 3px white;
-}
-
-button:hover {
-  background-color: white;
-  border: 3px solid $primary;
-}
-
 button:hover p {
   color: $primary;
 }

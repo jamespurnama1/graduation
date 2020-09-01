@@ -22,7 +22,7 @@
     :id='`projectBar${i}`'>
     <div style='display: flex'>
       <h3>{{ project.title }}</h3>
-      <feather style='margin-left: auto' type='plus' stroke='red' stroke-width='3' />
+      <feather style='margin-left: auto' type='plus' stroke='red' stroke-width='3' size='3em'/>
     </div>
       <work
       v-show='`projects.expand${i}`'
@@ -57,8 +57,13 @@ export default {
   },
   methods: {
     expand(e) {
+      const expanded = document.querySelector('.expanded');
+      if (expanded != null) {
+        expanded.classList.remove('expanded');
+      }
       const bar = document.getElementById(`project${e}`);
       const projectBar = document.getElementById(`projectBar${e}`);
+      // const scroll = bar.offsetTop;
       if (bar.classList.contains('expanded')) {
         bar.classList.remove('expanded');
         projectBar.classList.add('black');
@@ -66,6 +71,7 @@ export default {
         bar.classList.add('expanded');
         projectBar.classList.remove('black');
       }
+      // window.scrollTop();
     },
   },
 };
@@ -76,7 +82,7 @@ export default {
   min-height: 100vh !important;
   max-height: 350vh !important;
   visibility: initial !important;
-  padding-top: 5%;
+  padding-top: 50px;
 }
 
 .work {

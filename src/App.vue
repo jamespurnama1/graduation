@@ -58,6 +58,20 @@ export default {
 @import './src/styles/fonts.module.scss';
 @import './src/styles/transitions.module.scss';
 
+button {
+  font-family: 'AXIS';
+  padding: 0 10px;
+  color: white;
+  background-color: $primary;
+  border: solid 3px white;
+}
+
+button:hover {
+  background-color: white;
+  border: 3px solid $primary;
+  color: $primary;
+}
+
 .title {
   position: relative;
   left: -5%;

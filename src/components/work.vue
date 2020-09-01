@@ -94,7 +94,7 @@ export default {
 }
 
 .img {
-  width: 95%;
+  width: 100%;
   height: 45vw;
   overflow: hidden;
   margin: 0 auto;
