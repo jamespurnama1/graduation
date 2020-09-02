@@ -3,9 +3,9 @@
     <transition name='navbar'>
       <nav>
         <ul>
-          <router-link tag='li' to='/' class='margin'>About Us</router-link>
-          <router-link tag='li' to='/outbreak' class='margin'>The Outbreak</router-link>
-          <router-link tag='li' to='/mutation' class='margin'>The Mutation</router-link>
+          <router-link tag='li' to='/' class='margin'><h3>About Us</h3></router-link>
+          <router-link tag='li' to='/outbreak' class='margin'><h3>The Outbreak</h3></router-link>
+          <router-link tag='li' to='/mutation' class='margin'><h3>The Mutation</h3></router-link>
         </ul>
       </nav>
     </transition>
@@ -46,13 +46,17 @@ export default {
 <style lang="scss" scoped>
 @import './src/styles/fonts.module.scss';
 
+h3 {
+  color: black;
+}
+
 .router-link-exact-active {
   color: $primary !important;
   transition: all 0.25s;
 }
 
 .margin {
-  margin: 0 1em 1em 1em;
+  margin: 0 1em 0 1em;
   text-decoration: none;
 }
 
@@ -64,7 +68,10 @@ export default {
 
 nav {
   position: fixed;
-  min-width: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 50px;
   width: 100vw;
   height: 7vh;
   background-color: white;
@@ -78,19 +85,20 @@ nav {
 
 ul {
   display: flex;
-  justify-content: flex-end;
+  // justify-content: flex-end;
   flex-direction: row;
-  align-items: center;
+  // align-items: center;
   list-style-type: none;
   padding: 0 30px;
   position: relative;
+  margin: 0;
 }
 
 li {
   font-family: 'AXIS';
-  font-size: 1.3em;
+  // font-size: 1.3em;
   color: black;
-  margin: 0 50px;
+  // margin: 0 50px;
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;

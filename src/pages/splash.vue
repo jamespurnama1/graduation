@@ -71,7 +71,7 @@ h1, h2, h3, p {
 }
 
 h2 {
-  font-size: 3em;
+  // font-size: 3em;
 }
 
 #hint {
@@ -100,7 +100,7 @@ h2 {
   display: flex;
   flex-direction: column;
   width: 50%;
-  height: 30%;
+  padding-bottom: 15px;
   border: solid 3px white;
 }
 

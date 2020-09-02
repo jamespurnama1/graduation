@@ -88,6 +88,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import './src/styles/fonts.module.scss';
+
+button p {
+  color: white;
+}
+
+button:hover p {
+  color: $primary;
+}
+
 .desc {
   font-family: sans-serif;
   font-weight: normal;

@@ -161,7 +161,6 @@ h1 {
   font-family: 'AXIS';
   font-weight: 800;
   text-align: left;
-  font-size: 10em;
   color: $primary;
   font-weight: 700;
   line-height: 0.7em;
@@ -172,7 +171,6 @@ h1 {
 h2 {
   font-family: 'AXIS';
   font-weight: 800;
-  font-size: 5em;
   color: $primary;
   text-decoration: none;
   margin: 0.2em 0;
@@ -181,7 +179,6 @@ h2 {
 h3 {
   font-family: 'AXIS';
   font-weight: 800;
-  font-size: 1.5em;
   color: $primary;
   text-decoration: none;
   margin: 0.2em 0;
@@ -193,7 +190,6 @@ a {
 
 p {
   font-family: 'AXIS';
-  font-size: 1em;
   color: black;
   text-decoration: none;
 }
@@ -202,6 +198,78 @@ html {
   font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (min-width: 480px){
+  p {
+    font-size: 0.5em;
+  }
+
+  h3 {
+    font-size: 0.7em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h1 {
+    font-size: 3.5em;
+  }
+}
+
+@media screen and (min-width: 736px){
+  p {
+    font-size: 0.8em;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: 3em;
+  }
+
+  h1 {
+    font-size: 5.5em;
+  }
+}
+
+@media screen and (min-width: 980px){
+  p {
+    font-size: 1em;
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
+
+  h2 {
+    font-size: 4em;
+  }
+
+  h1 {
+    font-size: 7em;
+  }
+}
+
+@media screen and (min-width: 1280px){
+  p {
+    font-size: 1.3em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 5em;
+  }
+
+  h1 {
+    font-size: 10em;
+  }
 }
 
 </style>

@@ -99,11 +99,11 @@ export default {
 }
 
 h3 {
-  font-size: 5em;
+  // font-size: 5em;
 }
 
 p {
-  font-size: 2em;
+  // font-size: 2em;
   font-family: 'AXIS';
 }
 
@@ -111,7 +111,7 @@ p {
   position: absolute;
   z-index: 5;
   width: 50%;
-  top: 30vh;
+  top: 13%;
   mix-blend-mode: multiply;
 }
 
