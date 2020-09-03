@@ -3,9 +3,15 @@
     <transition name='navbar'>
       <nav>
         <ul>
-          <router-link tag='li' to='/' class='margin'><h3>About Us</h3></router-link>
-          <router-link tag='li' to='/outbreak' class='margin'><h3>The Outbreak</h3></router-link>
-          <router-link tag='li' to='/mutation' class='margin'><h3>The Mutation</h3></router-link>
+          <router-link tag='li' to='/' class='margin'>
+            <h3>About Us</h3>
+          </router-link>
+          <router-link tag='li' to='/outbreak' class='margin'>
+            <h3 class='unexact'>The Outbreak</h3>
+          </router-link>
+          <router-link tag='li' to='/mutation' class='margin'>
+            <h3 class='unexact'>The Mutation</h3>
+          </router-link>
         </ul>
       </nav>
     </transition>
@@ -50,7 +56,12 @@ h3 {
   color: black;
 }
 
-.router-link-exact-active {
+.router-link-exact-active h3 {
+  color: $primary !important;
+  transition: all 0.25s;
+}
+
+.router-link-active .unexact {
   color: $primary !important;
   transition: all 0.25s;
 }

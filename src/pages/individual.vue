@@ -1,5 +1,5 @@
 <template>
-  <div class='page'>
+  <div class='page' style='margin-bottom: 5%'>
     <div class='title'>
       <img class='smallLogo' src='@/assets/logo_red.svg'>
       <div>
@@ -10,7 +10,7 @@
       </div>
     </div>
     <div style='padding: 0 10vw'>
-      <ul :style="gridStyle" class="card-list">
+      <ul class="card-list grid">
         <li v-for="(user, i) in users" class="card-item" :key='`user${i}`'>
          <router-link :to="'outbreak/' + user.photo">
          <div class='videoMask'>
@@ -23,7 +23,7 @@
             autobuffer
             class='photo'
             :id='`photo${i++}`'>
-            <source :src="require(`@/assets/faces/${user.photo}.mp4`)" >
+            <source :src="require(`@/assets/people/${user.photo}.mp4`)" >
             </video>
          </div>
             <p class='name'>{{i-1}}. {{ user.name }}</p>
@@ -49,20 +49,14 @@ export default {
         { name: 'Samantha', photo: 'sam' },
         { name: 'Zhi Jian', photo: 'zhijian' },
         { name: 'Aurelius Kevin', photo: 'aurel' },
-        { name: 'Wei Hang', photo: 'weihang' },
-        { name: 'Hui San', photo: 'huisan' },
-        { name: 'Wai Yee', photo: 'waiyee' },
+        { name: 'James Henry', photo: 'james' },
+        { name: 'Chaterine A.', photo: 'huisan' },
+        { name: 'Vianka', photo: 'vianka' },
       ],
       cards: [1, 2, 3, 4],
-      numberOfColumns: 3,
     };
   },
   computed: {
-    gridStyle() {
-      return {
-        gridTemplateColumns: `repeat(${this.numberOfColumns}, minmax(100px, 1fr))`,
-      };
-    },
   },
   methods: {
     playVideo(e) {
@@ -108,5 +102,40 @@ h1, h2 {
 h3, p {
   color: black;
   margin: 0;
+}
+
+@media screen and (min-width: 480px){
+  .grid {
+    grid-template-columns: repeat(1, minmax(100px, 2fr));
+  }
+}
+
+@media screen and (min-width: 736px){
+  .videoMask {
+    height: 70vh;
+    width: 70vh;
+  }
+  .photo {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 980px){
+  .grid {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  }
+  .videoMask {
+    height: 40vh;
+    width: 40vh;
+  }
+    .photo {
+    transform: translateY(-20%);
+  }
+}
+
+@media screen and (min-width: 1280px){
+  .grid {
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
 }
 </style>

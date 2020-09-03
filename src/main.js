@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import Buefy from 'buefy';
 import VueFeather from 'vue-feather';
 import VueCountdown from '@chenfengyuan/vue-countdown';
+// import notFound from '@/pages/notFound.vue';
 import landing from './landing.vue';
 import App from './App.vue';
 import Individual from './pages/individual.vue';
@@ -23,14 +24,10 @@ const routes = [
   { path: '/outbreak', component: Individual },
   { path: '/mutation', component: Group },
   { name: 'weihang', path: '/outbreak/weihang', component: Personal },
-  { path: '/outbreak/waiyee', component: Personal },
-  { path: '/outbreak/anh', component: Personal },
-  { path: '/outbreak/karmun', component: Personal },
-  { path: '/outbreak/szechien', component: Personal },
-  { path: '/outbreak/aurel', component: Personal },
-  { path: '/outbreak/sam', component: Personal },
-  { path: '/outbreak/huisan', component: Personal },
-  { path: '/outbreak/zhijian', component: Personal },
+  {
+    name: 'User', path: '/outbreak/:user', component: Personal, props: true,
+  },
+  // { path: '*', component: notFound },
 ];
 
 const router = new VueRouter({

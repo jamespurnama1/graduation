@@ -1,88 +1,83 @@
 <template>
   <div class='block'>
-    <div class='img'>
-      <img src='@/assets/sample.jpeg'>
+    <div class='img' style='margin-bottom: 50px'>
+      <img :src="require(`@/assets/project${img}/img0.jpg`)">
     </div>
-    <h3 style='color: black'>Group Members: Vianka | Aurelius Kevin | Chaterine A.</h3>
+    <h3 style='color: black'>
+      Group Members:
+      {{ projects.members[0] }}
+      | {{ projects.members[1] }}
+      | {{ projects.members[2] }}
+    </h3>
     <div class='line' />
-    <div style='display: flex'>
-    <div>
+    <div style='display: flex; flex-wrap: wrap; justify-content: space-between'>
+    <div style='max-width: 400px; margin-right: 10px'>
       <h3>Problem</h3>
-      <p>Lorem ipsum dolor sit amet,
-        consectetuer adipiscing elit,
-        sed diam nonummy nibh euismod
-        tincidunt ut laoreet dolore magna
-        aliquam erat volutpat.
-        Ut wisi enim ad minim veniam,
-        quis nostrud exerci tation ullamcorper
-        suscipit lobortis nisl ut aliquip ex ea
-        commodo consequat. Duis autem vel eum
-        iriure dolor in hendrerit in vulputate velit esse
+      <p>{{ projects.problem }}
       </p>
     </div>
-    <div>
+    <div style='max-width: 400px; margin-right: 10px'>
       <h3>Insight</h3>
-      <p>Lorem ipsum dolor sit amet,
-        consectetuer adipiscing elit,
-        sed diam nonummy nibh euismod
-        tincidunt ut laoreet dolore magna
-        aliquam erat volutpat.
-        Ut wisi enim ad minim veniam,
-        quis nostrud exerci tation ullamcorper
-        suscipit lobortis nisl ut aliquip ex ea
-        commodo consequat. Duis autem vel eum
-        iriure dolor in hendrerit in vulputate velit esse
+      <p>{{ projects.insight }}
       </p>
     </div>
-    <div>
+    <div style='max-width: 400px'>
       <h3>Idea</h3>
-      <p>Lorem ipsum dolor sit amet,
-        consectetuer adipiscing elit,
-        sed diam nonummy nibh euismod
-        tincidunt ut laoreet dolore magna
-        aliquam erat volutpat.
-        Ut wisi enim ad minim veniam,
-        quis nostrud exerci tation ullamcorper
-        suscipit lobortis nisl ut aliquip ex ea
-        commodo consequat. Duis autem vel eum
-        iriure dolor in hendrerit in vulputate velit esse
+      <p>{{ projects.idea }}
       </p>
     </div>
     </div>
     <h3>Case Study Video</h3>
-    <div class='img' style='margin-bottom: 50px'>
-      <img src='@/assets/sample.jpeg'>
+    <div class='img' style='margin-bottom: 10px'>
+      <img :src="require(`@/assets/project${img}/img1.jpg`)">
     </div>
     <h3>How it Works</h3>
-    <div class='img'>
-      <img src='@/assets/sample.jpeg'>
-    </div>
-    <p>1. Lorem ipsum dolor sit amet,
-      consectetuer adipiscing elit,
-      sed diam nonummy nibh euismod
-      tincidunt ut laoreet dolore
-      magna aliquam erat volutpat.
-      Ut wisi enim ad minim veniam,
-      quis nostrud exerci tation
-      ullamcorper suscipit lobortis
-      nisl ut aliquip ex ea commodo consequat.
+    <carousel
+      :per-page='1'
+      :loop='true'
+      :navigation-enabled='true'
+      :navigation-next-label='`>`'
+      :navigation-prev-label='`<`'
+      :pagination-active-color='`#eb2027`'
+      :mouse-drag='true'
+      v-model="currentIndex">
+        <slide
+        v-for='(item, index) in projects.carousel'
+        :key='index'
+        :data-index='index'>
+          <img :src="require(`@/assets/project${img}/img${index}.jpg`)">
+        </slide>
+      </carousel>
+    <p>
+      {{ projects.carousel[currentIndex].caption }}
     </p>
   </div>
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel';
+
 export default {
   name: 'Work',
   props: {
-    members: String,
+    projects: Object,
+    img: Number,
   },
   components: {
+    Carousel,
+    Slide,
+  },
+  methods: {
+    change(dataset) {
+      console.log(dataset);
+      // this.i = dataset.index;
+    },
   },
   data() {
     return {
+      i: 0,
+      currentIndex: 0,
     };
-  },
-  methods: {
   },
 };
 </script>

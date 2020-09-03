@@ -4,7 +4,7 @@
       <h1>COVID-12</h1>
       <img id='overlay' src='@/assets/logo_red.svg'>
       <div>
-      <ul :style="gridStyle" class="card-list">
+      <ul class="card-list grid">
         <li v-for="(user, i) in users" class="card-item" :key='`user${i}`'>
          <router-link :to="'outbreak/' + user.photo">
          <div class='videoMask'>
@@ -14,7 +14,7 @@
             preload="auto"
             autobuffer
             class='photo'>
-            <source :src="require(`@/assets/faces/${user.photo}.mp4`)" >
+            <source :src="require(`@/assets/people/${user.photo}.mp4`)" >
             </video>
          </div>
           </router-link>
@@ -32,8 +32,10 @@
       </p>
       <img style='width: 28vw; height: 28vw; margin: 20px' src='@/assets/logo_red.svg'>
       <div class='line' />
-      <h3>We are the Covid-12,</h3>
-      <h3 style='margin-bottom: 5%'>the Creative Virus 12.</h3>
+      <div style='margin-bottom: 5%'>
+        <h2>We are the Covid-12,</h2>
+        <h2>the Creative Virus 12.</h2>
+      </div>
       <p id='footer'>copyright 2020 thecovid12</p>
     </div>
   </div>
@@ -57,12 +59,11 @@ export default {
         { name: 'Samantha', photo: 'sam' },
         { name: 'Zhi Jian', photo: 'zhijian' },
         { name: 'Aurelius Kevin', photo: 'aurel' },
-        { name: 'Wei Hang', photo: 'weihang' },
-        { name: 'Hui San', photo: 'huisan' },
-        { name: 'Wai Yee', photo: 'waiyee' },
+        { name: 'James Henry', photo: 'james' },
+        { name: 'Chaterine A.', photo: 'huisan' },
+        { name: 'Vianka', photo: 'vianka' },
       ],
       cards: [1, 2, 3, 4],
-      numberOfColumns: 4,
     };
   },
   methods: {
@@ -72,11 +73,6 @@ export default {
     },
   },
   computed: {
-    gridStyle() {
-      return {
-        gridTemplateColumns: `repeat(${this.numberOfColumns}, minmax(100px, 1fr))`,
-      };
-    },
   },
 };
 
@@ -84,6 +80,10 @@ export default {
 
 <style lang="scss" scoped>
 @import './src/styles/fonts.module.scss';
+
+.grid {
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+}
 
 #footer {
   position: absolute;
@@ -94,8 +94,7 @@ export default {
 }
 
 .videoMask {
-  height: 35vh;
-  width: 35vh;
+  overflow: hidden;
 }
 
 h3 {
@@ -113,6 +112,11 @@ p {
   width: 50%;
   top: 13%;
   mix-blend-mode: multiply;
+}
+
+.videoMask {
+    height: 20vw;
+    width: 20vw;
 }
 
 #close {

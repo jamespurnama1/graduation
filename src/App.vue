@@ -58,6 +58,26 @@ export default {
 @import './src/styles/fonts.module.scss';
 @import './src/styles/transitions.module.scss';
 
+.VueCarousel-navigation-button {
+  font-family: "AXIS" !important;
+  font-size: 3em !important;
+  color: #eb2027 !important;
+  transform: translate(0%, -100%) !important;
+}
+
+.VueCarousel-slide {
+  width: 100%;
+  height: 45vw;
+}
+
+.VueCarousel-dot-container {
+  margin: 0 !important;
+}
+
+.VueCarousel-dot {
+  padding: 0 10px !important;
+}
+
 button {
   font-family: 'AXIS';
   padding: 0 10px;
@@ -110,8 +130,6 @@ button:hover {
 
 .videoMask {
   overflow: hidden;
-  height: 40vh;
-  width: 40vh;
 }
 
 .photo {
@@ -119,6 +137,7 @@ button:hover {
   transform: translateY(-20%);
   filter: grayscale(1);
   -webkit-filter: grayscale(1);
+  object-fit: cover;
 }
 
 video{
@@ -146,7 +165,6 @@ video{
   justify-content: center;
   padding: 10px;
   flex-wrap: wrap;
-  min-height: 100vh;
   // overflow: hidden;
 }
 

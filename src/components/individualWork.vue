@@ -1,26 +1,60 @@
 <template>
   <div class='block'>
-    <div class='img'>
-      <h3>Stationery Design</h3>
-      <img src='@/assets/sample.jpeg'>
-    </div>
-    <h3>Environment</h3>
-    <div class='grid'>
-      <img src='@/assets/sample.jpeg'>
-      <img src='@/assets/sample.jpeg'>
-      <img src='@/assets/sample.jpeg'>
-      <img src='@/assets/sample.jpeg'>
-    </div>
+      <h3 style='margin-top: 5%'>{{ works.sections.one.name }}</h3>
+      <carousel
+      :per-page='1'
+      :loop='true'
+      :navigation-enabled='true'
+      :navigation-next-label='`>`'
+      :navigation-prev-label='`<`'
+      :pagination-active-color='`#eb2027`'
+      :autoplay='true'
+      :mouse-drag='true'>
+        <slide
+        v-for='(img) in works.sections.one.img'
+        :key='img'>
+          <video muted loop autoplay preload="true"
+          :poster="require(`@/assets/people/${path}/work${works.id}/one/${img}`)"
+          :src="require(`@/assets/people/${path}/work${works.id}/one/${img}`)" />
+        </slide>
+      </carousel>
+    <h3 style='margin-top: 5%'>{{ works.sections.two.name }}</h3>
+    <!-- <div class='grid'>
+      <img v-for='(secondImg) in works.sections.two.img'
+      :key='secondImg'
+      class='gridImg'
+      :src="require(`@/assets/people/${path}/work${works.id}/two/${secondImg}`)">
+    </div> -->
+    <stack
+    :gutter-width="8"
+    :gutter-height="8"
+    :column-min-width="500"
+    :monitor-images-loaded='true'>
+      <stack-item v-for='(medias) in works.sections.two.img'
+      :key='medias'
+      class='gridImg'>
+        <img
+        :src="require(`@/assets/people/${path}/work${works.id}/two/${medias}`)">
+      </stack-item>
+    </stack>
   </div>
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel';
+import { Stack, StackItem } from 'vue-stack-grid';
+
 export default {
   name: 'Work',
   props: {
-    members: String,
+    works: Object,
+    path: String,
   },
   components: {
+    Carousel,
+    Slide,
+    Stack,
+    StackItem,
   },
   data() {
     return {
@@ -31,10 +65,13 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped lang='scss'>
+@import './src/styles/fonts.module.scss';
+
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 40vw);
   grid-gap: 10px;
 }
 
@@ -43,15 +80,15 @@ export default {
   // align-items: center;
 }
 
-.img {
+img, video {
   width: 100%;
-  height: 45vw;
-  overflow: hidden;
-  margin: 0 auto;
+  min-height: 100%;
+  object-fit: cover;
+  // height: 45vw;
 }
 
-img {
-  width: 100%;
+.gridImg {
+  transition: transform 0.3 ease-in-out;
 }
 
 h3 {

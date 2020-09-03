@@ -14,20 +14,30 @@
       </p>
       </div>
     </div>
-    <div style='border-color: black; margin: 0; transform: translateY(316%)' class='line' />
-    <div @click='expand(i)'
-    v-for='(project, i) in projects'
-    class='projectBar black clickable'
-    :key='i'
-    :id='`projectBar${i}`'>
-    <div style='display: flex'>
-      <h3>{{ project.title }}</h3>
+    <div style='border-color: black;
+    margin: 0; margin-bottom: 0.5%;
+    transform: translateY(316%)'
+    class='line' />
+    <div
+    class='work'
+    :id='`project${i}`'
+    v-for='(projects, i) in projects'
+    :key='i'>
+      <div
+      style='display: flex'
+      :id='`projectBar${i}`'
+      class='projectBar black clickable'
+      @click='expand(i)'>
+      <h3 style='padding-left: 10%'>{{ projects.title }}</h3>
       <feather style='margin-left: auto' type='plus' stroke='red' stroke-width='3' size='3em'/>
-    </div>
+      </div>
       <work
       v-show='`projects.expand${i}`'
-      class='block work'
-      :id='`project${i}`' />
+      class='block'
+      :projects='projects'
+      :img='i'
+      style='position: absolute; padding: 0 10%;'
+      />
     </div>
   </div>
 </template>
@@ -35,24 +45,17 @@
 <script>
 import { gsap } from 'gsap';
 import work from '@/components/work.vue';
+import groupProject from '@/components/groupProject';
 
 export default {
-  name: 'Principles',
+  name: 'Group',
   components: {
     work,
   },
+  mixins: [groupProject],
   data() {
     return {
       gsap1: new gsap.timeline(), // eslint-disable-line
-      projects: [
-        { title: 'Concert in The Clouds', members: 'Vianka, Aurelius Kevin, Chaterine' },
-        { title: "The Tigers That Won't return", members: 'Vianka, Aurelius Kevin, Chaterine' },
-        { title: 'Untold Fact', members: 'Vianka, Aurelius Kevin, Chaterine' },
-        { title: 'Tree of Ash', members: 'Vianka, Aurelius Kevin, Chaterine' },
-        { title: 'Hard Rock', members: 'Vianka, Aurelius Kevin, Chaterine' },
-        { title: 'Mama Miss U', members: 'Vianka, Aurelius Kevin, Chaterine' },
-        { title: 'Eco Pack', members: 'Vianka, Aurelius Kevin, Chaterine' },
-      ],
     };
   },
   methods: {
@@ -84,30 +87,25 @@ export default {
 
 <style lang="scss" scoped>
 .expanded {
-  min-height: 100vh !important;
-  max-height: 350vh !important;
   visibility: initial !important;
-  padding-top: 50px;
 }
 
 .work {
   width: 100%;
   min-height: 0vh;
-  max-height: 0vh;
+  max-height: 3%;
   transition: all .5s ease-in-out;
-  visibility: hidden;
   overflow: hidden;
+  position: relative;
+  border-width: 3px;
+  border-bottom-style: solid;
 }
 
 .projectBar {
     display: flex;
-    flex-direction: column;
-    width: 100vw;
-    // max-height: 7vh;
-    border-width: 3px;
-    border-bottom-style: solid;
-    padding: 30px 10% 0 10%;
-    overflow: hidden;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px 0;
 }
 
 .black:hover {
@@ -120,8 +118,6 @@ export default {
 
 #titleLogo {
   padding-right: 7%;
-  // border-right-style: solid;
-  // border-width: 3px;
 }
 
 h3, p {
@@ -145,5 +141,35 @@ h3 {
 .smallLogo {
   height: 12vw;
   width: 12vw;
+}
+
+@media screen and (min-width: 480px){
+  .expanded {
+    min-height: 1700px !important;
+  }
+}
+
+@media screen and (min-width: 736px){
+  .expanded {
+    min-height: 2000px !important;
+  }
+}
+
+@media screen and (min-width: 980px){
+  .expanded {
+    min-height: 2470px !important;
+  }
+}
+
+@media screen and (min-width: 1280px){
+  .expanded {
+    min-height: 3070px !important;
+  }
+}
+
+@media screen and (min-width: 1344px){
+  .expanded {
+    min-height: 3500px !important;
+  }
 }
 </style>
