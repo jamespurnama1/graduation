@@ -1,10 +1,13 @@
-$font_path: '/assets/fonts/';
+$font_path: '~@/assets/fonts/';
 $primary: #eb2027;
 
 @font-face {
   font-family: 'AXIS';
   src: local('AXIS'),
-  url($font_path+'AXIS-ExtraBold.woff2') format('woff2');
+  url($font_path+'AxisExtraBold.woff2') format('woff2'),
+  url($font_path+'AxisExtraBold.woff') format('woff'),
+  url($font_path+'AxisExtraBold.otf') format('opentype'),
+  url($font_path+'AxisExtraBold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
 }
