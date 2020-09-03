@@ -1,17 +1,30 @@
 <template>
   <div class='page personal' style='grid-area: img'>
-    <h2>{{ data[0].name }}</h2>
+    <h2 class='desc red' style='font-weight: bold'>{{ data[0].name }}</h2>
     <div class='line' />
     <div class='data'>
     <img class='margin'
     :src="require(`@/assets/people/${data[0].path}/face.jpg`)">
-      <div class='margin' style='max-width: 70%; grid-area: data'>
-        <h3>email</h3>
-        <a class='underline' :href='data[0].email'><p>{{ data[0].email }}</p></a>
-        <h3>behance</h3>
-        <a class='underline' :href='data[0].behance'><p>{{ data[0].behance }}</p></a>
-        <h3>LinkedIn</h3>
-        <a class='underline' :href='data[0].linkedin'><p>{{ data[0].linkedin }}</p></a>
+      <div class='bio'>
+        <div class='margin'>
+          <h3 class='desc red' style='font-weight: bold'>Email</h3>
+          <a class='underline' :href='data[0].email'>
+            <p class='desc red'>{{ data[0].email }}</p>
+          </a>
+        </div>
+        <div class='margin'>
+          <h3 class='desc red' style='font-weight: bold'>Behance</h3>
+          <a class='underline' :href='data[0].behance'>
+            <p class='desc red'>{{ data[0].behance }}</p>
+          </a>
+        </div>
+        <div class='margin'>
+          <h3 class='desc red' style='font-weight: bold'>LinkedIn</h3>
+          <a class='underline'
+          :href='data[0].linkedin'>
+            <p class='desc red'>{{ data[0].linkedin }}</p>
+          </a>
+        </div>
         <button>
           <a :href='`@/assets/people/${data[0].path}/resume.pdf`' download>
             <p>
@@ -21,7 +34,7 @@
         </button>
       </div>
     <p style='grid-area: desc'
-    class='desc'>
+    class='desc red'>
       {{ data[0].bio }}
     </p>
     </div>
@@ -93,6 +106,11 @@ export default {
 <style lang="scss" scoped>
 @import './src/styles/fonts.module.scss';
 
+.bio {
+  max-width: 70%;
+  grid-area: data;
+}
+
 .underline:hover {
   text-decoration: underline;
   color: black;
@@ -106,11 +124,15 @@ button:hover p {
   color: $primary;
 }
 
+.red {
+  color: $primary !important;
+}
+
 .desc {
   font-family: sans-serif;
   font-weight: normal;
   color: black;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .intro {
@@ -141,7 +163,7 @@ img {
 }
 
 .margin {
-  // margin-right: 10px;
+  margin: 10% 0;
 }
 
 // p, h3 {

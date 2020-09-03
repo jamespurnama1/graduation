@@ -28,7 +28,7 @@
     <stack
     :gutter-width="8"
     :gutter-height="8"
-    :column-min-width="500"
+    :column-min-width="600"
     :monitor-images-loaded='true'>
       <stack-item v-for='(medias) in works.sections.two.img'
       :key='medias'
