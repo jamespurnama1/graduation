@@ -60,7 +60,7 @@ export default {
 
 .VueCarousel-navigation-button {
   font-family: "AXIS" !important;
-  font-size: 3em !important;
+  font-size: calc(10px + 1vw) !important;
   color: #eb2027 !important;
   transform: translate(0%, -100%) !important;
 }
@@ -93,12 +93,11 @@ button:hover {
 }
 
 .title {
-  position: relative;
-  left: -5%;
   display: flex;
   justify-content: center;
   padding: 2%;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .line {
@@ -148,7 +147,7 @@ video{
 
 .page {
   position: relative;
-  top: 7vh;
+  top: 6.46vh;
 }
 
 .bg{
@@ -165,7 +164,7 @@ video{
   justify-content: center;
   padding: 10px;
   flex-wrap: wrap;
-  // overflow: hidden;
+  overflow-y: hidden;
 }
 
 .center {
@@ -185,21 +184,24 @@ h1, h2 ,h3, h4 {
 
 h1 {
   text-align: center;
-  font-size: 15vw;
+  font-size: calc(12px + 13.5vw);
   line-height: 0.7em;
   text-indent: -0.2em;
+  white-space: nowrap;
 }
 
 h2 {
-  font-size: 5vw;
+  widows: 3;
+  orphans: 3;
+  font-size: calc(10px + 5vw);
 }
 
 h3 {
-  font-size: 3vw;
+  font-size: calc(10px + 3vw);
 }
 
 h4 {
-  font-size: 1.5vw;
+  font-size: calc(7px + 1vw);
   color: black;
 }
 
@@ -211,7 +213,7 @@ p {
   font-family: 'AXIS';
   color: black;
   text-decoration: none;
-  font-size: 1.7vw;
+  font-size: calc(8px + 1vw);
 }
 
 html {
@@ -219,77 +221,4 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-@media screen and (min-width: 480px){
-  p {
-    // font-size: 0.5em;
-  }
-
-  h3 {
-    // font-size: 0.7em;
-  }
-
-  h2 {
-    // font-size: 2em;
-  }
-
-  h1 {
-    // font-size: 3.5em;
-  }
-}
-
-@media screen and (min-width: 736px){
-  p {
-    // font-size: 0.8em;
-  }
-
-  h3 {
-    // font-size: 1em;
-  }
-
-  h2 {
-    // font-size: 3em;
-  }
-
-  h1 {
-    // font-size: 5.5em;
-  }
-}
-
-@media screen and (min-width: 980px){
-  p {
-    // font-size: 1em;
-  }
-
-  h3 {
-    // font-size: 1.3em;
-  }
-
-  h2 {
-    // font-size: 4em;
-  }
-
-  h1 {
-    // font-size: 7em;
-  }
-}
-
-@media screen and (min-width: 1280px){
-  p {
-    // font-size: 1.3em;
-  }
-
-  h3 {
-    // font-size: 1.5em;
-  }
-
-  h2 {
-    // font-size: 5em;
-  }
-
-  h1 {
-    // font-size: 10em;
-  }
-}
-
 </style>

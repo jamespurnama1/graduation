@@ -6,8 +6,8 @@
       <h2>The</h2>
       <h2>Mutation</h2>
       </div>
-      <div class='verticalLine' style='height:106%' />
-      <div style='width: 20%; padding-left: 7%' class='center'>
+      <!-- <div class='verticalLine' style='height:106%' /> -->
+      <div class='center mutation'>
       <p>
         Occurs when the viruses exchange creative info, idea strains
         and efficiency.
@@ -29,7 +29,7 @@
       class='projectBar black clickable'
       @click='expand(i)'>
       <h3 style='padding-left: 10%'>{{ projects.title }}</h3>
-      <feather style='margin-left: auto' type='plus' stroke='red' stroke-width='3' size='3vw'/>
+      <feather style='margin-left: auto' type='plus' stroke='red' stroke-width='3' />
       </div>
       <work
       v-show='`projects.expand${i}`'
@@ -92,6 +92,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.title {
+    padding: 0 2%;
+    height: 20vw;
+    flex-wrap: nowrap;
+    min-height: 125px;
+}
+
+.mutation {
+  width: 35vw;
+  height: 100%;
+  border-left-style: solid;
+  border-width: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7%;
+}
+
 .relative {
   position: relative !important;
 }
@@ -103,6 +121,7 @@ export default {
 
 #projectBar0 {
   border-top-style: solid;
+  border-width: 3px;
 }
 
 .expanded {
@@ -154,16 +173,14 @@ h1, h2 {
   margin: 0;
 }
 
-h3 {
-  // font-size: 3.5em;
-}
-
 .smallLogo {
   height: 12vw;
   width: 12vw;
 }
 
 .feather {
-  margin-right: 10px;
+  margin: auto 10px auto 0;
+  min-width: 5px;
+  width: 35px;
 }
 </style>

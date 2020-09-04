@@ -1,9 +1,8 @@
 <template>
-  <div class='page' style='padding: 0 10vw'>
+  <div class='page' style='padding: 0 8vw'>
     <div class='block'>
       <h1>COVID-12</h1>
       <img id='overlay' src='@/assets/logo_red.svg'>
-      <div>
       <ul class="card-list grid">
         <li v-for="(user, i) in users" class="card-item" :key='`user${i}`'>
          <router-link :to="'outbreak/' + user.photo">
@@ -21,7 +20,6 @@
         </li>
       </ul>
     </div>
-    </div>
     <div class='block center'>
       <h1 style='font-size: 8vw; white-space: nowrap'>What is COVID-12</h1>
       <div class='line' />
@@ -29,15 +27,15 @@
         As the world is still struggling with the outbreak of Covid-19,
         at The One Academy, a new mind-altering, top-grade virus has just been found.
         It is believed that once released, this virus will impact the world of design greatly.
-        we are the COVID-12.
+        we are the&nbsp;COVID-12.
       </p>
       <img style='width: 28vw; height: 28vw; margin: 20px' src='@/assets/logo_red.svg'>
       <div class='line' />
-      <div style='margin-bottom: 5%'>
-        <h2>We are the creative virus 12.</h2>
-        <h2>We are designed to spread.</h2>
+      <div style='margin-bottom: 50px'>
+        <h2>We are the creative virus&nbsp;12.</h2>
+        <h2>We are designed to&nbsp;spread.</h2>
       </div>
-      <p id='footer'>copyright 2020 thecovid12</p>
+      <p id='footer'>copyright 2020&nbsp;thecovid12</p>
     </div>
   </div>
 </template>
@@ -82,34 +80,29 @@ export default {
 <style lang="scss" scoped>
 @import './src/styles/fonts.module.scss';
 
+.block {
+  padding: 0;
+}
+
 #about {
   width: 100%;
   font-size: 100%;
 }
 
 .grid {
-  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 0;
 }
 
 #footer {
   position: absolute;
-  font-size: 0.9vw;
   bottom: 0;
   left: 0;
-  margin: 20px;
+  // margin: 20px;
 }
 
 .videoMask {
   overflow: hidden;
-}
-
-h3 {
-  // font-size: 5em;
-}
-
-p {
-  // font-size: 2em;
-  font-family: 'AXIS';
 }
 
 #overlay {

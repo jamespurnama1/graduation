@@ -79,8 +79,8 @@ export default {
   overflow: hidden;
   min-width: 0;
   min-height: 0;
-  grid-template-columns: repeat(2, minmax(200px, 1fr));
-  grid-template-rows: minmax(200px, 54vw) minmax(200px, 34.5vw) minmax(200px, 34.5vw);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 54vw) minmax(0, 34.5vw) minmax(0, 34.5vw);
   grid-template-areas:
     "top top"
     "leftone rightone"

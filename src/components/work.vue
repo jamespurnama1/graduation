@@ -1,14 +1,14 @@
 <template>
   <div class='block'>
-    <div class='img' style='margin-bottom: 50px'>
+    <div class='img'>
       <img :src="require(`@/assets/project${img}/img0.jpg`)">
     </div>
-    <h3 style='color: black'>
+    <h4 style='color: black'>
       Group Members:
       {{ projects.members[0] }}
       | {{ projects.members[1] }}
       | {{ projects.members[2] }}
-    </h3>
+    </h4>
     <div class='line' />
     <div style='display: flex; flex-wrap: wrap; justify-content: space-between'>
     <div style='max-width: 400px; margin-right: 10px'>

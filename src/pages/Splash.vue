@@ -25,7 +25,7 @@
       </div>
       <div id='warningText'>
         <div style='display: flex; flex-direction: row;'>
-          <feather type='alert-triangle' stroke='white' stroke-width='2' size='3em' />
+          <feather type='alert-triangle' stroke='white' stroke-width='2' />
           <p style='width: 80%'>
             Warning:
             <br>
@@ -101,6 +101,7 @@ p {
   display: flex;
   flex-direction: column;
   width: 50%;
+  min-width: 300px;
   padding-bottom: 15px;
   border: solid 3px white;
 }
@@ -136,7 +137,8 @@ button:hover .feather {
   stroke: $primary;
 }
 
-.feather {
+.feather--alert-triangle {
   margin: 3% 3% 0 0;
+  width: 50px;
 }
 </style>

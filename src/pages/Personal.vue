@@ -1,34 +1,35 @@
 <template>
   <div class='page personal' style='grid-area: img'>
     <h2 class='desc red' style='font-weight: bold'>{{ data[0].name }}</h2>
-    <div class='line' />
+    <div class='line' style='margin-top: 20px' />
     <div class='data'>
-    <img class='margin'
-      :src="require(`@/assets/people/${data[0].path}/face.jpg`)">
+    <img
+      :src="require(`@/assets/people/${data[0].path}/face.jpg`)"
+      style='grid-area: img; margin-bottom: 10px'>
 
     <div class='bio'>
       <div class='margin'>
         <h3 class='desc red' style='font-weight: bold'>Email</h3>
         <a class='underline' :href='data[0].email'>
-          <p style='font-size: 1.5vw' class='desc'>{{ data[0].email }}</p>
+          <p class='desc'>{{ data[0].email }}</p>
         </a>
       </div>
       <div class='margin'>
         <h3 class='desc red' style='font-weight: bold'>Behance</h3>
         <a class='underline' :href='data[0].behance'>
-          <p style='font-size: 1.5vw' class='desc'>{{ data[0].behance }}</p>
+          <p class='desc'>{{ data[0].behance }}</p>
         </a>
       </div>
       <div class='margin'>
         <h3 class='desc red' style='font-weight: bold'>LinkedIn</h3>
         <a class='underline'
         :href='data[0].linkedin'>
-          <p style='font-size: 1.5vw' class='desc'>{{ data[0].linkedin }}</p>
+          <p class='desc'>{{ data[0].linkedin }}</p>
         </a>
       </div>
       <button>
         <a :href='`@/assets/people/${data[0].path}/resume.pdf`' download>
-          <p style='margin: 1vw 0; font-size: 1vw;'>
+          <p style='margin: 1vw 0'>
             Download resume
           </p>
         </a>
@@ -162,16 +163,17 @@ button:hover p {
 
 .data {
   display: grid;
-  grid-template-columns: 20% auto auto 38%;
+  grid-template-columns: 20% auto auto 40%;
   grid-gap: 5px;
   align-items: center;
   justify-items: center;
   grid-template-areas:
-    "img data data data"
+    "img img data data"
     "desc desc desc desc";
 }
 
 img {
+  min-width: 170px;
   width: 20vw;
   height: auto;
 }
@@ -181,11 +183,11 @@ img {
 }
 
 h4 {
-  font-size: 2vw;
+  font-size: calc(7px + 0.5vw);
 }
 
 h3 {
-  font-size: 2vw;
+  font-size: calc(10px + 1vw);
 }
 
 @media screen and (min-width: 480px){

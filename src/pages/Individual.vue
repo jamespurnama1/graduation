@@ -1,5 +1,5 @@
 <template>
-  <div class='page' style='margin-bottom: 5%'>
+  <div class='page'>
     <div class='title'>
       <img class='smallLogo' src='@/assets/logo_red.svg'>
       <div>
@@ -9,7 +9,7 @@
       </p>
       </div>
     </div>
-    <div style='padding: 0 10vw'>
+    <div>
       <ul class="card-list grid">
         <li v-for="(user, i) in users" class="card-item" :key='`user${i}`'>
          <router-link :to="'outbreak/' + user.photo">
@@ -90,6 +90,8 @@ export default {
 }
 
 .smallLogo {
+  min-width: 100px;
+  min-height: 100px;
   width: 10vw;
   height: 10vw;
   margin: 0 30px;
@@ -107,7 +109,16 @@ h3, p {
 .videoMask {
     height: 70vw;
     width: 70vw;
-  }
+}
+
+.grid {
+  padding: 0;
+}
+
+.page {
+  padding: 0 8vw;
+  margin-bottom: 50px;
+}
 
 @media screen and (min-width: 480px){
   .grid {
@@ -123,9 +134,6 @@ h3, p {
     height: 35vw;
     width: 35vw;
   }
-  .photo {
-    // transform: translateY(0);
-  }
 }
 
 @media screen and (min-width: 980px){
@@ -136,7 +144,7 @@ h3, p {
     height: 23vw;
     width: 23vw;
   }
-    .photo {
+  .photo {
     transform: translateY(-20%);
   }
 }
