@@ -56,7 +56,7 @@ h3 {
   color: black;
 }
 
-.router-link-exact-active h3 {
+.router-link-exact-active h4 {
   color: $primary !important;
   transition: all 0.25s;
 }
