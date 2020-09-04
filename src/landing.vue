@@ -109,7 +109,7 @@ export default {
   position: absolute;
   z-index: 5;
   width: 50%;
-  top: 24vw;
+  top: 26vw;
   mix-blend-mode: multiply;
 }
 
@@ -133,11 +133,20 @@ export default {
   width: 30%;
 }
 
+@media screen and (max-width: 480px) {
+  #overlay {
+    top: 28vw;
+  }
+}
+
 @media screen and (min-width: 736px) {
   #about {
     font-size: 160%;
     margin-right: auto;
     width: 50%;
+  }
+  #overlay {
+    top: 24vw;
   }
 }
 </style>
