@@ -12,6 +12,7 @@ export default {
           works: {
             one: {
               id: 1,
+              layout: 'layoutB',
               name: 'Sagoo',
               type: 'Packaging',
               desc: 'Sagoo is a vintage themed restaurant in Bandung, Indonesia. Aside from selling food, they sell nostalgic items on the side as a waroeng. This project aims to bring back Indonesian nostalgic toys and candies with a packaging experience. The set includes a paper bag, bola bekel, gasing bamboe, and permen rokok.',
@@ -22,12 +23,13 @@ export default {
                 },
                 two: {
                   name: 'More Pictures',
-                  img: ['img0.jpg', 'img1.jpg', 'img2.jpg', 'img3.jpg'],
+                  img: ['img0.jpg', 'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg'],
                 },
               },
             },
             two: {
               id: 2,
+              layout: 'layoutA',
               name: 'Epic',
               type: 'Branding',
               desc: 'Epic or Epic Homes is a non-profit organization purposed to build houses for the homeless. Epic stands for Extraordinary People Impacting Communities. They believe in relationships, which is the differentiator of a house, and a home. This branding project serves to impact a growing community that genuinely cares.',
@@ -44,6 +46,7 @@ export default {
             },
             three: {
               id: 3,
+              layout: 'carouselB',
               name: 'Jack The Clipper',
               type: 'Corporate Identity',
               desc: 'Jack the Clipper is a unique barbershop experience taken from a well-known serial killer, Jack the Ripper. The idea behind the logo is a combination of bold old-school typeface with an unidentifiable common head and a clipper. The person in the logo brings a mysterious mood while the font shows seriousness in a ‘40s typeface. The clipper makes the brand identifiable as a barber as well as a representation of a weapon.',
@@ -54,7 +57,7 @@ export default {
                 },
                 two: {
                   name: 'More Pictures',
-                  img: ['img0.jpg', 'img1.jpg', 'img2.jpg'],
+                  img: ['img0.jpg', 'img1.jpg', 'img2.jpg', 'img0.jpg', 'img0.jpg'],
                 },
               },
             },
@@ -70,6 +73,7 @@ export default {
           works: {
             one: {
               id: 1,
+              layout: 'LAYOUT',
               name: 'WORK ONE',
               type: 'WORK TYPE',
               desc: 'WORK DESCRIPTION',
@@ -86,6 +90,7 @@ export default {
             },
             two: {
               id: 2,
+              layout: 'LAYOUT',
               name: 'WORK TWO',
               type: 'WORK TYPE',
               desc: '',
@@ -102,6 +107,7 @@ export default {
             },
             three: {
               id: 3,
+              layout: 'LAYOUT',
               name: 'WORK THREE',
               type: 'WORK TYPE',
               desc: '',

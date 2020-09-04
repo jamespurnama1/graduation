@@ -5,7 +5,7 @@
       <div>
       <h2>The Outbreak</h2>
       <p>
-        Click to view personal works.
+        The sudden spread of designs and the increase in creativity.
       </p>
       </div>
     </div>
@@ -104,6 +104,11 @@ h3, p {
   margin: 0;
 }
 
+.videoMask {
+    height: 70vw;
+    width: 70vw;
+  }
+
 @media screen and (min-width: 480px){
   .grid {
     grid-template-columns: repeat(1, minmax(100px, 2fr));
@@ -111,22 +116,25 @@ h3, p {
 }
 
 @media screen and (min-width: 736px){
+  .grid {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  }
   .videoMask {
-    height: 70vh;
-    width: 70vh;
+    height: 35vw;
+    width: 35vw;
   }
   .photo {
-    transform: translateY(0);
+    // transform: translateY(0);
   }
 }
 
 @media screen and (min-width: 980px){
   .grid {
-    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
   }
   .videoMask {
-    height: 40vh;
-    width: 40vh;
+    height: 23vw;
+    width: 23vw;
   }
     .photo {
     transform: translateY(-20%);

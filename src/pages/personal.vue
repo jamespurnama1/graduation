@@ -4,35 +4,37 @@
     <div class='line' />
     <div class='data'>
     <img class='margin'
-    :src="require(`@/assets/people/${data[0].path}/face.jpg`)">
-      <div class='bio'>
-        <div class='margin'>
-          <h3 class='desc red' style='font-weight: bold'>Email</h3>
-          <a class='underline' :href='data[0].email'>
-            <p class='desc red'>{{ data[0].email }}</p>
-          </a>
-        </div>
-        <div class='margin'>
-          <h3 class='desc red' style='font-weight: bold'>Behance</h3>
-          <a class='underline' :href='data[0].behance'>
-            <p class='desc red'>{{ data[0].behance }}</p>
-          </a>
-        </div>
-        <div class='margin'>
-          <h3 class='desc red' style='font-weight: bold'>LinkedIn</h3>
-          <a class='underline'
-          :href='data[0].linkedin'>
-            <p class='desc red'>{{ data[0].linkedin }}</p>
-          </a>
-        </div>
-        <button>
-          <a :href='`@/assets/people/${data[0].path}/resume.pdf`' download>
-            <p>
-              Download resume
-            </p>
-          </a>
-        </button>
+      :src="require(`@/assets/people/${data[0].path}/face.jpg`)">
+
+    <div class='bio'>
+      <div class='margin'>
+        <h3 class='desc red' style='font-weight: bold'>Email</h3>
+        <a class='underline' :href='data[0].email'>
+          <p class='desc'>{{ data[0].email }}</p>
+        </a>
       </div>
+      <div class='margin'>
+        <h3 class='desc red' style='font-weight: bold'>Behance</h3>
+        <a class='underline' :href='data[0].behance'>
+          <p class='desc'>{{ data[0].behance }}</p>
+        </a>
+      </div>
+      <div class='margin'>
+        <h3 class='desc red' style='font-weight: bold'>LinkedIn</h3>
+        <a class='underline'
+        :href='data[0].linkedin'>
+          <p class='desc'>{{ data[0].linkedin }}</p>
+        </a>
+      </div>
+      <button>
+        <a :href='`@/assets/people/${data[0].path}/resume.pdf`' download>
+          <p>
+            Download resume
+          </p>
+        </a>
+      </button>
+    </div>
+
     <p style='grid-area: desc'
     class='desc red'>
       {{ data[0].bio }}
@@ -42,48 +44,60 @@
     <div class='intro'>
       <h3 style='color: black'>{{ data[0].works.one.name }}</h3>
       <h3 class='desc' style='font-style: oblique'>{{ data[0].works.one.type }}</h3>
-      <p class='desc'>
+      <p class='desc' style='width: 80%'>
       {{ data[0].works.one.desc }}
       </p>
     </div>
-    <work
-    :works='data[0].works.one'
-    :path='data[0].path'
-    style='width: 100%' />
+
+    <component
+      :is='data[0].works.one.layout'
+      :works='data[0].works.one'
+      :path='data[0].path'
+      style='width: 100%' />
     <div class='line' />
     <div class='intro'>
-      <h3 style='color: black'>{{ data[0].works.two.name }}</h3>
-      <h3 class='desc' style='font-style: oblique'>{{ data[0].works.two.type }}</h3>
-      <p class='desc'>
-        {{ data[0].works.two.desc }}
-      </p>
+    <h3 style='color: black'>{{ data[0].works.two.name }}</h3>
+    <h3 class='desc' style='font-style: oblique'>{{ data[0].works.two.type }}</h3>
+    <p class='desc' style='width: 80%'>
+      {{ data[0].works.two.desc }}
+    </p>
     </div>
-    <work
-    :works='data[0].works.two'
-    :path='data[0].path'
-    style='width: 100%' />
+
+    <component
+      :is='data[0].works.two.layout'
+      :works='data[0].works.two'
+      :path='data[0].path'
+      style='width: 100%' />
     <div class='line' />
     <div class='intro'>
-      <h3 style='color: black'>{{ data[0].works.three.name }}</h3>
-      <h3 class='desc' style='font-style: oblique'>{{ data[0].works.three.type }}</h3>
-      <p class='desc'>
-        {{ data[0].works.three.desc }}
-      </p>
+    <h3 style='color: black'>{{ data[0].works.three.name }}</h3>
+    <h3 class='desc' style='font-style: oblique'>{{ data[0].works.three.type }}</h3>
+    <p class='desc' style='width: 80%'>
+      {{ data[0].works.three.desc }}
+    </p>
     </div>
-    <work
-    :works='data[0].works.three'
-    :path='data[0].path'
-    style='width: 100%' />
+
+    <component
+      :is='data[0].works.three.layout'
+      :works='data[0].works.three'
+      :path='data[0].path'
+      style='width: 100%' />
   </div>
 </template>
 
 <script>
-import work from '@/components/individualWork.vue';
+import layoutA from '@/components/layoutA.vue';
+import layoutB from '@/components/layoutB.vue';
+import carouselA from '@/components/carouselA.vue';
+import carouselB from '@/components/carouselB.vue';
 import usersData from '@/components/users';
 
 export default {
   components: {
-    work,
+    layoutA,
+    layoutB,
+    carouselA,
+    carouselB,
   },
   props: {
     user: String,
@@ -113,7 +127,7 @@ export default {
 
 .underline:hover {
   text-decoration: underline;
-  color: black;
+  color: $primary;
 }
 
 button p {
@@ -142,14 +156,14 @@ button:hover p {
   color: black;
 }
 .personal {
-  padding: 2% 3%;
+  padding: 2% 8%;
   flex-wrap: wrap;
 }
 
 .data {
   display: grid;
-  grid-template-columns: 20% auto 8% 30%;
-  grid-gap: 10px;
+  grid-template-columns: 20% auto auto 38%;
+  grid-gap: 5px;
   align-items: center;
   justify-items: center;
   grid-template-areas:

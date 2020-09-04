@@ -24,11 +24,14 @@
         </button>
       </div>
       <div id='warningText'>
-        <feather type='alert-triangle' stroke='white' stroke-width='2' size='3em' />
-        <h2>Warning:</h2>
-        <p>
-          There is a high chance of creativity being transmitted by going through our website.
-        </p>
+        <div style='display: flex; flex-direction: row;'>
+          <feather type='alert-triangle' stroke='white' stroke-width='2' size='3em' />
+          <p style='width: 80%'>
+            Warning:
+            <br>
+            There is a high chance of creativity being transmitted by going through our website.
+          </p>
+        </div>
         <button
         style='margin-left:auto'
         class='clickable'
@@ -136,6 +139,6 @@ button:hover .feather {
 }
 
 .feather {
-  margin-top: 3%;
+  margin: 3% 3% 0 0;
 }
 </style>

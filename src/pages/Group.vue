@@ -6,7 +6,7 @@
       <h2>The</h2>
       <h2>Mutation</h2>
       </div>
-      <div class='verticalLine' style='height:110%' />
+      <div class='verticalLine' style='height:106%' />
       <div style='width: 20%; padding-left: 7%' class='center'>
       <p>
         Occurs when the viruses exchange creative info, idea strains
@@ -14,10 +14,10 @@
       </p>
       </div>
     </div>
-    <div style='border-color: black;
+    <!-- <div style='border-color: black;
     margin: 0; margin-bottom: 0.5%;
     transform: translateY(316%)'
-    class='line' />
+    class='line' /> -->
     <div
     class='work'
     :id='`project${i}`'
@@ -29,14 +29,13 @@
       class='projectBar black clickable'
       @click='expand(i)'>
       <h3 style='padding-left: 10%'>{{ projects.title }}</h3>
-      <feather style='margin-left: auto' type='plus' stroke='red' stroke-width='3' size='3em'/>
+      <feather style='margin-left: auto' type='plus' stroke='red' stroke-width='3' size='3vw'/>
       </div>
       <work
       v-show='`projects.expand${i}`'
-      class='block'
+      class='block groupWork'
       :projects='projects'
       :img='i'
-      style='position: absolute; padding: 0 10%;'
       />
     </div>
   </div>
@@ -61,18 +60,25 @@ export default {
   methods: {
     expand(e) {
       const expanded = document.querySelector('.expanded');
+      const relative = document.querySelector('.relative');
       const bar = document.getElementById(`project${e}`);
+      const groupWork = document.querySelectorAll('.groupWork');
       const projectBar = document.getElementById(`projectBar${e}`);
       // const scroll = bar.offsetTop;
       if (bar.classList.contains('expanded')) {
         bar.classList.remove('expanded');
         projectBar.classList.add('black');
+        groupWork[e].classList.remove('relative');
       } else {
         bar.classList.add('expanded');
         projectBar.classList.remove('black');
+        setTimeout(() => {
+          groupWork[e].classList.add('relative');
+        }, 500);
       }
       if (expanded != null) {
         expanded.classList.remove('expanded');
+        relative.classList.remove('relative');
       }
       // const offset = topBar + (0.23 * window.innerHeight);
       setTimeout(() => {
@@ -86,7 +92,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.relative {
+  position: relative !important;
+}
+
+.groupWork {
+  position: absolute;
+  padding: 0 10%;
+}
+
+#projectBar0 {
+  border-top-style: solid;
+}
+
 .expanded {
+  min-height: 200vw !important;
   visibility: initial !important;
 }
 
@@ -135,7 +155,7 @@ h1, h2 {
 }
 
 h3 {
-  font-size: 3.5em;
+  // font-size: 3.5em;
 }
 
 .smallLogo {
@@ -145,31 +165,31 @@ h3 {
 
 @media screen and (min-width: 480px){
   .expanded {
-    min-height: 1700px !important;
+    // min-height: 1700px !important;
   }
 }
 
 @media screen and (min-width: 736px){
   .expanded {
-    min-height: 2000px !important;
+    // min-height: 2000px !important;
   }
 }
 
 @media screen and (min-width: 980px){
   .expanded {
-    min-height: 2470px !important;
+    // min-height: 2470px !important;
   }
 }
 
 @media screen and (min-width: 1280px){
   .expanded {
-    min-height: 3070px !important;
+    // min-height: 3070px !important;
   }
 }
 
 @media screen and (min-width: 1344px){
   .expanded {
-    min-height: 3500px !important;
+    // min-height: 3500px !important;
   }
 }
 </style>

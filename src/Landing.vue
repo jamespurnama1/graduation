@@ -23,18 +23,19 @@
     </div>
     </div>
     <div class='block center'>
-      <h1>What is COVID-12</h1>
+      <h1 style='font-size: 8vw; white-space: nowrap'>What is COVID-12</h1>
       <div class='line' />
-      <p style='width: 40%; margin-right: auto;'>
+      <p id='about'>
         As the world is still struggling with the outbreak of Covid-19,
         at The One Academy, a new mind-altering, top-grade virus has just been found.
         It is believed that once released, this virus will impact the world of design greatly.
+        we are the COVID-12.
       </p>
       <img style='width: 28vw; height: 28vw; margin: 20px' src='@/assets/logo_red.svg'>
       <div class='line' />
       <div style='margin-bottom: 5%'>
-        <h2>We are the Covid-12,</h2>
-        <h2>the Creative Virus 12.</h2>
+        <h2>We are the creative virus 12.</h2>
+        <h2>We are designed to spread.</h2>
       </div>
       <p id='footer'>copyright 2020 thecovid12</p>
     </div>
@@ -81,8 +82,13 @@ export default {
 <style lang="scss" scoped>
 @import './src/styles/fonts.module.scss';
 
+#about {
+  width: 100%;
+  font-size: 100%;
+}
+
 .grid {
-  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
 }
 
 #footer {
@@ -110,7 +116,7 @@ p {
   position: absolute;
   z-index: 5;
   width: 50%;
-  top: 13%;
+  top: 24vw;
   mix-blend-mode: multiply;
 }
 
@@ -132,5 +138,13 @@ p {
   position: relative;
   left: 5%;
   width: 30%;
+}
+
+@media screen and (min-width: 736px) {
+  #about {
+    font-size: 160%;
+    margin-right: auto;
+    width: 50%;
+  }
 }
 </style>
