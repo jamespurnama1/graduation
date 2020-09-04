@@ -20,7 +20,7 @@
           <p class='desc'>{{ data[0].behance }}</p>
         </a>
       </div>
-      <div class='margin'>
+      <div class='margin' style='margin-bottom: 7px'>
         <h3 class='desc red' style='font-weight: bold'>LinkedIn</h3>
         <a class='underline'
         :href='data[0].linkedin'>
@@ -44,8 +44,11 @@
     <div class='line' />
     <div class='intro'>
       <h4 class='desc' style='font-weight: bold;color: black'>{{ data[0].works.one.name }}</h4>
-      <h4 class='desc' style='font-style: oblique'>{{ data[0].works.one.type }}</h4>
-      <p class='desc' style='width: 80%'>
+      <h4 class='desc'
+      style='font-style: oblique; margin-bottom: 20px'>
+      {{ data[0].works.one.type }}
+    </h4>
+      <p class='desc' style='max-width: 900px'>
       {{ data[0].works.one.desc }}
       </p>
     </div>
@@ -57,9 +60,12 @@
       style='width: 100%' />
     <div class='line' />
     <div class='intro'>
-    <h4 style='color: black'>{{ data[0].works.two.name }}</h4>
-    <h4 class='desc' style='font-style: oblique'>{{ data[0].works.two.type }}</h4>
-    <p class='desc' style='width: 80%'>
+    <h4 class='desc' style='font-weight: bold;color: black'>{{ data[0].works.two.name }}</h4>
+    <h4 class='desc'
+    style='font-style: oblique; margin-bottom: 20px'>
+      {{ data[0].works.two.type }}
+    </h4>
+    <p class='desc' style='max-width: 900px'>
       {{ data[0].works.two.desc }}
     </p>
     </div>
@@ -71,9 +77,12 @@
       style='width: 100%' />
     <div class='line' />
     <div class='intro'>
-    <h4 style='color: black'>{{ data[0].works.three.name }}</h4>
-    <h4 class='desc' style='font-style: oblique'>{{ data[0].works.three.type }}</h4>
-    <p class='desc' style='width: 80%'>
+    <h4 class='desc' style='font-weight: bold;color: black'>{{ data[0].works.three.name }}</h4>
+    <h4 class='desc'
+    style='font-style: oblique; margin-bottom: 20px'>
+      {{ data[0].works.three.type }}
+    </h4>
+    <p class='desc' style='max-width: 900px'>
       {{ data[0].works.three.desc }}
     </p>
     </div>
@@ -128,7 +137,7 @@ export default {
 
 .underline:hover {
   text-decoration: underline;
-  color: $primary;
+  color: black;
 }
 
 button p {
@@ -179,42 +188,37 @@ img {
 }
 
 .margin {
-  margin: 10% 0;
+  margin: 2vw 0;
 }
 
 h4 {
-  font-size: calc(7px + 0.5vw);
+  font-size: calc(10px + 1vw);
 }
 
 h3 {
   font-size: calc(10px + 1vw);
 }
 
-@media screen and (min-width: 480px){
-  p {
-    // font-size: 0.7em;
+@media screen and (max-width: 480px){
+  .data {
+      grid-template-areas:
+    "img img img img"
+    "data data data data"
+    "desc desc desc desc";
   }
-}
-
-@media screen and (min-width: 736px){
-  p {
-    // font-size: 1em;
+  .bio{
+    max-width: initial;
+    width: 100%;
+  }
+  img {
+    width: 100%;
   }
 }
 
 @media screen and (min-width: 980px){
-  p {
-    // font-size: 1.3em;
-  }
   .data {
       grid-template-areas:
     "img data . desc";
-  }
-}
-
-@media screen and (min-width: 1280px){
-  p {
-    // font-size: 1.5em;
   }
 }
 </style>
