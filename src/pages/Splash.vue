@@ -69,12 +69,10 @@ export default {
 <style lang="scss" scoped>
 @import './src/styles/fonts.module.scss';
 
-h1, h2, h3, p {
+p {
   color: white;
-}
-
-h2 {
-  // font-size: 3em;
+  font-family: sans-serif;
+  margin: 10px 0;
 }
 
 #hint {
@@ -121,7 +119,7 @@ h2 {
 #warningText {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 3%;
+  padding: 3% 3% 0 3%;
 }
 
 #x {

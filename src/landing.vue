@@ -93,7 +93,7 @@ export default {
 
 #footer {
   position: absolute;
-  font-size: 0.7em;
+  font-size: 0.9vw;
   bottom: 0;
   left: 0;
   margin: 20px;

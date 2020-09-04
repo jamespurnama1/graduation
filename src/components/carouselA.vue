@@ -53,23 +53,23 @@ export default {
 <style scoped lang='scss'>
 @import './src/styles/fonts.module.scss';
 
-#grid-item-1 {
+#grid-item-0 {
   grid-area: top;
 }
 
-#grid-item-2 {
+#grid-item-1 {
   grid-area: leftone;
 }
 
-#grid-item-3 {
+#grid-item-2 {
   grid-area: rightone;
 }
 
-#grid-item-4 {
+#grid-item-3 {
   grid-area: lefttwo;
 }
 
-#grid-item-5 {
+#grid-item-4 {
   grid-area: righttwo;
 }
 
@@ -101,5 +101,6 @@ img, video {
 h3 {
   text-align: center;
   align-self: center;
+  font-size: 2vw;
 }
 </style>

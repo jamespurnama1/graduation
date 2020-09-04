@@ -18,12 +18,12 @@ export default {
               desc: 'Sagoo is a vintage themed restaurant in Bandung, Indonesia. Aside from selling food, they sell nostalgic items on the side as a waroeng. This project aims to bring back Indonesian nostalgic toys and candies with a packaging experience. The set includes a paper bag, bola bekel, gasing bamboe, and permen rokok.',
               sections: {
                 one: {
-                  name: 'Close ups',
-                  img: ['img0.jpg', 'vid4.mp4', 'img1.jpg', 'img2.jpg', 'img3.jpg'],
+                  name: '',
+                  img: [],
                 },
                 two: {
-                  name: 'More Pictures',
-                  img: ['img0.jpg', 'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg'],
+                  name: '',
+                  img: ['img0.jpg', 'img1.jpg', 'img2.jpg', 'img3.jpg'],
                 },
               },
             },
@@ -35,12 +35,12 @@ export default {
               desc: 'Epic or Epic Homes is a non-profit organization purposed to build houses for the homeless. Epic stands for Extraordinary People Impacting Communities. They believe in relationships, which is the differentiator of a house, and a home. This branding project serves to impact a growing community that genuinely cares.',
               sections: {
                 one: {
-                  name: 'Stationery Design',
-                  img: ['img0.jpg', 'img1.jpg', 'img2.jpg', 'img3.jpg'],
+                  name: '',
+                  img: [],
                 },
                 two: {
-                  name: 'Miscellaneous',
-                  img: ['img0.jpg', 'img1.jpg', 'img2.gif', 'img3.jpg'],
+                  name: '',
+                  img: ['img0.jpg', 'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg'],
                 },
               },
             },
@@ -53,11 +53,11 @@ export default {
               sections: {
                 one: {
                   name: 'Featured',
-                  img: ['img0.jpg', 'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg'],
+                  img: ['img0.jpg', 'img1.jpg', 'img2.jpg'],
                 },
                 two: {
                   name: 'More Pictures',
-                  img: ['img0.jpg', 'img1.jpg', 'img2.jpg', 'img0.jpg', 'img0.jpg'],
+                  img: ['img0.jpg', 'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg'],
                 },
               },
             },

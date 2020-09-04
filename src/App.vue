@@ -175,34 +175,32 @@ video{
   align-items: center;
 }
 
-h1 {
+h1, h2 ,h3, h4 {
   font-family: 'AXIS';
   font-weight: 900;
+  color: $primary;
+  margin: 0.2em 0;
+  text-decoration: none;
+}
+
+h1 {
   text-align: center;
   font-size: 15vw;
-  color: $primary;
-  font-weight: 700;
   line-height: 0.7em;
   text-indent: -0.2em;
-  margin: 0.2em 0;
 }
 
 h2 {
-  font-family: 'AXIS';
-  font-weight: 800;
   font-size: 5vw;
-  color: $primary;
-  text-decoration: none;
-  margin: 0.2em 0;
 }
 
 h3 {
-  font-family: 'AXIS';
-  font-weight: 800;
   font-size: 3vw;
-  color: $primary;
-  text-decoration: none;
-  margin: 0.2em 0;
+}
+
+h4 {
+  font-size: 1.5vw;
+  color: black;
 }
 
 a {

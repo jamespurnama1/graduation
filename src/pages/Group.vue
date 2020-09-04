@@ -163,33 +163,7 @@ h3 {
   width: 12vw;
 }
 
-@media screen and (min-width: 480px){
-  .expanded {
-    // min-height: 1700px !important;
-  }
-}
-
-@media screen and (min-width: 736px){
-  .expanded {
-    // min-height: 2000px !important;
-  }
-}
-
-@media screen and (min-width: 980px){
-  .expanded {
-    // min-height: 2470px !important;
-  }
-}
-
-@media screen and (min-width: 1280px){
-  .expanded {
-    // min-height: 3070px !important;
-  }
-}
-
-@media screen and (min-width: 1344px){
-  .expanded {
-    // min-height: 3500px !important;
-  }
+.feather {
+  margin-right: 10px;
 }
 </style>

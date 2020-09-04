@@ -4,13 +4,13 @@
       <nav>
         <ul>
           <router-link tag='li' to='/' class='margin'>
-            <h3>About Us</h3>
+            <h4>About Us</h4>
           </router-link>
           <router-link tag='li' to='/outbreak' class='margin'>
-            <h3 class='unexact'>The Outbreak</h3>
+            <h4 class='unexact'>The Outbreak</h4>
           </router-link>
           <router-link tag='li' to='/mutation' class='margin'>
-            <h3 class='unexact'>The Mutation</h3>
+            <h4 class='unexact'>The Mutation</h4>
           </router-link>
         </ul>
       </nav>
