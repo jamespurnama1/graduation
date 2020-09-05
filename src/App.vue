@@ -15,7 +15,7 @@
       <div id='footer'>
         <p style='font-size: calc(5px + 1vw);'>Copyright 2020 TheCOVID12</p>
         <div style='display: flex; flex-direction: row'>
-          <a href='http://instagram.com/thecovid12' style='color: black'>
+          <a href='http://instagram.com/thecovid12' style='color: black; padding: 0 20%'>
             <feather type='instagram' stroke-width='1.8' />
           </a>
           <a href='http://www.facebook.com/Ad1708GraduationExhibition' style='color: black'>
