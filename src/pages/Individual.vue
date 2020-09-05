@@ -6,6 +6,8 @@
       <h2>The Outbreak</h2>
       <p>
         The sudden spread of designs and the increase in creativity.
+        <br>
+         [Click to view our works]
       </p>
       </div>
     </div>
@@ -20,10 +22,11 @@
             @mouseleave='stopVideo(i)'
             muted
             preload="auto"
-            autobuffer
             class='photo'
+            autobuffer
             :id='`photo${i++}`'>
-            <source :src="require(`@/assets/people/${user.photo}.mp4`)" >
+            <source
+            :src="require(`@/assets/people/${user.photo}.mp4`)" >
             </video>
          </div>
             <p class='name'>{{i-1}}. {{ user.name }}</p>
@@ -117,7 +120,7 @@ h3, p {
 
 .page {
   padding: 0 8vw;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 @media screen and (min-width: 480px){

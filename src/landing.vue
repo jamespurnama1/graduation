@@ -5,7 +5,6 @@
       <img id='overlay' src='@/assets/logo_red.svg'>
       <ul class="card-list grid">
         <li v-for="(user, i) in users" class="card-item" :key='`user${i}`'>
-         <router-link :to="'outbreak/' + user.photo">
          <div class='videoMask'>
             <video
             :ref='`photo${i++}`'
@@ -16,12 +15,11 @@
             <source :src="require(`@/assets/people/${user.photo}.mp4`)" >
             </video>
          </div>
-          </router-link>
         </li>
       </ul>
     </div>
-    <div class='block center'>
-      <h1 style='font-size: 8vw; white-space: nowrap'>What is COVID-12</h1>
+    <div class='block center' style='margin-top:100px'>
+      <h1 style='font-size: 8.5vw; white-space: nowrap'>What is COVID-12</h1>
       <div class='line' />
       <p id='about'>
         As the world is still struggling with the outbreak of Covid-19,
@@ -32,10 +30,13 @@
       <img style='width: 28vw; height: 28vw; margin: 20px' src='@/assets/logo_red.svg'>
       <div class='line' />
       <div style='margin-bottom: 50px'>
-        <h2>We are the creative virus&nbsp;12.</h2>
-        <h2>We are designed to&nbsp;spread.</h2>
+        <h2 style='font-size: 4.7vw; white-space: nowrap; text-align: center;'>
+          We are the creative virus&nbsp;12.
+        </h2>
+        <h2 style='font-size: 4.7vw; white-space: nowrap; text-align: center;'>
+          We are designed to&nbsp;spread.
+        </h2>
       </div>
-      <p id='footer'>copyright 2020&nbsp;thecovid12</p>
     </div>
   </div>
 </template>
@@ -91,14 +92,8 @@ export default {
 
 .grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
   padding: 0;
-}
-
-#footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  // margin: 20px;
 }
 
 .videoMask {

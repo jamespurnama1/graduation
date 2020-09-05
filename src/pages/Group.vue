@@ -1,5 +1,5 @@
 <template>
-  <div class='block page' style='padding: 0'>
+  <div class='block page'>
     <div class='title'>
       <img class='smallLogo' src='@/assets/logo_red.svg'>
       <div id='titleLogo'>
@@ -11,6 +11,9 @@
       <p>
         Occurs when the viruses exchange creative info, idea strains
         and efficiency.
+        <br>
+        <br>
+        [Click to view our group works]
       </p>
       </div>
     </div>
@@ -94,20 +97,22 @@ export default {
 <style lang="scss" scoped>
 .title {
     padding: 0 2%;
+    min-height: 170px;
     height: 20vw;
+    width: 100vw;
     flex-wrap: nowrap;
-    min-height: 125px;
 }
 
 .mutation {
-  width: 35vw;
+  min-height: 80px;
+  width: 40vw;
   height: 100%;
   border-left-style: solid;
   border-width: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 7%;
+  padding: 0 0 0 7%;
 }
 
 .relative {
@@ -156,7 +161,7 @@ export default {
 }
 
 #titleLogo {
-  padding-right: 7%;
+  padding: 3% 7%;
 }
 
 h3, p {
@@ -182,5 +187,23 @@ h1, h2 {
   margin: auto 10px auto 0;
   min-width: 5px;
   width: 35px;
+}
+
+.page {
+  padding: 0;
+  margin-bottom: 100px;
+}
+
+@media screen and (max-width: 980px) {
+  .mutation {
+    width: 100vw;
+    height: 10vw;
+    border-top-style: solid;
+    border-left-style: none;
+  }
+  .title {
+    flex-wrap: wrap;
+    height: initial;
+  }
 }
 </style>

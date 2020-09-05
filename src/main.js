@@ -34,6 +34,9 @@ const router = new VueRouter({
   mode: 'history',
   base: __dirname,
   routes,
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
 });
 
 new Vue({

@@ -72,6 +72,7 @@ export default {
 p {
   color: white;
   font-family: sans-serif;
+  font-weight: bold;
   margin: 10px 0;
 }
 

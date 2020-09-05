@@ -12,21 +12,19 @@
         mode="out-in">
         <router-view />
       </transition>
+      <p style='padding: 0 8vw'>Copyright 2020 TheCOVID12</p>
     </main>
-    <scrollTop v-show='scrollButton' @click.native='scrollToTop(); $refs.fullpage.api.moveTo(3)' />
   </div>
 </template>
 
 <script>
 import navbar from './components/nav.vue';
-import scrollTop from './components/scrollTop.vue';
 import splash from './pages/splash.vue';
 
 export default {
   name: 'Graduation',
   components: {
     navbar,
-    scrollTop,
     splash,
   },
   data() {
@@ -133,16 +131,11 @@ button:hover {
 
 .photo {
   width: 100%;
-  transform: translateY(-20%);
+  height: auto;
   filter: grayscale(1);
+  transform: translateY(-20%);
   -webkit-filter: grayscale(1);
   object-fit: cover;
-}
-
-video{
-  width: 70vw;
-  max-height: 70vh;
-  z-index: 0;
 }
 
 .page {
@@ -194,6 +187,7 @@ h2 {
   widows: 3;
   orphans: 3;
   font-size: calc(10px + 5vw);
+  line-height: calc(10px + 4.5vw);
 }
 
 h3 {
@@ -214,6 +208,10 @@ p {
   color: black;
   text-decoration: none;
   font-size: calc(8px + 1vw);
+}
+
+body {
+  margin: 0;
 }
 
 html {

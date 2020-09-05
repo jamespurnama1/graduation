@@ -1,7 +1,7 @@
 <template>
   <div class='block'>
     <div class='img'>
-      <img :src="require(`@/assets/project${img}/img0.jpg`)">
+      <img :src="require(`@/assets/group/project${img}/img0.jpg`)">
     </div>
     <h4 style='color: black'>
       Group Members:
@@ -29,7 +29,7 @@
     </div>
     <h3>Case Study Video</h3>
     <div class='img' style='margin-bottom: 10px'>
-      <img :src="require(`@/assets/project${img}/img1.jpg`)">
+      <img :src="require(`@/assets/group/project${img}/img1.jpg`)">
     </div>
     <h3>How it Works</h3>
     <carousel
@@ -45,7 +45,7 @@
         v-for='(item, index) in projects.carousel'
         :key='index'
         :data-index='index'>
-          <img :src="require(`@/assets/project${img}/img${index}.jpg`)">
+          <img :src="require(`@/assets/group/project${img}/img${index}.jpg`)">
         </slide>
       </carousel>
     <p>

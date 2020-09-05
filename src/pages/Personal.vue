@@ -3,33 +3,35 @@
     <h2 class='desc red' style='font-weight: bold'>{{ data[0].name }}</h2>
     <div class='line' style='margin-top: 20px' />
     <div class='data'>
+    <div class='mask'>
     <img
-      :src="require(`@/assets/people/${data[0].path}/face.jpg`)"
+      :src="require(`@/assets/people/${data[0].path}/face1.jpg`)"
       style='grid-area: img; margin-bottom: 10px'>
+    </div>
 
     <div class='bio'>
-      <div class='margin'>
+      <div class='margin' style='margin-top: 0'>
         <h3 class='desc red' style='font-weight: bold'>Email</h3>
-        <a class='underline' :href='data[0].email'>
+        <a class='underline' :href='`mailto:${data[0].email}`'>
           <p class='desc'>{{ data[0].email }}</p>
         </a>
       </div>
       <div class='margin'>
         <h3 class='desc red' style='font-weight: bold'>Behance</h3>
-        <a class='underline' :href='data[0].behance'>
+        <a class='underline' :href='`http://www.${data[0].behance}`'>
           <p class='desc'>{{ data[0].behance }}</p>
         </a>
       </div>
-      <div class='margin' style='margin-bottom: 7px'>
+      <div class='margin'>
         <h3 class='desc red' style='font-weight: bold'>LinkedIn</h3>
         <a class='underline'
-        :href='data[0].linkedin'>
+        :href='`http://www.${data[0].linkedin}`'>
           <p class='desc'>{{ data[0].linkedin }}</p>
         </a>
       </div>
       <button>
         <a :href='`@/assets/people/${data[0].path}/resume.pdf`' download>
-          <p style='margin: 1vw 0'>
+          <p style='font-size: calc(10px+5vw);margin: 1vw 0'>
             Download resume
           </p>
         </a>
@@ -37,7 +39,7 @@
     </div>
 
     <p style='grid-area: desc'
-    class='desc red'>
+    class='desc'>
       {{ data[0].bio }}
     </p>
     </div>
@@ -130,6 +132,10 @@ export default {
 <style lang="scss" scoped>
 @import './src/styles/fonts.module.scss';
 
+.page {
+  margin-bottom: 100px;
+}
+
 .bio {
   max-width: 70%;
   grid-area: data;
@@ -172,19 +178,30 @@ button:hover p {
 
 .data {
   display: grid;
-  grid-template-columns: 20% auto auto 40%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: minmax(200px, 25vw) auto;
   grid-gap: 5px;
-  align-items: center;
+  align-items: start;
   justify-items: center;
   grid-template-areas:
-    "img img data data"
-    "desc desc desc desc";
+    "img data"
+    "desc desc";
 }
 
 img {
-  min-width: 170px;
-  width: 20vw;
-  height: auto;
+  // transform: translateY(-20%);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.mask {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .margin {
@@ -201,10 +218,12 @@ h3 {
 
 @media screen and (max-width: 480px){
   .data {
-      grid-template-areas:
-    "img img img img"
-    "data data data data"
-    "desc desc desc desc";
+    grid-template-columns: 100%;
+    grid-template-rows: 80vw auto auto;
+    grid-template-areas:
+    "img"
+    "data"
+    "desc";
   }
   .bio{
     max-width: initial;
@@ -217,8 +236,10 @@ h3 {
 
 @media screen and (min-width: 980px){
   .data {
-      grid-template-areas:
-    "img data . desc";
+    grid-template-columns: 22% auto 35%;
+    grid-template-rows: minmax(300px, 25vw);
+    grid-template-areas:
+    "img data desc";
   }
 }
 </style>
