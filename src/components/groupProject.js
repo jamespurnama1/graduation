@@ -13,6 +13,7 @@ export default {
             { id: 0, caption: 'uno' },
             { id: 1, caption: 'duo' },
           ],
+          heading: 'How it Works',
         },
         {
           title: 'Untold Fact',

@@ -13,22 +13,26 @@
     <div style='display: flex; flex-wrap: wrap; justify-content: space-between'>
     <div v-if='projects.brief' style='max-width: 400px; margin-right: 10px'>
       <h3>Brief</h3>
-      <p>{{ projects.brief }}
+      <p>
+        {{ projects.brief }}
       </p>
     </div>
     <div v-if='projects.problem' style='max-width: 400px; margin-right: 10px'>
       <h3>Problem</h3>
-      <p>{{ projects.problem }}
+      <p>
+        {{ projects.problem }}
       </p>
     </div>
     <div v-if='projects.insight' style='max-width: 400px; margin-right: 10px'>
       <h3>Insight</h3>
-      <p>{{ projects.insight }}
+      <p>
+        {{ projects.insight }}
       </p>
     </div>
     <div v-if='projects.idea' style='max-width: 400px'>
       <h3>Idea</h3>
-      <p>{{ projects.idea }}
+      <p>
+        {{ projects.idea }}
       </p>
     </div>
     </div>
@@ -36,8 +40,9 @@
     <div class='img' style='margin-bottom: 10px'>
       <img :src="require(`@/assets/group/project${img}/img1.jpg`)">
     </div>
-    <h3>How it Works</h3>
+    <h3>{{ projects.heading }}</h3>
     <carousel
+      style='margin-top: 50px'
       :per-page='1'
       :loop='true'
       :navigation-enabled='true'
@@ -45,6 +50,7 @@
       :navigation-prev-label='`<`'
       :pagination-active-color='`#eb2027`'
       :mouse-drag='true'
+      v-if='projects.carousel'
       v-model="currentIndex">
         <slide
         v-for='(item, index) in projects.carousel'
@@ -53,7 +59,7 @@
           <img :src="require(`@/assets/group/project${img}/img${index}.jpg`)">
         </slide>
       </carousel>
-    <p>
+    <p style='margin-top: 0;'>
       {{ projects.carousel[currentIndex].caption }}
     </p>
   </div>
@@ -97,7 +103,7 @@ export default {
   width: 100%;
   height: 45vw;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 img {

@@ -27,7 +27,8 @@ const routes = [
   {
     name: 'User', path: '/outbreak/:user', component: Personal, props: true,
   },
-  // { path: '*', component: notFound },
+  { name: '404', path: '/404', component: landing },
+  { path: '*', redirect: '/404' },
 ];
 
 const router = new VueRouter({

@@ -5,7 +5,8 @@
       <transition
         name="fade"
         mode="out-in">
-      <splash style='z-index: 20' v-show='this.$store.state.splash' />
+      <splash style='z-index: 20'
+      v-show="(this.$store.state.splash) && (this.$route.name != '404')" />
       </transition>
       <transition
         name="fade"
@@ -19,7 +20,7 @@
             <feather type='instagram' stroke-width='1.8' />
           </a>
           <a href='http://www.facebook.com/Ad1708GraduationExhibition' style='color: black'>
-            <feather type='facebook' stroke-width='1.5' />
+            <feather type='facebook' stroke-width='1.6' />
           </a>
         </div>
       </div>
