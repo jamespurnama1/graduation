@@ -28,15 +28,15 @@
 
 <script>
 import { gsap } from 'gsap';
-import Front from '../components/Front.vue';
-import Work from '../components/Work.vue';
+// import Front from '../components/Front.vue';
+// import Work from '../components/Work.vue';
 import Familiar from '../components/Familiar.vue';
 
 export default {
   name: 'Principles',
   components: {
-    Front,
-    Work,
+    // Front,
+    // Work,
     Familiar,
   },
   data() {

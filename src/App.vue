@@ -78,7 +78,7 @@ button:active {
 
 main {
   position: relative;
-  width: 94.45vw;
+  // width: 94.45vw;
   z-index: 1;
 }
 
@@ -104,7 +104,7 @@ h1 {
   font-family: 'AXIS';
   font-weight: 800;
   text-align: left;
-  font-size: 10em;
+  font-size: calc(12px + 10vw);
   color: black;
   font-weight: 700;
   line-height: 0.7em;
@@ -115,7 +115,7 @@ h1 {
 h3 {
   font-family: 'AXIS';
   font-weight: 800;
-  font-size: 1.5em;
+  font-size: calc(6px + 1.5vw);
   color:black;
   text-decoration: none;
 }
@@ -131,6 +131,13 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #575F6B;
+}
+
+#app {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 </style>
