@@ -12,7 +12,17 @@
         mode="out-in">
         <router-view />
       </transition>
-      <p style='padding: 0 8vw; font-size: 1vw;'>Copyright 2020 TheCOVID12</p>
+      <div id='footer'>
+        <p style='font-size: 1vw;'>Copyright 2020 TheCOVID12</p>
+        <div>
+          <a href='http://instagram.com/thecovid12' style='color: black'>
+            <feather type='instagram' stroke-width='1.8' />
+          </a>
+          <a href='http://www.facebook.com/Ad1708GraduationExhibition' style='color: black'>
+            <feather type='facebook' stroke-width='1.5'/>
+          </a>
+        </div>
+      </div>
     </main>
   </div>
 </template>
@@ -55,6 +65,13 @@ export default {
 <style lang="scss">
 @import './src/styles/fonts.module.scss';
 @import './src/styles/transitions.module.scss';
+
+#footer {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8vw;
+}
 
 .VueCarousel-navigation-button {
   font-family: "AXIS" !important;
