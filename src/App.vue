@@ -13,13 +13,13 @@
         <router-view />
       </transition>
       <div id='footer'>
-        <p style='font-size: 1vw;'>Copyright 2020 TheCOVID12</p>
-        <div>
+        <p style='font-size: calc(5px + 1vw);'>Copyright 2020 TheCOVID12</p>
+        <div style='display: flex; flex-direction: row'>
           <a href='http://instagram.com/thecovid12' style='color: black'>
             <feather type='instagram' stroke-width='1.8' />
           </a>
           <a href='http://www.facebook.com/Ad1708GraduationExhibition' style='color: black'>
-            <feather type='facebook' stroke-width='1.5'/>
+            <feather type='facebook' stroke-width='1.5' />
           </a>
         </div>
       </div>
@@ -65,6 +65,10 @@ export default {
 <style lang="scss">
 @import './src/styles/fonts.module.scss';
 @import './src/styles/transitions.module.scss';
+
+.feather--instagram, .feather--facebook {
+  width: calc(10px + 1.5vw);
+}
 
 #footer {
   display:flex;
