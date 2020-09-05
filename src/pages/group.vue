@@ -191,7 +191,6 @@ h1, h2 {
 
 .page {
   padding: 0;
-  margin-bottom: 100px;
 }
 
 @media screen and (max-width: 980px) {

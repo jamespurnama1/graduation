@@ -12,7 +12,7 @@
         mode="out-in">
         <router-view />
       </transition>
-      <p style='padding: 0 8vw'>Copyright 2020 TheCOVID12</p>
+      <p style='padding: 0 8vw; font-size: 1vw;'>Copyright 2020 TheCOVID12</p>
     </main>
   </div>
 </template>
@@ -141,6 +141,7 @@ button:hover {
 .page {
   position: relative;
   top: 6.46vh;
+  margin-bottom: 100px;
 }
 
 .bg{

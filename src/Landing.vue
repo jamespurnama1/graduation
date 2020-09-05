@@ -19,7 +19,7 @@
       </ul>
     </div>
     <div class='block center' style='margin-top:100px'>
-      <h1 style='font-size: 8.5vw; white-space: nowrap'>What is COVID-12</h1>
+      <h1 style='font-size: 8.4vw; white-space: nowrap'>What is COVID-12</h1>
       <div class='line' />
       <p id='about'>
         As the world is still struggling with the outbreak of Covid-19,
