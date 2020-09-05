@@ -11,17 +11,22 @@
     </h4>
     <div class='line' />
     <div style='display: flex; flex-wrap: wrap; justify-content: space-between'>
-    <div style='max-width: 400px; margin-right: 10px'>
+    <div v-if='projects.brief' style='max-width: 400px; margin-right: 10px'>
+      <h3>Brief</h3>
+      <p>{{ projects.brief }}
+      </p>
+    </div>
+    <div v-if='projects.problem' style='max-width: 400px; margin-right: 10px'>
       <h3>Problem</h3>
       <p>{{ projects.problem }}
       </p>
     </div>
-    <div style='max-width: 400px; margin-right: 10px'>
+    <div v-if='projects.insight' style='max-width: 400px; margin-right: 10px'>
       <h3>Insight</h3>
       <p>{{ projects.insight }}
       </p>
     </div>
-    <div style='max-width: 400px'>
+    <div v-if='projects.idea' style='max-width: 400px'>
       <h3>Idea</h3>
       <p>{{ projects.idea }}
       </p>
