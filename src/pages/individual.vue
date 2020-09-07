@@ -39,12 +39,7 @@ export default {
   data() {
     return {
       face: 'face',
-      cards: [1, 2, 3, 4],
     };
-  },
-  computed: {
-  },
-  methods: {
   },
 };
 </script>

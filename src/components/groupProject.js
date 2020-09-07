@@ -34,7 +34,7 @@ export default {
             { id: 3, caption: 'We also have a Website Pop Up Promotional.', src: 'img3.jpg' },
           ],
           heading: 'How it Works',
-          video: '',
+          video: 'https://www.youtube.com/embed/bUmzTKpaa9Q',
         },
         {
           title: 'Unlock Your Space',
@@ -86,7 +86,7 @@ export default {
             { id: 4, caption: 'People will be encouraged to visit a link to donate to WWF fund to save the tigers. After the donation has been made, the match will go back to normal.', src: 'img4.jpg' },
           ],
           heading: 'How it Works',
-          video: '',
+          video: 'https://www.youtube.com/embed/4cPV544y2Dc',
         },
         {
           title: 'Tree of Ash',
@@ -128,7 +128,7 @@ export default {
             { id: 0, caption: '', src: 'img0.mp4' },
           ],
           heading: 'Youtube Ad',
-          video: '',
+          video: 'https://www.youtube.com/embed/LXXwUPXFMuA',
         },
         {
           title: 'Chari-Tiger-Able Logo of the Day',

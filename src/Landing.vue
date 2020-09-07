@@ -48,22 +48,6 @@ export default {
   mixins: [users],
   data() {
     return {
-      overlayVideo: false,
-      // users: [
-      //   { name: 'Phuong Anh', photo: 'anh' },
-      //   { name: 'Wei Hang', photo: 'weihang' },
-      //   { name: 'Hui San', photo: 'huisan' },
-      //   { name: 'Wai Yee', photo: 'waiyee' },
-      //   { name: 'Kar Mun', photo: 'karmun' },
-      //   { name: 'Sze Chien', photo: 'szechien' },
-      //   { name: 'Samantha', photo: 'sam' },
-      //   { name: 'Zhi Jian', photo: 'zhijian' },
-      //   { name: 'Aurelius Kevin', photo: 'aurel' },
-      //   { name: 'James Henry', photo: 'james' },
-      //   { name: 'Chaterine A.', photo: 'huisan' },
-      //   { name: 'Vianka', photo: 'vianka' },
-      // ],
-      cards: [1, 2, 3, 4],
     };
   },
   methods: {

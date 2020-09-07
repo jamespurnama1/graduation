@@ -63,8 +63,11 @@
         <slide
         v-for='(item, index) in projects.carousel'
         :key='index'
-        :data-index='index'>
+        :data-index='index'
+        style='display: flex; justify-content: center; align-items: center;'>
           <video
+          :controls="item.src === 'img0.mp4'"
+          :ref='`vidCarousel${index}`'
           :poster="require(`@/assets/group/project${img}/${item.src}`)"
           :src="require(`@/assets/group/project${img}/${item.src}`)" />
         </slide>
@@ -88,12 +91,6 @@ export default {
     Carousel,
     Slide,
   },
-  methods: {
-    change(dataset) {
-      console.log(dataset);
-      // this.i = dataset.index;
-    },
-  },
   data() {
     return {
       i: 0,
@@ -104,9 +101,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.feather--play-circle {
+  position: absolute;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  width: 10vw;
+  height: 10vw;
+}
+
 .block {
   flex-direction: column;
-  // align-items: center;
 }
 
 .img {
