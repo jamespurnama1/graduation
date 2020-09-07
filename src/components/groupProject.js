@@ -18,7 +18,7 @@ export default {
             { id: 5, caption: 'Supporting media such as instagram story ad and facebook post to promote this campaign', src: 'img5.jpg' },
           ],
           heading: 'How it Works',
-          video: '',
+          video: 'video',
         },
         {
           title: 'Mama Miss You',
@@ -28,8 +28,7 @@ export default {
           insight: '',
           idea: 'We depict the nature as a “mother” that missing her child due to this pandemic and want them to come “home”.',
           carousel: [
-            // eslint-disable-next-line
-            // { id: 0, caption: 'We will post a testimony video about a mother who misses her children.', src: 'img0.mp4' },
+            { id: 0, caption: 'We will post a testimony video about a mother who misses her children.', src: 'img0.mp4' },
             { id: 1, caption: 'You can listen on the radio.', src: 'img1.jpg' },
             { id: 2, caption: 'The message would be delivered as social media posting such as Instagram story, Facebook Carousel.', src: 'img2.jpg' },
             { id: 3, caption: 'We also have a Website Pop Up Promotional.', src: 'img3.jpg' },
@@ -126,7 +125,7 @@ export default {
           insight: '',
           idea: 'To tackle the insight and to reduce air pollution in Kuala Lumpur, Malaysia Quit Smoking Clinic has released a Youtube video to expose the truth that smokers contribute 10 times more to air pollution and eventually to convince smokers to quit smoking and reduce air pollution.',
           carousel: [
-            // { id: 0, caption: '', src: 'img0.mp4' },
+            { id: 0, caption: '', src: 'img0.mp4' },
           ],
           heading: 'Youtube Ad',
           video: '',
