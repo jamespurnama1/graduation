@@ -52,7 +52,7 @@ export default {
             { id: 5, caption: 'To promote this game, several digital ads will be launched on social media.', src: 'img5.jpg' },
           ],
           heading: 'How it Works',
-          video: '',
+          video: 'https://www.youtube.com/embed/xW-VF1TqVWA',
         },
         {
           title: 'ROCKTIFY',
@@ -70,7 +70,7 @@ export default {
             { id: 5, caption: 'Digital Poster around the mall', src: 'img5.gif' },
           ],
           heading: 'How it Works',
-          video: '',
+          video: 'https://www.youtube.com/embed/tFSKYlMbRQQ',
         },
         {
           title: 'The Tigers That Won’t Return',
