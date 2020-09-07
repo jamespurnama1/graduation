@@ -30,7 +30,7 @@
         </a>
       </div>
       <button>
-        <a :href='`@/assets/people/${data[0].path}/resume.pdf`' download>
+        <a :href='`/resume/${data[0].path}_resume.pdf`' download>
           <p style='font-size: calc(10px+5vw);margin: 1vw 0'>
             Download resume
           </p>
