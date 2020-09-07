@@ -582,7 +582,7 @@ SAMANTHA
 SEOW WEI HANG
 --------------------------------------------------------------------------------------------------*/
         {
-          path: 'weihang',
+          path: 'seowweihang',
           name: 'Seow Wei Hang',
           email: 'seowweihang@gmail.com',
           behance: 'be.net/weihangseow',

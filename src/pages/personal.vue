@@ -124,7 +124,8 @@ export default {
     const who = this.allUsers.filter((filter) => filter.path === this.user);
     this.data = who;
     if (this.data === undefined || this.data.length === 0) {
-      this.$router.push('/404');
+      // this.$router.push('/404');
+      console.log('404');
     }
   },
 };
