@@ -15,7 +15,7 @@ export default {
           works: {
             one: {
               id: 1,
-              layout: 'carouselB',
+              layout: 'carouselA',
               name: 'Frank Salon',
               type: 'Corporate Identity',
               desc: 'Frank Salon is a Malaysian high-end indie salon founded in 2014. The art direction is inspired by organic styling, depicting the natural product and atmosphere that they offer. The colors and typography approach are minimalist and simple, applying earth tones and use only one elegant font.',
@@ -32,7 +32,7 @@ export default {
             },
             two: {
               id: 2,
-              layout: 'layoutA',
+              layout: 'layoutB',
               name: 'Indonesian Heritage',
               type: 'Packaging',
               desc: 'This packaging is a promotional item for the collaboration between Festival Mesin Waktu (90s Music Festival) and Sagoo’s Kitchen (Old Chinese Malay Restaurant). The mood and feel are nostalgic and traditional inspired by packaging in the 80s. It comes in a set of 5 and each packaging represents 1 big province in Indonesia, depicted by the pattern and product itself.',
@@ -49,7 +49,7 @@ export default {
             },
             three: {
               id: 3,
-              layout: 'layoutB',
+              layout: 'layoutA',
               name: 'Malaysia’s Unwanted',
               type: 'Publication',
               desc: 'Malaysia’s Unwanted is a publication project about different groups of people being shunned because they are considered criminals by Malaysian law and society. The purpose of the book is to deliver serious issues in a lighthearted way. I want to build curiosity and amusement with this “fun” approach by using a lot of illustrations and pictures in a playful mood.',
