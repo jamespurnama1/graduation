@@ -13,21 +13,14 @@
     </div>
     <div>
       <ul class="card-list grid">
-        <li v-for="(user, i) in users" class="card-item" :key='`user${i}`'>
-         <router-link :to="'outbreak/' + user.photo">
+        <li v-for="(user, i) in allUsers" class="card-item" :key='`user${i}`'>
+         <router-link :to="'outbreak/' + user.path">
          <div class='videoMask'>
-            <video
+            <img
             :ref='`photo${i++}`'
-            @mouseover='playVideo(i)'
-            @mouseleave='stopVideo(i)'
-            muted
-            preload="auto"
             class='photo'
-            autobuffer
-            :id='`photo${i++}`'>
-            <source
-            :src="require(`@/assets/people/${user.photo}.mp4`)" >
-            </video>
+            :id='`photo${i++}`'
+            :src="require(`@/assets/people/${user.path}/face.jpg`)">
          </div>
             <p class='name'>{{i-1}}. {{ user.name }}</p>
           </router-link>
@@ -38,50 +31,21 @@
 </template>
 
 <script>
+import users from '@/components/users';
+
 export default {
   Name: 'Individual',
+  mixins: [users],
   data() {
     return {
-      users: [
-        { name: 'Phuong Anh', photo: 'anh' },
-        { name: 'Wei Hang', photo: 'weihang' },
-        { name: 'Hui San', photo: 'huisan' },
-        { name: 'Wai Yee', photo: 'waiyee' },
-        { name: 'Kar Mun', photo: 'karmun' },
-        { name: 'Sze Chien', photo: 'szechien' },
-        { name: 'Samantha', photo: 'sam' },
-        { name: 'Zhi Jian', photo: 'zhijian' },
-        { name: 'Aurelius Kevin', photo: 'aurel' },
-        { name: 'James Henry', photo: 'james' },
-        { name: 'Chaterine A.', photo: 'huisan' },
-        { name: 'Vianka', photo: 'vianka' },
-      ],
+      face: 'face',
       cards: [1, 2, 3, 4],
     };
   },
   computed: {
   },
   methods: {
-    playVideo(e) {
-      const p = document.getElementById(`photo${e - 1}`);
-      p.play();
-    },
-    stopVideo(e) {
-      const p = document.getElementById(`photo${e - 1}`);
-      p.pause();
-      p.currentTime = 0;
-    },
   },
-  mounted() {
-  },
-  // created() {
-  //   document.getElementsByTagName('video').onmouseover = function playVideo() { this.play(); };
-  //   document.getElementsByTagName('video').onmouseover = function playVideo() { this.stop(); };
-  // },
-  // destroyed() {
-  //   document.getElementsByTagName('video').removeEventListener('mouseover');
-  //   document.getElementsByTagName('video').removeEventListener('mouseout');
-  // },
 };
 </script>
 
@@ -146,9 +110,6 @@ h3, p {
   .videoMask {
     height: 23vw;
     width: 23vw;
-  }
-  .photo {
-    transform: translateY(-20%);
   }
 }
 

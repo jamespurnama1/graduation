@@ -155,7 +155,7 @@ button:hover {
   width: 100%;
   height: auto;
   filter: grayscale(1);
-  transform: translateY(-20%);
+  // transform: translateY(-20%);
   -webkit-filter: grayscale(1);
   object-fit: cover;
 }

@@ -4,16 +4,15 @@
       <h1>COVID-12</h1>
       <img id='overlay' src='@/assets/logo_red.svg'>
       <ul class="card-list grid">
-        <li v-for="(user, i) in users" class="card-item" :key='`user${i}`'>
+        <li v-for="(user, i) in allUsers" class="card-item" :key='`user${i}`'>
          <div class='videoMask'>
-            <video
+            <img
             :ref='`photo${i++}`'
             muted
             preload="auto"
             autobuffer
-            class='photo'>
-            <source :src="require(`@/assets/people/${user.photo}.mp4`)" >
-            </video>
+            class='photo'
+            :src="require(`@/assets/people/${user.path}/face.jpg`)">
          </div>
         </li>
       </ul>
@@ -42,27 +41,28 @@
 </template>
 
 <script>
+import users from '@/components/users';
+
 export default {
   name: 'JamesHenry',
-  components: {
-  },
+  mixins: [users],
   data() {
     return {
       overlayVideo: false,
-      users: [
-        { name: 'Phuong Anh', photo: 'anh' },
-        { name: 'Wei Hang', photo: 'weihang' },
-        { name: 'Hui San', photo: 'huisan' },
-        { name: 'Wai Yee', photo: 'waiyee' },
-        { name: 'Kar Mun', photo: 'karmun' },
-        { name: 'Sze Chien', photo: 'szechien' },
-        { name: 'Samantha', photo: 'sam' },
-        { name: 'Zhi Jian', photo: 'zhijian' },
-        { name: 'Aurelius Kevin', photo: 'aurel' },
-        { name: 'James Henry', photo: 'james' },
-        { name: 'Chaterine A.', photo: 'huisan' },
-        { name: 'Vianka', photo: 'vianka' },
-      ],
+      // users: [
+      //   { name: 'Phuong Anh', photo: 'anh' },
+      //   { name: 'Wei Hang', photo: 'weihang' },
+      //   { name: 'Hui San', photo: 'huisan' },
+      //   { name: 'Wai Yee', photo: 'waiyee' },
+      //   { name: 'Kar Mun', photo: 'karmun' },
+      //   { name: 'Sze Chien', photo: 'szechien' },
+      //   { name: 'Samantha', photo: 'sam' },
+      //   { name: 'Zhi Jian', photo: 'zhijian' },
+      //   { name: 'Aurelius Kevin', photo: 'aurel' },
+      //   { name: 'James Henry', photo: 'james' },
+      //   { name: 'Chaterine A.', photo: 'huisan' },
+      //   { name: 'Vianka', photo: 'vianka' },
+      // ],
       cards: [1, 2, 3, 4],
     };
   },
