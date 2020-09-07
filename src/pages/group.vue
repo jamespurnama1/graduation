@@ -67,28 +67,25 @@ export default {
       const bar = document.getElementById(`project${e}`);
       const groupWork = document.querySelectorAll('.groupWork');
       const projectBar = document.getElementById(`projectBar${e}`);
-      // const scroll = bar.offsetTop;
       if (bar.classList.contains('expanded')) {
         bar.classList.remove('expanded');
         projectBar.classList.add('black');
         groupWork[e].classList.remove('relative');
+        console.log('closing', bar);
+        console.log(groupWork[e]);
       } else {
         bar.classList.add('expanded');
         projectBar.classList.remove('black');
         setTimeout(() => {
           groupWork[e].classList.add('relative');
         }, 500);
+        console.log('opening', bar);
+        console.log(groupWork[e]);
       }
       if (expanded != null) {
         expanded.classList.remove('expanded');
         relative.classList.remove('relative');
       }
-      // const offset = topBar + (0.23 * window.innerHeight);
-      setTimeout(() => {
-        // projectBar.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
-        // const topBar = bar.getBoundingClientRect().top;
-        // window.scrollTo({ behavior: 'smooth', top: topBar });
-      }, 500);
     },
   },
 };
@@ -130,7 +127,7 @@ export default {
 }
 
 .expanded {
-  min-height: 200vw !important;
+  min-height: 100vw !important;
   visibility: initial !important;
 }
 

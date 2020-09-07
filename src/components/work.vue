@@ -1,7 +1,7 @@
 <template>
   <div class='block'>
     <div class='img'>
-      <img :src="require(`@/assets/group/project${img}/img0.jpg`)">
+      <img :src="require(`@/assets/group/project${img}/top.jpg`)">
     </div>
     <h4 style='color: black'>
       Group Members:
@@ -36,9 +36,15 @@
       </p>
     </div>
     </div>
+    <div v-if='projects.video'>
     <h3>Case Study Video</h3>
     <div class='img' style='margin-bottom: 10px'>
-      <img :src="require(`@/assets/group/project${img}/img1.jpg`)">
+      <video
+      controls>
+      <source :src="require(`@/assets/group/project${img}/${projects.video}.webm`)">
+      <source :src="require(`@/assets/group/project${img}/${projects.video}.mp4`)">
+       </video>
+    </div>
     </div>
     <h3>{{ projects.heading }}</h3>
     <carousel
@@ -50,13 +56,16 @@
       :navigation-prev-label='`<`'
       :pagination-active-color='`#eb2027`'
       :mouse-drag='true'
+      :centerMode='true'
       v-if='projects.carousel'
       v-model="currentIndex">
         <slide
         v-for='(item, index) in projects.carousel'
         :key='index'
         :data-index='index'>
-          <img :src="require(`@/assets/group/project${img}/img${index}.jpg`)">
+          <video
+          :poster="require(`@/assets/group/project${img}/${item.src}`)"
+          :src="require(`@/assets/group/project${img}/${item.src}`)" />
         </slide>
       </carousel>
     <p style='margin-top: 0;'>
@@ -106,7 +115,7 @@ export default {
   margin: 50px auto;
 }
 
-img {
+img, video {
   width: 100%;
 }
 

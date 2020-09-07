@@ -21,8 +21,9 @@
 
     <h3 style='margin-top: 5%'>{{ works.sections.two.name }}</h3>
     <div class='grid'>
-      <img v-for='(secondImg) in works.sections.two.img'
-      :key='secondImg'
+      <img v-for='(secondImg, i) in works.sections.two.img'
+      :key='i'
+      :id='`grid-item-${i}`'
       :src="require(`@/assets/people/${path}/work${works.id}/two/${secondImg}`)">
     </div>
   </div>
