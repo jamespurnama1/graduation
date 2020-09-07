@@ -18,7 +18,7 @@ export default {
             { id: 5, caption: 'Supporting media such as instagram story ad and facebook post to promote this campaign', src: 'img5.jpg' },
           ],
           heading: 'How it Works',
-          video: 'video',
+          video: 'https://www.youtube.com/embed/Mz1bBupEnyE',
         },
         {
           title: 'Mama Miss You',

@@ -39,11 +39,12 @@
     <div v-if='projects.video'>
     <h3>Case Study Video</h3>
     <div class='img' style='margin-bottom: 10px'>
-      <video
-      controls>
-      <source :src="require(`@/assets/group/project${img}/${projects.video}.webm`)">
-      <source :src="require(`@/assets/group/project${img}/${projects.video}.mp4`)">
-       </video>
+      <iframe
+      :src="`${projects.video}`"
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+      </iframe>
     </div>
     </div>
     <h3>{{ projects.heading }}</h3>
@@ -115,8 +116,13 @@ export default {
   margin: 50px auto;
 }
 
-img, video {
+img, video, iframe {
   width: 100%;
+  height: auto;
+}
+
+iframe {
+  height: 100%;
 }
 
 h3 {
