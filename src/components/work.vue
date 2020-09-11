@@ -6,8 +6,8 @@
     <h4 style='color: black'>
       Group Members:
       {{ projects.members[0] }}
-      | {{ projects.members[1] }}
-      | {{ projects.members[2] }}
+      <span v-if='projects.members[1]'>| {{ projects.members[1] }} </span>
+      <span v-if='projects.members[2]'>| {{ projects.members[2] }}</span>
     </h4>
     <div class='line' />
     <div style='display: flex; flex-wrap: wrap; justify-content: space-between'>
@@ -37,8 +37,8 @@
     </div>
     </div>
     <div v-if='projects.video'>
-    <h3>Case Study Video</h3>
-    <div class='img' style='margin-bottom: 10px'>
+    <h3 style='text-align: center'>Case Study Video</h3>
+    <div class='img' style='margin: 10px auto'>
       <iframe
       :src="`${projects.video}`"
       frameborder="0"
@@ -47,9 +47,8 @@
       </iframe>
     </div>
     </div>
-    <h3>{{ projects.heading }}</h3>
+    <h3 style='text-align: center'>{{ projects.heading }}</h3>
     <carousel
-      style='margin-top: 50px'
       :per-page='1'
       :loop='true'
       :navigation-enabled='true'
@@ -72,7 +71,7 @@
           :src="require(`@/assets/group/project${img}/${item.src}`)" />
         </slide>
       </carousel>
-    <p style='margin-top: 0;'>
+    <p style='margin-top: 15px; margin-bottom: 50px'>
       {{ projects.carousel[currentIndex].caption }}
     </p>
   </div>
@@ -116,22 +115,26 @@ export default {
 
 .img {
   width: 100%;
-  height: 45vw;
   overflow: hidden;
   margin: 50px auto;
 }
 
-img, video, iframe {
+img, video {
   width: 100%;
   height: auto;
 }
 
 iframe {
-  height: 100%;
+  width: 100%;
+  height: 39vw;
 }
 
 h3 {
   text-align: left;
   align-self: flex-start;
+}
+
+p {
+  margin-top: 0;
 }
 </style>

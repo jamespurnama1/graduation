@@ -345,7 +345,7 @@ JAMES
                   img: [],
                 },
                 two: {
-                  name: 'More Pictures',
+                  name: '',
                   img: ['img0.jpg', 'img1.jpg', 'img2.jpg', 'img3.jpg'],
                 },
               },
@@ -362,7 +362,7 @@ JAMES
                   img: [],
                 },
                 two: {
-                  name: 'Miscellaneous',
+                  name: '',
                   img: ['img0.jpg', 'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg'],
                 },
               },
@@ -375,11 +375,11 @@ JAMES
               desc: 'Jack the Clipper is a unique barbershop experience taken from a well-known serial killer, Jack the Ripper. The idea behind the logo is a combination of bold old-school typeface with an unidentifiable common head and a clipper. The person in the logo brings a mysterious mood while the font shows seriousness in a ‘40s typeface. The clipper makes the brand identifiable as a barber as well as a representation of a weapon.',
               sections: {
                 one: {
-                  name: 'Featured',
+                  name: 'Stationery Design',
                   img: ['img0.jpg', 'img1.jpg', 'img2.jpg'],
                 },
                 two: {
-                  name: 'More Pictures',
+                  name: 'Brand Communication',
                   img: ['img0.jpg', 'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg'],
                 },
               },

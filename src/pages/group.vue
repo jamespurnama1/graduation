@@ -6,7 +6,6 @@
       <h2>The</h2>
       <h2>Mutation</h2>
       </div>
-      <!-- <div class='verticalLine' style='height:106%' /> -->
       <div class='center mutation'>
       <p>
         Occurs when the viruses exchange creative info, idea strains
@@ -17,10 +16,6 @@
       </p>
       </div>
     </div>
-    <!-- <div style='border-color: black;
-    margin: 0; margin-bottom: 0.5%;
-    transform: translateY(316%)'
-    class='line' /> -->
     <div
     class='work'
     :id='`project${i}`'
@@ -71,16 +66,16 @@ export default {
         bar.classList.remove('expanded');
         projectBar.classList.add('black');
         groupWork[e].classList.remove('relative');
-        console.log('closing', bar);
-        console.log(groupWork[e]);
+        // console.log('closing', bar);
+        // console.log(groupWork[e]);
       } else {
         bar.classList.add('expanded');
         projectBar.classList.remove('black');
         setTimeout(() => {
           groupWork[e].classList.add('relative');
         }, 500);
-        console.log('opening', bar);
-        console.log(groupWork[e]);
+        // console.log('opening', bar);
+        // console.log(groupWork[e]);
       }
       if (expanded != null) {
         expanded.classList.remove('expanded');
@@ -118,7 +113,7 @@ export default {
 
 .groupWork {
   position: absolute;
-  padding: 0 10%;
+  padding: 0 15%;
 }
 
 #projectBar0 {
@@ -158,7 +153,7 @@ export default {
 }
 
 #titleLogo {
-  padding: 3% 7%;
+  padding: 3% 3% 3% 0;
 }
 
 h3, p {

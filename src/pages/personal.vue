@@ -5,7 +5,7 @@
     <div class='data'>
     <div class='mask'>
     <img
-      :src="require(`@/assets/people/${data[0].path}/face1.jpg`)"
+      :src="require(`@/assets/people/${data[0].path}/face.jpg`)"
       style='grid-area: img; margin-bottom: 10px'>
     </div>
 
@@ -50,7 +50,7 @@
       style='font-style: oblique; margin-bottom: 20px'>
       {{ data[0].works.one.type }}
     </h4>
-      <p class='desc' style='max-width: 900px'>
+      <p class='desc' style='max-width: 900px; text-align: center'>
       {{ data[0].works.one.desc }}
       </p>
     </div>
@@ -67,7 +67,7 @@
     style='font-style: oblique; margin-bottom: 20px'>
       {{ data[0].works.two.type }}
     </h4>
-    <p class='desc' style='max-width: 900px'>
+    <p class='desc' style='max-width: 900px; text-align: center'>
       {{ data[0].works.two.desc }}
     </p>
     </div>
@@ -84,7 +84,7 @@
     style='font-style: oblique; margin-bottom: 20px'>
       {{ data[0].works.three.type }}
     </h4>
-    <p class='desc' style='max-width: 900px'>
+    <p class='desc' style='max-width: 900px; text-align: center'>
       {{ data[0].works.three.desc }}
     </p>
     </div>
@@ -94,6 +94,12 @@
       :works='data[0].works.three'
       :path='data[0].path'
       style='width: 100%' />
+
+    <router-link :to='`/outbreak/${allUsers[next].path}`'>
+    <p class='desc' style='text-align: right; margin-top: 50px'>
+      Next - {{ allUsers[next].name }} >
+    </p>
+    </router-link>
   </div>
 </template>
 
@@ -118,6 +124,7 @@ export default {
   data() {
     return {
       data: '',
+      next: '',
     };
   },
   created() {
@@ -127,6 +134,8 @@ export default {
       // this.$router.push('/404');
       console.log('404');
     }
+    const pathArray = this.allUsers.map((person) => person.path);
+    this.next = pathArray.indexOf(this.user) + 1;
   },
 };
 </script>
@@ -182,9 +191,8 @@ button:hover p {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: minmax(200px, 25vw) auto;
-  grid-gap: 5px;
+  grid-gap: 30px;
   align-items: start;
-  justify-items: center;
   grid-template-areas:
     "img data"
     "desc desc";
@@ -218,6 +226,10 @@ h3 {
   font-size: calc(10px + 1vw);
 }
 
+a:hover p {
+  color: $primary;
+}
+
 @media screen and (max-width: 480px){
   .data {
     grid-template-columns: 100%;
@@ -238,6 +250,7 @@ h3 {
 
 @media screen and (min-width: 980px){
   .data {
+    width: 85%;
     grid-template-columns: 22% auto 35%;
     grid-template-rows: minmax(300px, 25vw);
     grid-template-areas:

@@ -11,7 +11,8 @@
       <transition
         name="fade"
         mode="out-in">
-        <router-view />
+        <router-view
+        :key='$route.fullPath' />
       </transition>
       <div id='footer'>
         <p style='font-size: calc(5px + 1vw);'>Copyright 2020 TheCOVID12</p>
@@ -47,11 +48,6 @@ export default {
     scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     },
-    // getPos() {
-    //   const scrollPos = window.scrollY ||
-    // window.scrollTop || document.getElementsByTagName('html')[0].scrollTop;
-    //   console.log(scrollPos);
-    // },
   },
   created() {
     window.addEventListener('scroll', this.getPos);
@@ -87,7 +83,6 @@ export default {
 
 .VueCarousel-slide {
   width: 100%;
-  height: 45vw;
 }
 
 .VueCarousel-dot-container {

@@ -1,6 +1,6 @@
 <template>
   <div class='block'>
-    <h3 style='margin-top: 5%'>{{ works.sections.two.name }}</h3>
+    <h3 style='margin: 5% 0 1% 0'>{{ works.sections.two.name }}</h3>
     <div class='grid'>
       <img v-for='(secondImg, i) in works.sections.two.img'
       :key='i'
