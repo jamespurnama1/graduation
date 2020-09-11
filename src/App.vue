@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <navbar style='z-index: 10' />
-    <main>
+    <splash style='z-index: 20'
+      v-show="(this.$store.state.splash) && (this.$route.name != '404')" />
+    <navbar v-if='renderSwitchSet' style='z-index: 10' />
+    <main v-if='renderSwitchSet'>
       <transition
         name="fade"
         mode="out-in">
-      <splash style='z-index: 20'
-      v-show="(this.$store.state.splash) && (this.$route.name != '404')" />
       </transition>
       <transition
         name="fade"
@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import navbar from '@/components/nav.vue';
-import splash from '@/pages/splash.vue';
+const navbar = () => import('@/components/nav.vue');
+const splash = () => import('@/pages/splash.vue');
 
 export default {
   name: 'Graduation',
@@ -42,6 +42,7 @@ export default {
   data() {
     return {
       scrollButton: false,
+      renderSwitchSet: false,
     };
   },
   methods: {
@@ -51,6 +52,9 @@ export default {
   },
   created() {
     window.addEventListener('scroll', this.getPos);
+    this.$on('start', () => {
+      this.renderSwitchSet = true;
+    });
   },
   destroyed() {
     window.removeEventListener('scroll', this.getPos);

@@ -1,5 +1,5 @@
 <template>
-  <div class='page personal' style='grid-area: img'>
+  <div class='page personal' style='grid-area: img' v-images-loaded:on.progress="imageProgress">
     <h2 class='desc red' style='font-weight: bold'>{{ data[0].name }}</h2>
     <div class='line' style='margin-top: 20px' />
     <div class='data'>
@@ -108,11 +108,13 @@
 </template>
 
 <script>
+import imagesLoaded from 'vue-images-loaded';
 import layoutA from '@/components/layoutA.vue';
 import layoutB from '@/components/layoutB.vue';
 import carouselA from '@/components/carouselA.vue';
 import carouselB from '@/components/carouselB.vue';
 import usersData from '@/components/users';
+import loading from '@/components/loading';
 
 export default {
   components: {
@@ -124,7 +126,10 @@ export default {
   props: {
     user: String,
   },
-  mixins: [usersData],
+  directives: {
+    imagesLoaded,
+  },
+  mixins: [usersData, loading],
   data() {
     return {
       data: '',

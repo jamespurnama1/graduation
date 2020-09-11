@@ -1,5 +1,5 @@
 <template>
-  <div class='page'>
+  <div class='page' v-images-loaded:on.progress="imageProgress">
     <div class='title'>
       <img class='smallLogo' src='@/assets/logo_red.svg'>
       <div>
@@ -31,15 +31,20 @@
 </template>
 
 <script>
+import imagesLoaded from 'vue-images-loaded';
 import users from '@/components/users';
+import loading from '@/components/loading';
 
 export default {
   Name: 'Individual',
-  mixins: [users],
+  mixins: [users, loading],
   data() {
     return {
       face: 'face',
     };
+  },
+  directives: {
+    imagesLoaded,
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class='block page'>
+  <div class='block page' v-images-loaded:on.progress="imageProgress">
     <div class='title'>
       <img class='smallLogo' src='@/assets/logo_red.svg'>
       <div id='titleLogo'>
@@ -45,15 +45,20 @@
 
 <script>
 import { gsap } from 'gsap';
+import imagesLoaded from 'vue-images-loaded';
 import work from '@/components/work.vue';
 import groupProject from '@/components/groupProject';
+import loading from '@/components/loading';
 
 export default {
   name: 'Group',
   components: {
     work,
   },
-  mixins: [groupProject],
+  directives: {
+    imagesLoaded,
+  },
+  mixins: [groupProject, loading],
   data() {
     return {
       gsap1: new gsap.timeline(), // eslint-disable-line

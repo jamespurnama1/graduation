@@ -1,5 +1,5 @@
 <template>
-  <div class='page' style='padding: 0 8vw'>
+  <div class='page' style='padding: 0 8vw' v-images-loaded:on.progress="imageProgress">
     <div class='block'>
       <h1>CREAID</h1>
       <img id='overlay' src='@/assets/logo_red.svg'>
@@ -42,14 +42,21 @@
 </template>
 
 <script>
+import gsap from 'gsap';
+import imagesLoaded from 'vue-images-loaded';
 import users from '@/components/users';
+import loading from '@/components/loading';
 
 export default {
   name: 'JamesHenry',
-  mixins: [users],
+  mixins: [users, loading],
   data() {
     return {
+      tl: gsap.timeline(),
     };
+  },
+  directives: {
+    imagesLoaded,
   },
   methods: {
     nextBlock(e) {
@@ -57,7 +64,14 @@ export default {
       el.scrollIntoView({ behavior: 'smooth' });
     },
   },
-  computed: {
+  mounted() {
+    this.tl.to('#overlay', {
+      scale: 1.1,
+      ease: 'power1.inOut',
+      yoyo: true,
+      repeat: -1,
+      duration: 5,
+    });
   },
 };
 

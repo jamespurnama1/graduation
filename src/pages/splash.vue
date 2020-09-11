@@ -1,35 +1,93 @@
 <template>
   <div id='red' class='center'>
-    <!-- <transition name='scale'> -->
-        <p style='width: 80%'>
-          Creative Cure is in Process
+    <transition name='fade'>
+      <div v-show='first'>
+        <img id='logoAnim' src='@/assets/logo.svg'>
+        <p>
+          Creative Cure is in Process...
         </p>
       <div class="border">
         <div class="progress"></div>
       </div>
-    <!-- </transition> -->
+      <p>
+        {{ $store.state.progress }}
+      </p>
+      </div>
+    </transition>
+      <div v-show='!first' class='anim'>
+        <p>
+          The cure has been found!
+        </p>
+      </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+import gsap from 'gsap';
+
 export default {
   Name: 'Loading',
   data() {
     return {
-      delay: false,
+      delay: true,
+      first: true,
+      tl2: gsap.timeline({ paused: true }),
     };
   },
-  mounted() {
-    this.delay = true;
-    setTimeout(() => {
-      this.letMeIn();
-    }, 1000);
-  },
+  computed: mapState(['progress']),
   methods: {
     letMeIn() {
-      this.delay = false;
-      this.$store.commit('removeSplash');
+      const timer = setInterval(() => {
+        if (this.delay === false) {
+          this.first = false;
+          this.loadAnim();
+          window.clearInterval(timer);
+          setTimeout(() => {
+            this.$store.commit('removeSplash');
+          }, 3500);
+        }
+      }, 500);
     },
+    loadAnim() {
+      gsap.to('.anim', {
+        scale: 1.5,
+        opacity: 1,
+        ease: 'easeOut',
+        duration: 1,
+        delay: 1,
+      });
+      gsap.to('#red', {
+        opacity: 0,
+        ease: 'easeOut',
+        duration: 0.5,
+        delay: 3,
+      });
+    },
+  },
+  watch: {
+    progress(newValue) {
+      const bar = document.querySelector('.progress');
+      console.log(bar);
+      bar.style.width = newValue;
+      this.tl2.pause(newValue.replace('%', '') - 1);
+      setTimeout(() => {
+        this.delay = false;
+      }, 2000);
+      if (newValue === '100%') {
+        this.letMeIn();
+      }
+    },
+  },
+  mounted() {
+    this.tl2.to('#logoAnim', {
+      rotation: 360,
+      ease: 'none',
+      duration: 100,
+    });
+    setTimeout(() => {
+      this.$parent.$emit('start');
+    }, 10);
   },
 };
 </script>
@@ -37,14 +95,22 @@ export default {
 <style lang="scss" scoped>
 @import './src/styles/fonts.module.scss';
 
+.anim {
+  position: absolute;
+  opacity: 0;
+}
+
 .border {
   border: 3px solid white;
+  width: 50vw;
+  height: 30px;
 }
 
 .progress {
-  height: 10%;
+  height: 100%;
   width: 0;
   background: white;
+  transition: width 1s ease;
 }
 
 p {
@@ -54,21 +120,10 @@ p {
   margin: 10px 0;
 }
 
-#hint {
-  position: absolute;
-  top: 26%;
-  right: 15%;
-  z-index: 2;
-  border: solid 3px white;
-  background-color: $primary;
-  padding: 10px 15px;
-  display: flex;
-  flex-direction: column;
-}
-
 #red {
   position: fixed;
   overflow: hidden;
+  flex-direction: column;
   background-color: $primary;
   width: 100vw;
   height: 100vh;
@@ -76,43 +131,19 @@ p {
   left: 0;
 }
 
-#window {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  min-width: 300px;
-  padding-bottom: 15px;
-  border: solid 3px white;
+#logoAnim {
+  display: block;
+  margin: 3% auto;
+  width: 15vw;
+  height: 15vw;
+  transition: all 1s ease;
 }
 
-#titleBar {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-  width: 96%;
-  border-width: 3px;
-  border-bottom-style: solid;
-  border-color: white;
-  padding: 2%;
-}
+// button:hover p {
+//   color: $primary;
+// }
 
-#warningText {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 3% 3% 0 3%;
-}
-
-#x {
-  display: inline-block;
-  padding: 1px;
-  border: solid 3px white;
-}
-
-button:hover p {
-  color: $primary;
-}
-
-button:hover .feather {
-  stroke: $primary;
-}
+// button:hover .feather {
+//   stroke: $primary;
+// }
 </style>
