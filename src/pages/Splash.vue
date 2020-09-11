@@ -2,7 +2,7 @@
   <div>
     <div class='block page'>
       <img src='@/assets/logo.svg' />
-      <div style='margin: 0 50px'>
+      <div style='margin: 0 100px'>
         <br>
         <countdown :time='time'>
           <template slot-scope="props">
