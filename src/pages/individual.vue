@@ -83,13 +83,19 @@ h3, p {
   margin-bottom: 100px;
 }
 
-@media screen and (min-width: 480px){
+@media (min-width: 480px){
   .grid {
     grid-template-columns: repeat(1, minmax(100px, 2fr));
   }
+  h2 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
 }
 
-@media screen and (min-width: 736px){
+@media (min-width: 736px){
   .grid {
     grid-template-columns: repeat(2, minmax(100px, 1fr));
   }
@@ -97,9 +103,15 @@ h3, p {
     height: 35vw;
     width: 35vw;
   }
+  h2 {
+    text-align: left;
+  }
+  p {
+    text-align: left;
+  }
 }
 
-@media screen and (min-width: 980px){
+@media (min-width: 980px){
   .grid {
     grid-template-columns: repeat(3, minmax(100px, 1fr));
   }
@@ -109,7 +121,7 @@ h3, p {
   }
 }
 
-@media screen and (min-width: 1280px){
+@media(min-width: 1280px){
   .grid {
     grid-template-columns: repeat(3, minmax(100px, 1fr));
   }

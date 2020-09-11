@@ -91,7 +91,7 @@ export default {
 }
 
 .VueCarousel-inner {
-  height: 39vw !important;
+  height: 47vw !important;
 }
 
 .VueCarousel-dot-container {
@@ -109,6 +109,7 @@ button {
   color: white;
   background-color: $primary;
   border: solid 3px white;
+  margin-left: 15px;
 }
 
 button:hover {
@@ -131,7 +132,7 @@ button:hover {
   border-color: $primary;
   width: 100%;
   height: 0;
-  margin: 40px 0;
+  margin: 4% 0;
 }
 
 .verticalLine {

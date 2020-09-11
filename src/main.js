@@ -1,9 +1,8 @@
 import Vue from 'vue';
-import VueFullPage from 'vue-fullpage.js';
 import VueRouter from 'vue-router';
 import Buefy from 'buefy';
 import VueFeather from 'vue-feather';
-import Splash from '@/pages/splash.vue';
+import Splash from '@/pages/splash copy.vue';
 import App from './App.vue';
 import store from './store';
 
@@ -16,7 +15,6 @@ const Individual = () => import('@/pages/individual.vue');
 Vue.use(Buefy);
 Vue.use(VueRouter);
 Vue.use(VueFeather);
-Vue.use(VueFullPage);
 Vue.config.productionTip = false;
 
 const routes = [

@@ -55,54 +55,55 @@
       class='desc' style='max-width: 900px; text-align: center'>
       </p>
     </div>
+    <div>
+      <component
+        :is='data[0].works.one.layout'
+        :works='data[0].works.one'
+        :path='data[0].path'
+        style='width: 100%' />
+      <div class='line' />
+      <div class='intro'>
+      <h4 class='desc' style='font-weight: bold;color: black'>{{ data[0].works.two.name }}</h4>
+      <h4 class='desc'
+      style='font-style: oblique; margin-bottom: 20px'>
+        {{ data[0].works.two.type }}
+      </h4>
+      <p
+      v-html='data[0].works.two.desc'
+      class='desc' style='max-width: 900px; text-align: center'>
+      </p>
+      </div>
 
-    <component
-      :is='data[0].works.one.layout'
-      :works='data[0].works.one'
-      :path='data[0].path'
-      style='width: 100%' />
-    <div class='line' />
-    <div class='intro'>
-    <h4 class='desc' style='font-weight: bold;color: black'>{{ data[0].works.two.name }}</h4>
-    <h4 class='desc'
-    style='font-style: oblique; margin-bottom: 20px'>
-      {{ data[0].works.two.type }}
-    </h4>
-    <p
-    v-html='data[0].works.two.desc'
-    class='desc' style='max-width: 900px; text-align: center'>
-    </p>
+      <component
+        :is='data[0].works.two.layout'
+        :works='data[0].works.two'
+        :path='data[0].path'
+        style='width: 100%' />
+      <div class='line' />
+      <div class='intro'>
+      <h4 class='desc' style='font-weight: bold;color: black'>{{ data[0].works.three.name }}</h4>
+      <h4 class='desc'
+      style='font-style: oblique; margin-bottom: 20px'>
+        {{ data[0].works.three.type }}
+      </h4>
+      <p
+      v-html='data[0].works.three.desc'
+      class='desc' style='max-width: 900px; text-align: center'>
+      </p>
+      </div>
+
+      <component
+        :is='data[0].works.three.layout'
+        :works='data[0].works.three'
+        :path='data[0].path'
+        style='width: 100%' />
+
+      <router-link :to='`/aid/${allUsers[next].path}`'>
+      <p class='desc underline' style='text-align: right; margin-top: 50px'>
+        Next - {{ allUsers[next].name }} >
+      </p>
+      </router-link>
     </div>
-
-    <component
-      :is='data[0].works.two.layout'
-      :works='data[0].works.two'
-      :path='data[0].path'
-      style='width: 100%' />
-    <div class='line' />
-    <div class='intro'>
-    <h4 class='desc' style='font-weight: bold;color: black'>{{ data[0].works.three.name }}</h4>
-    <h4 class='desc'
-    style='font-style: oblique; margin-bottom: 20px'>
-      {{ data[0].works.three.type }}
-    </h4>
-    <p
-    v-html='data[0].works.three.desc'
-    class='desc' style='max-width: 900px; text-align: center'>
-    </p>
-    </div>
-
-    <component
-      :is='data[0].works.three.layout'
-      :works='data[0].works.three'
-      :path='data[0].path'
-      style='width: 100%' />
-
-    <router-link :to='`/aid/${allUsers[next].path}`'>
-    <p class='desc' style='text-align: right; margin-top: 50px'>
-      Next - {{ allUsers[next].name }} >
-    </p>
-    </router-link>
   </div>
 </template>
 
@@ -134,7 +135,7 @@ export default {
     const who = this.allUsers.filter((filter) => filter.path === this.user);
     this.data = who;
     if (this.data === undefined || this.data.length === 0) {
-      // this.$router.push('/404');
+      this.$router.push('/404');
       console.log('404');
     }
     const pathArray = this.allUsers.map((person) => person.path);
@@ -160,7 +161,7 @@ export default {
 
 .underline:hover {
   text-decoration: underline;
-  color: black;
+  color: $primary;
 }
 
 button p {
@@ -180,6 +181,7 @@ button:hover p {
   font-weight: normal;
   color: black;
   margin: 0;
+  margin-left: 20px;
 }
 
 .intro {
@@ -188,8 +190,9 @@ button:hover p {
   align-items: center;
   color: black;
 }
+
 .personal {
-  padding: 2% 8%;
+  padding: 30px 8%;
   flex-wrap: wrap;
 }
 
@@ -198,6 +201,7 @@ button:hover p {
   grid-template-columns: 50% 50%;
   grid-template-rows: minmax(200px, 25vw) auto;
   grid-gap: 30px;
+  margin-left: 20px;
   align-items: start;
   grid-template-areas:
     "img data"
@@ -205,7 +209,6 @@ button:hover p {
 }
 
 img {
-  // transform: translateY(-20%);
   height: 100%;
   width: 100%;
   object-fit: cover;

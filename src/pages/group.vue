@@ -185,11 +185,27 @@ h1, h2 {
   width: 35px;
 }
 
+@media (max-width: 736px){
+  .grid {
+    grid-template-columns: repeat(1, minmax(100px, 2fr));
+  }
+  p
+  .smallLogo {
+    height: 30%;
+    width: 50%;
+    margin-top: 2%;
+  }
+  #titleLogo {
+    text-align: center;
+    padding: 0;
+  }
+}
+
 .page {
   padding: 0;
 }
 
-@media screen and (max-width: 980px) {
+@media (max-width: 980px) {
   .mutation {
     width: 100vw;
     height: 10vw;

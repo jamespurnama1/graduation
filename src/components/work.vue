@@ -45,16 +45,17 @@
     </div>
     <h3 style='text-align: center'>{{ projects.heading }}</h3>
     <carousel
-      :per-page='1'
-      :loop='true'
-      :navigation-enabled='true'
-      :navigation-next-label='`>`'
-      :navigation-prev-label='`<`'
-      :pagination-active-color='`#eb2027`'
-      :mouse-drag='true'
-      :centerMode='true'
-      v-if='projects.carousel'
-      v-model="currentIndex">
+    class='vw39'
+    :per-page='1'
+    :loop='true'
+    :navigation-enabled='true'
+    :navigation-next-label='`>`'
+    :navigation-prev-label='`<`'
+    :pagination-active-color='`#eb2027`'
+    :mouse-drag='true'
+    :centerMode='true'
+    v-if='projects.carousel'
+    v-model="currentIndex">
         <slide
         v-for='(item, index) in projects.carousel'
         :key='index'
@@ -97,6 +98,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.vw39 > .VueCarousel-wrapper > .VueCarousel-inner {
+  height: 39vw;
+}
+
 .BPII {
   max-width: 350px;
   margin-right: 10px

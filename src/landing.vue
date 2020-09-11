@@ -17,7 +17,7 @@
         </li>
       </ul>
     </div>
-    <div class='block center' style='margin-top:100px'>
+    <div class='block center' style='margin-top:10%'>
       <h1 style='font-size: 8.4vw; white-space: nowrap'>What is CREAID?</h1>
       <div class='line' />
       <p id='about'>
@@ -115,13 +115,13 @@ export default {
   width: 30%;
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
   #overlay {
     top: 28vw;
   }
 }
 
-@media screen and (min-width: 736px) {
+@media (min-width: 736px) {
   #about {
     font-size: 160%;
     margin-right: auto;
