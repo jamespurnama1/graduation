@@ -15,9 +15,9 @@
         :key='$route.fullPath' />
       </transition>
       <div id='footer'>
-        <p style='font-size: calc(5px + 1vw);'>Copyright 2020 TheCOVID12</p>
+        <p style='font-size: calc(5px + 1vw);'>Copyright 2020 TheCREAID</p>
         <div style='display: flex; flex-direction: row'>
-          <a href='http://instagram.com/thecovid12' style='color: black; padding: 0 20%'>
+          <a href='http://instagram.com/the_creaid' style='color: black; padding: 0 20%'>
             <feather type='instagram' stroke-width='1.8' />
           </a>
           <a href='http://www.facebook.com/Ad1708GraduationExhibition' style='color: black'>
@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import navbar from './components/nav.vue';
-import splash from './pages/splash.vue';
+import navbar from '@/components/nav.vue';
+import splash from '@/pages/splash.vue';
 
 export default {
   name: 'Graduation',
@@ -74,6 +74,11 @@ export default {
   padding: 0 8vw;
 }
 
+.VueCarousel-pagination {
+  display: flex !important;
+  justify-content: center !important;
+}
+
 .VueCarousel-navigation-button {
   font-family: "AXIS" !important;
   font-size: calc(10px + 1vw) !important;
@@ -82,11 +87,16 @@ export default {
 }
 
 .VueCarousel-slide {
-  width: 100%;
+  width: 100% !important;
+}
+
+.VueCarousel-inner {
+  height: 39vw !important;
 }
 
 .VueCarousel-dot-container {
-  margin: 0 !important;
+  position: absolute !important;
+  transform: translateY(-200%) !important;
 }
 
 .VueCarousel-dot {
@@ -110,7 +120,7 @@ button:hover {
 .title {
   display: flex;
   justify-content: center;
-  padding: 2%;
+  padding: 4%;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -140,6 +150,7 @@ button:hover {
   list-style-type: none;
   align-items: center;
   justify-items: center;
+  margin: 0;
 }
 
 .videoMask {

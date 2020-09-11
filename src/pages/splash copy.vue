@@ -1,32 +1,64 @@
 <template>
   <div id='red' class='center'>
-    <!-- <transition name='scale'> -->
-        <p style='width: 80%'>
-          Creative Cure is in Process
+    <transition name='scale'>
+      <div v-show='showHint' id='hint'>
+        <feather
+        @click='showHint=false'
+        class='clickable'
+        style='margin-left:auto'
+        type='x'
+        stroke='white'
+        stroke-width='3' />
+        <p>
+          Try clicking the
+          <br>
+          “let me in” button
         </p>
-      <div class="border">
-        <div class="progress"></div>
       </div>
-    <!-- </transition> -->
+    </transition>
+    <transition name='scale'>
+    <div v-show='delay' id='window'>
+      <div id='titleBar'>
+        <button @click='showHint=true' class='clickable' id='x'>
+          <feather type='x' stroke='white' stroke-width='3' />
+        </button>
+      </div>
+      <div id='warningText'>
+        <div style='display: flex; flex-direction: row;'>
+          <feather type='alert-triangle' stroke='white' stroke-width='2' />
+          <p style='width: 80%'>
+            Warning:
+            <br>
+            There is a high chance of creativity being transmitted by going through our website.
+          </p>
+        </div>
+        <button
+        style='margin-left:auto'
+        class='clickable'
+        @click='letMeIn()'>
+          <p>Let me in</p>
+        </button>
+      </div>
+    </div>
+    </transition>
   </div>
 </template>
 
 <script>
 export default {
-  Name: 'Loading',
+  Name: 'About',
   data() {
     return {
+      showHint: false,
       delay: false,
     };
   },
   mounted() {
     this.delay = true;
-    setTimeout(() => {
-      this.letMeIn();
-    }, 1000);
   },
   methods: {
     letMeIn() {
+      this.showHint = false;
       this.delay = false;
       this.$store.commit('removeSplash');
     },
@@ -36,16 +68,6 @@ export default {
 
 <style lang="scss" scoped>
 @import './src/styles/fonts.module.scss';
-
-.border {
-  border: 3px solid white;
-}
-
-.progress {
-  height: 10%;
-  width: 0;
-  background: white;
-}
 
 p {
   color: white;
@@ -114,5 +136,10 @@ button:hover p {
 
 button:hover .feather {
   stroke: $primary;
+}
+
+.feather--alert-triangle {
+  margin: 3% 3% 0 0;
+  width: 50px;
 }
 </style>

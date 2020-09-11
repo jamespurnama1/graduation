@@ -11,28 +11,24 @@
     </h4>
     <div class='line' />
     <div style='display: flex; flex-wrap: wrap; justify-content: space-between'>
-    <div v-if='projects.brief' style='max-width: 400px; margin-right: 10px'>
+    <div v-if='projects.brief' class='BPII'>
       <h3>Brief</h3>
-      <p>
-        {{ projects.brief }}
+      <p v-html='projects.brief'>
       </p>
     </div>
-    <div v-if='projects.problem' style='max-width: 400px; margin-right: 10px'>
+    <div v-if='projects.problem' class='BPII'>
       <h3>Problem</h3>
-      <p>
-        {{ projects.problem }}
+      <p v-html='projects.problem'>
       </p>
     </div>
-    <div v-if='projects.insight' style='max-width: 400px; margin-right: 10px'>
+    <div v-if='projects.insight' class='BPII'>
       <h3>Insight</h3>
-      <p>
-        {{ projects.insight }}
+      <p v-html='projects.insight'>
       </p>
     </div>
-    <div v-if='projects.idea' style='max-width: 400px'>
+    <div v-if='projects.idea' class='BPII' style='margin-right: 0'>
       <h3>Idea</h3>
-      <p>
-        {{ projects.idea }}
+      <p v-html='projects.idea'>
       </p>
     </div>
     </div>
@@ -71,8 +67,9 @@
           :src="require(`@/assets/group/project${img}/${item.src}`)" />
         </slide>
       </carousel>
-    <p style='margin-top: 15px; margin-bottom: 50px'>
-      {{ projects.carousel[currentIndex].caption }}
+    <p
+    v-html='`${projects.carousel[currentIndex].caption}`'
+    style='margin-top: 25px; margin-bottom: 50px; text-align: center;'>
     </p>
   </div>
 </template>
@@ -100,6 +97,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.BPII {
+  max-width: 350px;
+  margin-right: 10px
+}
+
 .feather--play-circle {
   position: absolute;
   display: flex !important;
@@ -117,6 +119,7 @@ export default {
   width: 100%;
   overflow: hidden;
   margin: 50px auto;
+  margin-bottom: 20px;
 }
 
 img, video {
@@ -131,10 +134,22 @@ iframe {
 
 h3 {
   text-align: left;
-  align-self: flex-start;
 }
 
 p {
   margin-top: 0;
 }
+
+@media (max-width: 1530px) {
+  .BPII {
+    max-width: 33vw;
+    min-width: 250px;
+  }
+};
+@media (max-width: 728px) {
+  .BPII {
+    max-width: 70vw;
+    min-width: 250px;
+  }
+};
 </style>

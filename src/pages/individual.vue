@@ -3,18 +3,18 @@
     <div class='title'>
       <img class='smallLogo' src='@/assets/logo_red.svg'>
       <div>
-      <h2>The Outbreak</h2>
+      <h2>The Aid</h2>
       <p>
-        The sudden spread of designs and the increase in creativity.
+        The 12 cures that are ready to help the creative industry.
         <br>
-         [Click to view our works]
+         [Click to view our individual works]
       </p>
       </div>
     </div>
     <div>
       <ul class="card-list grid">
         <li v-for="(user, i) in allUsers" class="card-item" :key='`user${i}`'>
-         <router-link :to="'outbreak/' + user.path">
+         <router-link :to="'aid/' + user.path">
          <div class='videoMask'>
             <img
             :ref='`photo${i++}`'
@@ -66,6 +66,7 @@ h1, h2 {
 h3, p {
   color: black;
   margin: 0;
+  padding-top: 10px;
 }
 
 .videoMask {

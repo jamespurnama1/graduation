@@ -1,7 +1,7 @@
 <template>
   <div class='page' style='padding: 0 8vw'>
     <div class='block'>
-      <h1>COVID-12</h1>
+      <h1>CREAID</h1>
       <img id='overlay' src='@/assets/logo_red.svg'>
       <ul class="card-list grid">
         <li v-for="(user, i) in allUsers" class="card-item" :key='`user${i}`'>
@@ -18,22 +18,23 @@
       </ul>
     </div>
     <div class='block center' style='margin-top:100px'>
-      <h1 style='font-size: 8.4vw; white-space: nowrap'>What is COVID-12</h1>
+      <h1 style='font-size: 8.4vw; white-space: nowrap'>What is CREAID?</h1>
       <div class='line' />
       <p id='about'>
-        As the world is still struggling with the outbreak of Covid-19,
-        at The One Academy, a new mind-altering, top-grade virus has just been found.
-        It is believed that once released, this virus will impact the world of design greatly.
-        we are the&nbsp;COVID-12.
+        The world is currently sick and suffering from the pandemic.
+        <br>But eureka!
+        The One Academy has successfully manifested a mind-altering, top grade creative cure.
+         <br>It is believed that once introduced,
+         this cure will impact the world of design&nbsp;greatly.
       </p>
       <img style='width: 28vw; height: 28vw; margin: 20px' src='@/assets/logo_red.svg'>
       <div class='line' />
       <div style='margin-bottom: 50px'>
-        <h2 style='font-size: 4.7vw; white-space: nowrap; text-align: center;'>
-          We are the creative virus&nbsp;12.
+        <h2 style='font-size: 6.5vw; white-space: nowrap; text-align: center;'>
+          We are the Cre-Aid,
         </h2>
-        <h2 style='font-size: 4.7vw; white-space: nowrap; text-align: center;'>
-          We are designed to&nbsp;spread.
+        <h2 style='font-size: 6.7vw; white-space: nowrap; text-align: center;'>
+          The creative cure.
         </h2>
       </div>
     </div>
@@ -71,6 +72,7 @@ export default {
 
 #about {
   width: 100%;
+  margin-left: 3%;
   font-size: 100%;
 }
 
@@ -104,6 +106,7 @@ export default {
 
 .card-list {
   grid-gap: 0;
+  margin-top: 1%;
 }
 
 #description {

@@ -4,12 +4,11 @@
       <img class='smallLogo' src='@/assets/logo_red.svg'>
       <div id='titleLogo'>
       <h2>The</h2>
-      <h2>Mutation</h2>
+      <h2>Antidote</h2>
       </div>
       <div class='center mutation'>
       <p>
-        Occurs when the viruses exchange creative info, idea strains
-        and efficiency.
+        The remedy specialised in counteracting particular <br>creative briefs.
         <br>
         <br>
         [Click to view our group works]
@@ -27,7 +26,12 @@
       class='projectBar black clickable'
       @click='expand(i)'>
       <h3 style='padding-left: 10%'>{{ projects.title }}</h3>
-      <feather style='margin-left: auto' type='plus' stroke='red' stroke-width='3' />
+      <feather
+      :ref='`icon${i}`'
+      style='margin-left: auto'
+      type='plus'
+      stroke='red'
+      stroke-width='3' />
       </div>
       <work
       v-show='`projects.expand${i}`'
@@ -60,23 +64,23 @@ export default {
       const expanded = document.querySelector('.expanded');
       const relative = document.querySelector('.relative');
       const bar = document.getElementById(`project${e}`);
+      // const icon = this.$refs.icon[e];
       const groupWork = document.querySelectorAll('.groupWork');
       const projectBar = document.getElementById(`projectBar${e}`);
+      // close the project & add black highlight hover
       if (bar.classList.contains('expanded')) {
         bar.classList.remove('expanded');
         projectBar.classList.add('black');
         groupWork[e].classList.remove('relative');
-        // console.log('closing', bar);
-        // console.log(groupWork[e]);
+        // expand the project & remove black highlight hover
       } else {
         bar.classList.add('expanded');
         projectBar.classList.remove('black');
         setTimeout(() => {
           groupWork[e].classList.add('relative');
         }, 500);
-        // console.log('opening', bar);
-        // console.log(groupWork[e]);
       }
+      // if clicked on itself then close
       if (expanded != null) {
         expanded.classList.remove('expanded');
         relative.classList.remove('relative');

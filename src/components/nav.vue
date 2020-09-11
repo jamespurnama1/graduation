@@ -6,11 +6,11 @@
           <router-link tag='li' to='/' class='margin'>
             <h4>About Us</h4>
           </router-link>
-          <router-link tag='li' to='/outbreak' class='margin'>
-            <h4 class='unexact'>The Outbreak</h4>
+          <router-link tag='li' to='/aid' class='margin'>
+            <h4 class='unexact'>The Aid</h4>
           </router-link>
-          <router-link tag='li' to='/mutation' class='margin'>
-            <h4 class='unexact'>The Mutation</h4>
+          <router-link tag='li' to='/antidote' class='margin'>
+            <h4 class='unexact'>The Antidote</h4>
           </router-link>
         </ul>
       </nav>

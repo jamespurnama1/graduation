@@ -3,29 +3,28 @@ import VueFullPage from 'vue-fullpage.js';
 import VueRouter from 'vue-router';
 import Buefy from 'buefy';
 import VueFeather from 'vue-feather';
-import VueCountdown from '@chenfengyuan/vue-countdown';
-// import notFound from '@/pages/notFound.vue';
-import landing from './landing.vue';
+import Splash from '@/pages/splash.vue';
 import App from './App.vue';
-import Individual from './pages/individual.vue';
-import Group from './pages/group.vue';
-import Personal from './pages/personal.vue';
 import store from './store';
+
+// const notFound = () => import('@/pages/notFound.vue');
+const Group = () => ({ component: import('@/pages/group.vue'), loading: Splash, delay: 200 });
+const Personal = () => import('@/pages/personal.vue');
+const landing = () => import('@/landing.vue');
+const Individual = () => import('@/pages/individual.vue');
 
 Vue.use(Buefy);
 Vue.use(VueRouter);
 Vue.use(VueFeather);
 Vue.use(VueFullPage);
-Vue.component(VueCountdown.name, VueCountdown);
 Vue.config.productionTip = false;
 
 const routes = [
   { path: '/', component: landing },
-  { path: '/outbreak', component: Individual },
-  { path: '/mutation', component: Group },
-  { name: 'weihang', path: '/outbreak/weihang', component: Personal },
+  { path: '/aid', component: Individual },
+  { path: '/antidote', component: Group },
   {
-    name: 'User', path: '/outbreak/:user', component: Personal, props: true,
+    name: 'User', path: '/aid/:user', component: Personal, props: true,
   },
   { name: '404', path: '/404', component: landing },
   { path: '*', redirect: '/404' },

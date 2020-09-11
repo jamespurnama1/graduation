@@ -39,8 +39,8 @@
     </div>
 
     <p style='grid-area: desc'
+    v-html='data[0].bio'
     class='desc'>
-      {{ data[0].bio }}
     </p>
     </div>
     <div class='line' />
@@ -50,8 +50,9 @@
       style='font-style: oblique; margin-bottom: 20px'>
       {{ data[0].works.one.type }}
     </h4>
-      <p class='desc' style='max-width: 900px; text-align: center'>
-      {{ data[0].works.one.desc }}
+      <p
+      v-html='data[0].works.one.desc'
+      class='desc' style='max-width: 900px; text-align: center'>
       </p>
     </div>
 
@@ -67,8 +68,9 @@
     style='font-style: oblique; margin-bottom: 20px'>
       {{ data[0].works.two.type }}
     </h4>
-    <p class='desc' style='max-width: 900px; text-align: center'>
-      {{ data[0].works.two.desc }}
+    <p
+    v-html='data[0].works.two.desc'
+    class='desc' style='max-width: 900px; text-align: center'>
     </p>
     </div>
 
@@ -84,8 +86,9 @@
     style='font-style: oblique; margin-bottom: 20px'>
       {{ data[0].works.three.type }}
     </h4>
-    <p class='desc' style='max-width: 900px; text-align: center'>
-      {{ data[0].works.three.desc }}
+    <p
+    v-html='data[0].works.three.desc'
+    class='desc' style='max-width: 900px; text-align: center'>
     </p>
     </div>
 
@@ -95,7 +98,7 @@
       :path='data[0].path'
       style='width: 100%' />
 
-    <router-link :to='`/outbreak/${allUsers[next].path}`'>
+    <router-link :to='`/aid/${allUsers[next].path}`'>
     <p class='desc' style='text-align: right; margin-top: 50px'>
       Next - {{ allUsers[next].name }} >
     </p>
@@ -136,6 +139,9 @@ export default {
     }
     const pathArray = this.allUsers.map((person) => person.path);
     this.next = pathArray.indexOf(this.user) + 1;
+    if (this.next === 12) {
+      this.next = 0;
+    }
   },
 };
 </script>
