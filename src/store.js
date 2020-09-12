@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   namespaced: true,
   state: {
-    splash: true,
+    splash: false,
     progress: '0%',
   },
   mutations: {

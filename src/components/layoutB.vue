@@ -2,17 +2,22 @@
   <div class='block'>
     <h3 style='margin: 5% 0 1% 0'>{{ works.sections.two.name }}</h3>
     <div class='grid'>
-      <img v-for='(secondImg, i) in works.sections.two.img'
+      <div v-for='(secondImg, i) in works.sections.two.img'
       :key='i'
-      :id='`grid-item-${i}`'
+      :id='`grid-item-${i}`'>
+      <img
       :src="require(`@/assets/people/${path}/work${works.id}/two/${secondImg}`)">
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import safari from '@/components/safari';
+
 export default {
   name: 'Work',
+  mixins: [safari],
   props: {
     works: Object,
     path: String,
@@ -20,8 +25,6 @@ export default {
   data() {
     return {
     };
-  },
-  methods: {
   },
 };
 </script>
@@ -31,18 +34,26 @@ export default {
 
 #grid-item-0 {
   grid-area: top;
+  height: auto;
+  overflow: hidden;
 }
 
 #grid-item-1 {
   grid-area: left;
+  height: auto;
+  overflow: hidden;
 }
 
 #grid-item-2 {
   grid-area: rightone;
+  height: auto;
+  overflow: hidden;
 }
 
 #grid-item-3 {
   grid-area: righttwo;
+  height: auto;
+  overflow: hidden;
 }
 
 .grid {

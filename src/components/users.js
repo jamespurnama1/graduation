@@ -416,7 +416,7 @@ LAU WAI YEE
             },
             two: {
               id: 2,
-              layout: 'layoutA',
+              layout: 'layoutB',
               name: 'Zensuous',
               type: 'Packaging',
               desc: 'Zensuous is a proud homegrown brand providing and supplying quality aromatherapy and spa related products. They decided to launch a special gift set featuring natural massage oil and scented candles. Every ingredient used in the products are illustrated in the&nbsp;packaging.',
@@ -433,7 +433,7 @@ LAU WAI YEE
             },
             three: {
               id: 3,
-              layout: 'layoutB',
+              layout: 'layoutA',
               name: 'The Last Day On Earth',
               type: 'Publication',
               desc: 'This publication project is all about Malaysian traditional funerals: from the essential preparation, the procedure to every taboo to be avoided during these ceremonies. Since there are three main races in Malaysia, which are Malay, Chinese and Indian, the project contains three books, each dedicated to one&nbsp;race.',
@@ -591,7 +591,7 @@ SEOW WEI HANG
           works: {
             one: {
               id: 1,
-              layout: 'carouselA',
+              layout: 'carouselB',
               name: 'Twolip Dreadshoppe',
               type: 'Corporate Identity',
               desc: 'Twolip Dreadshoppe an exclusive salon that offers special hairstyling services such as braids, cornrows and dreadlocks. The logo is inspired by the beauty of dreadlocks, complex like the root and will turn absolutely gorgeous like the flower upon&nbsp;finishing.',

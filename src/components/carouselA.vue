@@ -22,16 +22,19 @@
 
     <h3 style='margin: 5% 0 1% 0'>{{ works.sections.two.name }}</h3>
     <div class='grid'>
-      <img v-for='(secondImg, i) in works.sections.two.img'
+      <div v-for='(secondImg, i) in works.sections.two.img'
       :key='i'
-      :id='`grid-item-${i}`'
+      :id='`grid-item-${i}`'>
+      <img
       :src="require(`@/assets/people/${path}/work${works.id}/two/${secondImg}`)">
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import { Carousel, Slide } from 'vue-carousel';
+import safari from '@/components/safari';
 
 export default {
   name: 'Work',
@@ -39,6 +42,7 @@ export default {
     works: Object,
     path: String,
   },
+  mixins: [safari],
   components: {
     Carousel,
     Slide,
@@ -57,22 +61,32 @@ export default {
 
 #grid-item-0 {
   grid-area: top;
+  height: auto;
+  overflow: hidden;
 }
 
 #grid-item-1 {
   grid-area: leftone;
+  height: auto;
+  overflow: hidden;
 }
 
 #grid-item-2 {
   grid-area: rightone;
+  height: auto;
+  overflow: hidden;
 }
 
 #grid-item-3 {
   grid-area: lefttwo;
+  height: auto;
+  overflow: hidden;
 }
 
 #grid-item-4 {
   grid-area: righttwo;
+  height: auto;
+  overflow: hidden;
 }
 
 .grid {
@@ -96,6 +110,7 @@ export default {
 img, video {
   width: 100%;
   min-height: 100%;
+  max-height: 100%;
   height: auto;
   object-fit: cover;
 }

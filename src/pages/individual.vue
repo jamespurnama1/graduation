@@ -5,7 +5,7 @@
       <div>
       <h2>The Aid</h2>
       <p>
-        The 12 cures that are ready to help the creative industry.
+        The 12 cures that are ready to<span /> help the creative industry.
         <br>
          [Click to view our individual works]
       </p>
@@ -102,6 +102,9 @@ p {
 @media (min-width: 480px){
   .grid {
     grid-template-columns: repeat(1, minmax(100px, 2fr));
+  }
+  p span::before {
+    content: "\A";
   }
 }
 

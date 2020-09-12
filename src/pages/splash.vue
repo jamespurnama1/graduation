@@ -70,7 +70,6 @@ export default {
   watch: {
     progress(newValue) {
       const bar = document.querySelector('.progress');
-      console.log(bar);
       bar.style.width = newValue;
       this.tl2.pause(newValue.replace('%', '') - 1);
       setTimeout(() => {
