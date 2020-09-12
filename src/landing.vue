@@ -5,14 +5,15 @@
       <img id='overlay' src='@/assets/logo_red.svg'>
       <ul class="card-list grid">
         <li v-for="(user, i) in allUsers" class="card-item" :key='`user${i}`'>
-         <div class='videoMask'>
+         <div
+         class='videoMask'>
             <img
             :ref='`photo${i++}`'
             muted
             preload="auto"
             autobuffer
             class='photo'
-            :src="require(`@/assets/people/${user.path}/face.jpg`)">
+            :src="`/faces/${user.path}.jpg`">
          </div>
         </li>
       </ul>

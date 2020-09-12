@@ -14,15 +14,19 @@
     <div>
       <ul class="card-list grid">
         <li v-for="(user, i) in allUsers" class="card-item" :key='`user${i}`'>
-         <router-link :to="'aid/' + user.path">
-         <div class='videoMask'>
+         <router-link
+         @mouseover.native="$set(face,i,'1')"
+         @mouseleave.native="$set(face,i,'')"
+         :to="'aid/' + user.path">
+         <div
+         class='videoMask'>
             <img
-            :ref='`photo${i++}`'
+            :ref='`photo${i}`'
             class='photo'
-            :id='`photo${i++}`'
-            :src="require(`@/assets/people/${user.path}/face.jpg`)">
+            :id='`photo${i}`'
+            :src="`./faces/${user.path}${face[i]}.jpg`">
          </div>
-            <p class='name'>{{i-1}}. {{ user.name }}</p>
+            <p class='name'>{{i+1}}. {{ user.name }}</p>
           </router-link>
         </li>
       </ul>
@@ -40,7 +44,7 @@ export default {
   mixins: [users, loading],
   data() {
     return {
-      face: 'face',
+      face: ['', '', '', '', '', '', '', '', '', '', '', ''],
     };
   },
   directives: {
