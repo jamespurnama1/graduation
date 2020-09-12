@@ -190,12 +190,15 @@ h1, h2 {
   width: 35px;
 }
 
+.page {
+  padding: 0;
+}
+
 @media (max-width: 736px){
   .grid {
     grid-template-columns: repeat(1, minmax(100px, 2fr));
   }
-  p
-  .smallLogo {
+  p.smallLogo {
     height: 30%;
     width: 50%;
     margin-top: 2%;
@@ -206,20 +209,18 @@ h1, h2 {
   }
 }
 
-.page {
-  padding: 0;
-}
-
 @media (max-width: 980px) {
   .mutation {
     width: 100vw;
     height: 10vw;
-    border-top-style: solid;
     border-left-style: none;
+    text-align: center;
+    padding: 0;
   }
   .title {
     flex-wrap: wrap;
     height: initial;
+    padding-top: 4vw;
   }
 }
 </style>

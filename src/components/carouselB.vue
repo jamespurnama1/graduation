@@ -100,6 +100,6 @@ img, video {
 h3 {
   text-align: center;
   align-self: center;
-  font-size: 2vw;
+  font-size: calc(5px + 2vw);
 }
 </style>

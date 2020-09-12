@@ -104,10 +104,11 @@ export default {
   border: 3px solid white;
   width: 50vw;
   height: 30px;
+  overflow: hidden;
 }
 
 .progress {
-  height: 100%;
+  height: 120%;
   width: 0;
   background: white;
   transition: width 1s ease;

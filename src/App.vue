@@ -112,13 +112,12 @@ button {
   padding: 0 10px;
   color: white;
   background-color: $primary;
-  border: solid 3px white;
+  border: solid 3px $primary;
   margin-left: 15px;
 }
 
 button:hover {
   background-color: white;
-  border: 3px solid $primary;
   color: $primary;
 }
 

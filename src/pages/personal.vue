@@ -1,7 +1,7 @@
 <template>
   <div class='page personal' style='grid-area: img' v-images-loaded:on.progress="imageProgress">
     <h2 class='desc red' style='font-weight: bold'>{{ data[0].name }}</h2>
-    <div class='line' style='margin-top: 20px' />
+    <div class='line' />
     <div class='data'>
     <div class='mask'>
     <img
@@ -47,7 +47,7 @@
     <div class='intro'>
       <h4 class='desc' style='font-weight: bold;color: black'>{{ data[0].works.one.name }}</h4>
       <h4 class='desc'
-      style='font-style: oblique; margin-bottom: 20px'>
+      style='font-style: oblique'>
       {{ data[0].works.one.type }}
     </h4>
       <p
@@ -65,7 +65,7 @@
       <div class='intro'>
       <h4 class='desc' style='font-weight: bold;color: black'>{{ data[0].works.two.name }}</h4>
       <h4 class='desc'
-      style='font-style: oblique; margin-bottom: 20px'>
+      style='font-style: oblique'>
         {{ data[0].works.two.type }}
       </h4>
       <p
@@ -83,7 +83,7 @@
       <div class='intro'>
       <h4 class='desc' style='font-weight: bold;color: black'>{{ data[0].works.three.name }}</h4>
       <h4 class='desc'
-      style='font-style: oblique; margin-bottom: 20px'>
+      style='font-style: oblique'>
         {{ data[0].works.three.type }}
       </h4>
       <p
@@ -156,7 +156,7 @@ export default {
 @import './src/styles/fonts.module.scss';
 
 .page {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .bio {
@@ -167,6 +167,10 @@ export default {
 .underline:hover {
   text-decoration: underline;
   color: $primary;
+}
+
+button{
+  margin: 0;
 }
 
 button p {
@@ -186,7 +190,6 @@ button:hover p {
   font-weight: normal;
   color: black;
   margin: 0;
-  margin-left: 20px;
 }
 
 .intro {
@@ -205,8 +208,8 @@ button:hover p {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: minmax(200px, 25vw) auto;
-  grid-gap: 30px;
-  margin-left: 20px;
+  grid-gap: 50px;
+  // margin-left: 20px;
   align-items: start;
   grid-template-areas:
     "img data"
@@ -238,20 +241,26 @@ h4 {
 
 h3 {
   font-size: calc(10px + 1vw);
+  margin: 0;
+}
+
+p {
+  margin: 0;
 }
 
 a:hover p {
   color: $primary;
 }
 
-@media screen and (max-width: 480px){
+@media (max-width: 480px){
   .data {
     grid-template-columns: 100%;
-    grid-template-rows: 80vw auto auto;
+    grid-template-rows: 126vw auto auto;
     grid-template-areas:
     "img"
     "data"
     "desc";
+    grid-gap: 10px;
   }
   .bio{
     max-width: initial;
@@ -260,12 +269,22 @@ a:hover p {
   img {
     width: 100%;
   }
+  h2 {
+    text-align: center;
+  }
+  h4.desc:nth-child(2) {
+    margin-bottom: 10px;
+  }
+
+  .line {
+    margin: 4% 0;
+  }
 }
 
-@media screen and (min-width: 980px){
+@media (min-width: 980px){
   .data {
     width: 85%;
-    grid-template-columns: 22% auto 35%;
+    grid-template-columns: 22% 30% 35%;
     grid-template-rows: minmax(300px, 25vw);
     grid-template-areas:
     "img data desc";

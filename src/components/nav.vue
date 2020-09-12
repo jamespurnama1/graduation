@@ -134,4 +134,13 @@ li:hover {
   transform: translateY(-100%);
 }
 
+@media (max-width: 480px) {
+  nav {
+    justify-content: center;
+  }
+  ul {
+    padding: 0;
+  }
+}
+
 </style>

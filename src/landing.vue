@@ -30,7 +30,7 @@
       </p>
       <img style='width: 28vw; height: 28vw; margin: 20px' src='@/assets/logo_red.svg'>
       <div class='line' />
-      <div style='margin-bottom: 50px'>
+      <div>
         <h2 style='font-size: 6.5vw; white-space: nowrap; text-align: center;'>
           We are the Cre-Aid,
         </h2>
