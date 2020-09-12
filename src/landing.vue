@@ -22,7 +22,7 @@
       <h1 style='font-size: 8.4vw; white-space: nowrap'>What is CREAID?</h1>
       <div class='line' />
       <p id='about'>
-        The world is currently sick and suffering from the pandemic.
+        The world is currently sick and suffering from the&nbsp;pandemic.
         <br>But eureka!
         The One Academy has successfully manifested a mind-altering, top grade creative cure.
          <br>It is believed that once introduced,
