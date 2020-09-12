@@ -44,6 +44,8 @@ export default {
           this.loadAnim();
           window.clearInterval(timer);
           setTimeout(() => {
+            const app = document.getElementById('app');
+            app.classList.remove('noScroll');
             this.$store.commit('removeSplash');
           }, 3500);
         }
@@ -85,6 +87,8 @@ export default {
       ease: 'none',
       duration: 100,
     });
+    const app = document.getElementById('app');
+    app.classList.add('noScroll');
     setTimeout(() => {
       this.$parent.$emit('start');
     }, 10);

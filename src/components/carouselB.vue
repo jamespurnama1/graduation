@@ -12,6 +12,7 @@
       :mouse-drag='true'>
         <slide
         v-for='(img) in works.sections.one.img'
+        style='display: flex; justify-content: center; align-items: center; height: 39.5vw'
         :key='img'>
           <video muted loop autoplay preload="true"
           :poster="require(`@/assets/people/${path}/work${works.id}/one/${img}`)"

@@ -95,12 +95,20 @@ export default {
 }
 
 .VueCarousel-inner {
-  height: 47vw !important;
+  // height: 47vw !important;
 }
 
 .VueCarousel-dot-container {
   position: absolute !important;
   transform: translateY(-200%) !important;
+}
+
+.VueCarousel-dot {
+  min-height: 5px;
+  min-width: 5px;
+  width: 0.5vw !important;
+  height: 0.5vw !important;
+  margin-left: 0;
 }
 
 .VueCarousel-dot {
@@ -245,6 +253,10 @@ p {
 
 body {
   margin: 0;
+}
+
+body.noScroll {
+  overflow: hidden;
 }
 
 html {

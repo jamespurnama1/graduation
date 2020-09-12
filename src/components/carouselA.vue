@@ -12,7 +12,8 @@
       :mouse-drag='true'>
       <slide
         v-for='(img) in works.sections.one.img'
-        :key='img'>
+        :key='img'
+        style='display: flex; justify-content: center; align-items: center; height: 47vw'>
         <video muted loop autoplay preload="true"
           :poster="require(`@/assets/people/${path}/work${works.id}/one/${img}`)"
           :src="require(`@/assets/people/${path}/work${works.id}/one/${img}`)" />
@@ -95,7 +96,7 @@ export default {
 img, video {
   width: 100%;
   min-height: 100%;
-  max-height: 100%;
+  height: auto;
   object-fit: cover;
 }
 

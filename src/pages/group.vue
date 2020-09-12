@@ -122,7 +122,7 @@ export default {
 
 .groupWork {
   position: absolute;
-  padding: 0 15%;
+  padding: 50px 15%;
 }
 
 #projectBar0 {

@@ -60,7 +60,7 @@
         v-for='(item, index) in projects.carousel'
         :key='index'
         :data-index='index'
-        style='display: flex; justify-content: center; align-items: center;'>
+        style='display: flex; justify-content: center; align-items: center; height: 39.5vw'>
           <video
           :controls="item.src === 'img0.mp4'"
           :ref='`vidCarousel${index}`'
@@ -70,7 +70,7 @@
       </carousel>
     <p
     v-html='`${projects.carousel[currentIndex].caption}`'
-    style='margin-top: 25px; margin-bottom: 50px; text-align: center;'>
+    style='margin-top: 25px; text-align: center;'>
     </p>
   </div>
 </template>
@@ -123,8 +123,8 @@ export default {
 .img {
   width: 100%;
   overflow: hidden;
-  margin: 50px auto;
-  margin-bottom: 20px;
+  // margin: 50px auto;
+  // margin-bottom: 20px;
 }
 
 img, video {
