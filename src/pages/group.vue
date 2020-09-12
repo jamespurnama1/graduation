@@ -8,7 +8,7 @@
       </div>
       <div class='center mutation'>
       <p>
-        The remedy specialised in counteracting particular <br>creative briefs.
+        The remedy specialised in counteracting particular creative briefs.
         <br>
         [Click to view our group works]
       </p>
