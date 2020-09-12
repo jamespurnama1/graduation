@@ -17,10 +17,10 @@
       <div id='footer'>
         <p style='font-size: calc(5px + 1vw);'>Copyright 2020 TheCREAID</p>
         <div style='display: flex; flex-direction: row'>
-          <a href='http://instagram.com/the_creaid' style='color: black; padding: 0 20%'>
+          <a href='http://instagram.com/the_creaid' target='_blank' style='color: black; padding: 0 20%'>
             <feather type='instagram' stroke-width='1.8' />
           </a>
-          <a href='http://www.facebook.com/Ad1708GraduationExhibition' style='color: black'>
+          <a href='http://www.facebook.com/Ad1708GraduationExhibition' target='_blank' style='color: black'>
             <feather type='facebook' stroke-width='1.6' />
           </a>
         </div>
