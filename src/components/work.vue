@@ -61,7 +61,8 @@
         :key='index'
         :data-index='index'
         style='display: flex; justify-content: center; align-items: center; height: 39.5vw'>
-          <video
+          <component
+          :is='item.tag'
           :controls="item.src === 'img0.mp4'"
           :ref='`vidCarousel${index}`'
           :poster="require(`@/assets/group/project${img}/${item.src}`)"
@@ -84,6 +85,10 @@ export default {
     projects: Object,
     img: Number,
   },
+  // render: (h) => {
+  // const tag = this.tag ? 'video' : 'img'
+  // return h(tag, ... );
+  // },
   components: {
     Carousel,
     Slide,

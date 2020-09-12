@@ -71,7 +71,7 @@ export default {
     progress(newValue) {
       const bar = document.querySelector('.progress');
       bar.style.width = newValue;
-      this.tl2.pause(newValue.replace('%', '') - 1);
+      this.tl2.pause(newValue.replace('%', '') - 0.1);
       setTimeout(() => {
         this.delay = false;
       }, 2000);
@@ -119,7 +119,6 @@ export default {
 
 p {
   color: white;
-  font-family: sans-serif;
   font-weight: bold;
   margin: 10px 0;
 }
@@ -142,12 +141,4 @@ p {
   height: 15vw;
   transition: all 1s ease;
 }
-
-// button:hover p {
-//   color: $primary;
-// }
-
-// button:hover .feather {
-//   stroke: $primary;
-// }
 </style>

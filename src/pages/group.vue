@@ -81,11 +81,11 @@ export default {
         bar.classList.remove('expanded');
         projectBar.classList.add('black');
         groupWork[e].classList.remove('relative');
-        gsap.to(plus, {
-          rotation: 0,
-          ease: 'power3.out',
-          duration: 0.5,
-        });
+        // gsap.to(plus, {
+        //   rotation: 0,
+        //   ease: 'power3.out',
+        //   duration: 0.5,
+        // });
         setTimeout(() => {
           // plus.style.display = 'initial';
           // minus.style.display = 'none';
@@ -93,11 +93,11 @@ export default {
         // expand the project & remove black highlight hover
       } else {
         bar.classList.add('expanded');
-        gsap.to(plus, {
-          rotation: +45,
-          ease: 'power3.out',
-          duration: 0.5,
-        });
+        // gsap.to(plus, {
+        //   rotation: +45,
+        //   ease: 'power3.out',
+        //   duration: 0.5,
+        // });
         projectBar.classList.remove('black');
         setTimeout(() => {
           groupWork[e].classList.add('relative');
@@ -217,10 +217,15 @@ h1, h2 {
   margin: auto 10px auto 0;
   min-width: 5px;
   width: 35px;
+  transition: transform 1s ease;
 }
 
 .page {
   padding: 0;
+}
+
+.expanded > .projectBar > .feather {
+  transform: rotate(45);
 }
 
 @media (max-width: 736px){
