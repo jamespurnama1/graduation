@@ -1,4 +1,3 @@
-import VueFullPage from 'vue-fullpage.js';
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
@@ -18,7 +17,6 @@ Vue.use(Buefy);
 Vue.use(Vuex);
 Vue.use(VueRouter);
 Vue.use(VueFeather);
-Vue.use(VueFullPage);
 Vue.component(VueCountdown.name, VueCountdown);
 Vue.config.productionTip = false;
 
