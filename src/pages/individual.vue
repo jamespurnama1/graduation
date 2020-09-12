@@ -92,15 +92,16 @@ h3, p {
   margin-bottom: 100px;
 }
 
+h2 {
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+
 @media (min-width: 480px){
   .grid {
     grid-template-columns: repeat(1, minmax(100px, 2fr));
-  }
-  h2 {
-    text-align: center;
-  }
-  p {
-    text-align: center;
   }
 }
 
