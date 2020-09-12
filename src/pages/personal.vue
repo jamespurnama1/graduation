@@ -5,7 +5,7 @@
     <div class='data'>
     <div class='mask'>
     <img
-      :src="`./faces/${data[0].path}.jpg`"
+      :src="`../faces/${data[0].path}.jpg`"
       style='grid-area: img; margin-bottom: 10px'>
     </div>
 
