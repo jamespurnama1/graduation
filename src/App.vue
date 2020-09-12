@@ -87,7 +87,7 @@ export default {
   font-family: "AXIS" !important;
   font-size: calc(10px + 1vw) !important;
   color: #eb2027 !important;
-  transform: translate(0%, -100%) !important;
+  // transform: translate(0%, -100%) !important;
 }
 
 .VueCarousel-slide {

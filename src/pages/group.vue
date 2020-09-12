@@ -221,15 +221,16 @@ h1, h2 {
   margin: auto 10px auto 0;
   min-width: 5px;
   width: 35px;
-  transition: transform 1s ease;
+  transition: transform .3s ease;
+  transform: rotate(45deg);
 }
 
 .page {
   padding: 0;
 }
 
-.expanded > .projectBar > .feather {
-  transform: rotate(45);
+.black .feather {
+  transform: rotate(0);
 }
 
 @media (max-width: 736px){
