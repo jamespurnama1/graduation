@@ -1,8 +1,8 @@
 <template>
   <div class='page' style='padding: 0 8vw' v-images-loaded:on.progress="imageProgress">
-    <div class='block'>
-      <h1>CREAID</h1>
-      <img id='overlay' src='@/assets/logo_red.svg'>
+    <h1>CREAID</h1>
+    <div class='block' style='position: relative'>
+      <img v-if='renderOverlay' id='overlay' src='@/assets/logo_red.svg'>
       <ul class="card-list grid">
         <li v-for="(user, i) in allUsers" class="card-item" :key='`user${i}`'>
          <div
@@ -22,11 +22,11 @@
       <h1 style='font-size: 8.4vw; white-space: nowrap'>What is CREAID?</h1>
       <div class='line' />
       <p id='about'>
-        The world is currently sick and suffering from the&nbsp;pandemic.
+        The world is currently sick and suffering from<span v-html='` the&nbsp;pandemic`'></span>.
         <br>But eureka!
         The One Academy has successfully manifested a mind-altering, top grade creative cure.
          <br>It is believed that once introduced,
-         this cure will impact the world of design&nbsp;greatly.
+         this cure will impact the world of <span v-html='` design&nbsp;greatly`'></span>.
       </p>
       <img style='width: 28vw; height: 28vw; margin: 20px' src='@/assets/logo_red.svg'>
       <div class='line' />
@@ -54,6 +54,7 @@ export default {
   data() {
     return {
       tl: gsap.timeline(),
+      renderOverlay: false,
     };
   },
   directives: {
@@ -64,14 +65,22 @@ export default {
       const el = this.$el.getElementsByClassName('nextBlock')[e];
       el.scrollIntoView({ behavior: 'smooth' });
     },
+    gsap() {
+      this.tl.to('#overlay', {
+        scale: 1.1,
+        ease: 'power1.inOut',
+        yoyo: true,
+        repeat: -1,
+        duration: 5,
+      });
+    },
   },
   mounted() {
-    this.tl.to('#overlay', {
-      scale: 1.1,
-      ease: 'power1.inOut',
-      yoyo: true,
-      repeat: -1,
-      duration: 5,
+    this.$nextTick(() => {
+      this.renderOverlay = true;
+      setTimeout(() => {
+        this.gsap();
+      }, 500);
     });
   },
 };
@@ -105,7 +114,9 @@ export default {
   position: absolute;
   z-index: 5;
   width: 50%;
-  top: 26vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   mix-blend-mode: multiply;
 }
 
@@ -130,20 +141,11 @@ export default {
   width: 30%;
 }
 
-@media (max-width: 480px) {
-  #overlay {
-    top: 28vw;
-  }
-}
-
 @media (min-width: 736px) {
   #about {
     font-size: 160%;
     margin-right: auto;
     width: 50%;
-  }
-  #overlay {
-    top: 24vw;
   }
 }
 </style>

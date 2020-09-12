@@ -2,12 +2,11 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Buefy from 'buefy';
 import VueFeather from 'vue-feather';
-import Splash from '@/pages/splash copy.vue';
 import App from './App.vue';
 import store from './store';
 
 // const notFound = () => import('@/pages/notFound.vue');
-const Group = () => ({ component: import('@/pages/group.vue'), loading: Splash, delay: 200 });
+const Group = () => import('@/pages/group.vue');
 const Personal = () => import('@/pages/personal.vue');
 const landing = () => import('@/landing.vue');
 const Individual = () => import('@/pages/individual.vue');
