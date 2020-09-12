@@ -23,9 +23,9 @@
       <div class='line' />
       <p id='about'>
         The world is currently sick and suffering from<span v-html='` the&nbsp;pandemic`'></span>.
-        <br>But eureka!
+        But eureka!
         The One Academy has successfully manifested a mind-altering, top grade creative cure.
-         <br>It is believed that once introduced,
+        It is believed that once introduced,
          this cure will impact the world of <span v-html='` design&nbsp;greatly`'></span>.
       </p>
       <img style='width: 28vw; height: 28vw; margin: 20px' src='@/assets/logo_red.svg'>
