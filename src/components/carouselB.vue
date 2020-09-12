@@ -93,7 +93,7 @@ export default {
   min-width: 0;
   min-height: 0;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: minmax(0, 47vw) minmax(0, 31.5vw) minmax(0, 31.5vw);
+  grid-template-rows: minmax(0, 47vw) minmax(0, 31.5vw) minmax(0, 63vw);
   grid-template-areas:
     "top top"
     "leftone rightone"
