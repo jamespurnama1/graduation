@@ -7,12 +7,12 @@
         <countdown :time='time'>
           <template slot-scope="props">
             <h1 style='display: flex; justify-content: center'>
-            {{ props.hours }} hours
+            {{ props.days }} days
             </h1>
             <div style='display: flex; justify-content: center'>
-            <!-- <h3> -->
-            <!-- {{ props.hours }}&nbsp;hours -->
-            <!-- </h3> -->
+            <h3>
+            {{ props.hours }}&nbsp;hours
+            </h3>
             <h3>
             {{ props.minutes }}&nbsp;minutes
             </h3>
@@ -34,7 +34,7 @@ export default {
   Name: 'About',
   data() {
     const now = new Date();
-    const grad = new Date('September 12, 2020 18:30:00 GMT+0800');
+    const grad = new Date('September 14, 2020 10:00:00 GMT+0800');
     return {
       time: grad - now,
     };
