@@ -399,7 +399,7 @@ LAU WAI YEE
           works: {
             one: {
               id: 1,
-              layout: 'carouselA',
+              layout: 'carouselB',
               name: 'Twolip Dreadshoppe',
               type: 'Corporate Identity',
               desc: 'Twolip Dreadshoppe an exclusive salon that offers special hairstyling services such as braids, cornrows and dreadlocks. To form the logo, I’ve rolled the braids and snake together to represent the natural formation of dreadlocks. The reason behind the imagery of a snake is that the snake brings out feelings of creative self expression unified with a naturalistic sense of&nbsp;style.',

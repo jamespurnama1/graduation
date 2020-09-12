@@ -6,7 +6,7 @@
     <div class='mask'>
     <img
       :src="`../faces/${data[0].path}.jpg`"
-      style='grid-area: img; margin-bottom: 10px'>
+      class='photo'>
     </div>
 
     <div class='bio'>
@@ -155,6 +155,16 @@ export default {
 <style lang="scss" scoped>
 @import './src/styles/fonts.module.scss';
 
+.photo {
+  grid-area: img;
+  position: relative;
+  width: 100%;
+  height: initial;
+  min-height: 100%;
+  object-fit: cover;
+  top: 40%;
+}
+
 .page {
   margin-bottom: 50px;
 }
@@ -219,7 +229,7 @@ button:hover p {
 img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .mask {
@@ -275,9 +285,11 @@ a:hover p {
   h4.desc:nth-child(2) {
     margin-bottom: 10px;
   }
-
   .line {
     margin: 4% 0;
+  }
+  .photo {
+    top: 0;
   }
 }
 
@@ -288,6 +300,9 @@ a:hover p {
     grid-template-rows: minmax(300px, 25vw);
     grid-template-areas:
     "img data desc";
+  }
+  .photo {
+    top: 0;
   }
 }
 </style>

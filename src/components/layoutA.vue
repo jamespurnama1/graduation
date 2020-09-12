@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import safari from '@/components/safari';
+// import safari from '@/components/safari';
 
 export default {
   name: 'Work',
-  mixins: [safari],
+  // mixins: [safari],
   props: {
     works: Object,
     path: String,
@@ -71,7 +71,7 @@ export default {
   min-width: 0;
   min-height: 0;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: minmax(0, 54vw) minmax(0, 34.5vw) minmax(0, 34.5vw);
+  grid-template-rows: minmax(0, 47vw) minmax(0, 31.5vw) minmax(0, 31.5vw);
   grid-template-areas:
     "top top"
     "leftone rightone"

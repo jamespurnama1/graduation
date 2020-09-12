@@ -12,7 +12,7 @@
       :mouse-drag='true'>
         <slide
         v-for='(img) in works.sections.one.img'
-        style='display: flex; justify-content: center; align-items: center; height: 39.5vw'
+        style='display: flex; justify-content: center; align-items: center; height: 47vw'
         :key='img'>
           <video muted loop autoplay preload="true"
           :poster="require(`@/assets/people/${path}/work${works.id}/one/${img}`)"
@@ -33,7 +33,7 @@
 
 <script>
 import { Carousel, Slide } from 'vue-carousel';
-import safari from '@/components/safari';
+// import safari from '@/components/safari';
 
 export default {
   name: 'Work',
@@ -41,7 +41,7 @@ export default {
     works: Object,
     path: String,
   },
-  mixins: [safari],
+  // mixins: [safari],
   components: {
     Carousel,
     Slide,
@@ -93,7 +93,7 @@ export default {
   min-width: 0;
   min-height: 0;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: minmax(0, 54vw) minmax(0, 34.5vw) minmax(0, 61.3vw);
+  grid-template-rows: minmax(0, 47vw) minmax(0, 31.5vw) minmax(0, 31.5vw);
   grid-template-areas:
     "top top"
     "leftone rightone"
