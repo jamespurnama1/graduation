@@ -10,7 +10,6 @@
       <p>
         The remedy specialised in counteracting particular <br>creative briefs.
         <br>
-        <br>
         [Click to view our group works]
       </p>
       </div>
@@ -217,10 +216,15 @@ h1, h2 {
     text-align: center;
     padding: 0;
   }
+  .smallLogo{
+    width: 18vw;
+    height: 18vw;
+  }
   .title {
     flex-wrap: wrap;
     height: initial;
     padding-top: 4vw;
+    flex-direction: column;
   }
 }
 </style>
