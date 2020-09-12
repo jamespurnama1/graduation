@@ -2,7 +2,7 @@
   <div class='page' style='padding: 0 8vw' v-images-loaded:on.progress="imageProgress">
     <h1>CREAID</h1>
     <div class='block' style='position: relative'>
-      <img v-if='renderOverlay' id='overlay' src='@/assets/logo_red.svg'>
+      <img id='overlay' src='@/assets/logo_red.svg'>
       <ul class="card-list grid">
         <li v-for="(user, i) in allUsers" class="card-item" :key='`user${i}`'>
          <div
@@ -65,23 +65,21 @@ export default {
       const el = this.$el.getElementsByClassName('nextBlock')[e];
       el.scrollIntoView({ behavior: 'smooth' });
     },
-    gsap() {
-      this.tl.to('#overlay', {
+  },
+  mounted() {
+    this.tl.set('#overlay', {
+      xPercent: -50,
+      yPercent: -50,
+      left: '50%',
+      top: '50%',
+    })
+      .to('#overlay', {
         scale: 1.1,
         ease: 'power1.inOut',
         yoyo: true,
         repeat: -1,
         duration: 5,
       });
-    },
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.renderOverlay = true;
-      setTimeout(() => {
-        this.gsap();
-      }, 500);
-    });
   },
 };
 
@@ -114,9 +112,9 @@ export default {
   position: absolute;
   z-index: 5;
   width: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
   mix-blend-mode: multiply;
 }
 

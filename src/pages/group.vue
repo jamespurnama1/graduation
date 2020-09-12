@@ -33,13 +33,6 @@
       type='plus'
       stroke='red'
       stroke-width='3' />
-      <feather
-      v-show='minus'
-      :id='`minus${i}`'
-      style='margin-left: auto; display: none;'
-      type='minus'
-      stroke='red'
-      stroke-width='3' />
       </div>
       <work
       v-show='`projects.expand${i}`'
@@ -80,7 +73,6 @@ export default {
       const relative = document.querySelector('.relative');
       const bar = document.getElementById(`project${e}`);
       const plus = document.getElementById(`icon${e}`);
-      const minus = document.getElementById(`minus${e}`);
       // const icon = this.$refs.icon[e];
       const groupWork = document.querySelectorAll('.groupWork');
       const projectBar = document.getElementById(`projectBar${e}`);
@@ -89,43 +81,43 @@ export default {
         bar.classList.remove('expanded');
         projectBar.classList.add('black');
         groupWork[e].classList.remove('relative');
-        gsap.to(minus, {
-          rotation: 90,
+        gsap.to(plus, {
+          rotation: 0,
           ease: 'power3.out',
           duration: 0.5,
         });
         setTimeout(() => {
-          plus.style.display = 'initial';
-          minus.style.display = 'none';
+          // plus.style.display = 'initial';
+          // minus.style.display = 'none';
         }, 500);
         // expand the project & remove black highlight hover
       } else {
         bar.classList.add('expanded');
         gsap.to(plus, {
-          rotation: 90,
+          rotation: +45,
           ease: 'power3.out',
           duration: 0.5,
         });
         projectBar.classList.remove('black');
         setTimeout(() => {
           groupWork[e].classList.add('relative');
-          plus.style.display = 'none';
-          minus.style.display = 'initial';
+          // plus.style.display = 'none';
+          // minus.style.display = 'initial';
         }, 500);
       }
       // if clicked on itself then close
       if (expanded != null) {
         expanded.classList.remove('expanded');
         relative.classList.remove('relative');
-        gsap.to(minus, {
-          rotation: 90,
+        gsap.to(plus, {
+          rotation: 0,
           ease: 'power3.out',
           duration: 0.5,
         });
-        setTimeout(() => {
-          plus.style.display = 'initial';
-          minus.style.display = 'none';
-        }, 500);
+        // setTimeout(() => {
+        //   plus.style.display = 'initial';
+        //   minus.style.display = 'none';
+        // }, 500);
       }
     },
   },
