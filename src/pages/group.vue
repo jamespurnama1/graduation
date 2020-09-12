@@ -199,6 +199,10 @@ h3, p {
   margin: 0;
 }
 
+h3 {
+  max-width: 65vw;
+}
+
 .smallLogo {
   width: 10%;
   margin: 0 30px;
