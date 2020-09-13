@@ -2,18 +2,24 @@
   <div>
     <div class='block page'>
       <img src='@/assets/logo.svg' />
-      <div>
+      <div style='margin: 0 100px'>
         <br>
         <countdown :time='time'>
           <template slot-scope="props">
-            <h1>
-            {{ props.days }} days
+            <h1 style='display: flex; justify-content: center'>
+            {{ props.hours }} hours
             </h1>
+            <div style='display: flex; justify-content: center'>
+            <!-- <h3>
+            {{ props.hours }}&nbsp;hours
+            </h3> -->
             <h3>
-            {{ props.hours }} hours,
-            {{ props.minutes }} minutes,
-            {{ props.seconds }} seconds.
+            {{ props.minutes }}&nbsp;minutes
             </h3>
+            <h3>
+            {{ props.seconds }}&nbsp;seconds
+            </h3>
+            </div>
           </template>
         </countdown>
       </div>
@@ -28,7 +34,7 @@ export default {
   Name: 'About',
   data() {
     const now = new Date();
-    const grad = new Date('September 12, 2020 18:30:00 GMT+0800');
+    const grad = new Date('September 14, 2020 10:00:00 GMT+0800');
     return {
       time: grad - now,
     };
@@ -48,8 +54,9 @@ export default {
 .page {
   padding-top: 0;
   width: 100vw;
-  max-height: 100vh;
+  height: 100vh;
   background-color: #ed1c24;
+  margin: 0;
 }
 
 button {
@@ -70,42 +77,40 @@ button:hover {
 }
 
 h1, h3, img {
-  margin: 5%;
-  text-align: center;
+  margin: 0;
+  color: white;
+}
+
+h3 {
+  margin: 0 2%;
+  text-align: left;
+  white-space: nowrap;
 }
 
 img {
   width: 30%;
+  min-width: 200px;
   margin-left: 0;
 }
 
-h1, h3 {
+h1 {
   color: white;
   white-space: nowrap;
 }
 
 h1 {
-  font-size:10em;
+  // font-size:10em;
   line-height: 0.9em;
 }
 
 html, body {
   background-color: #ed1c24;
-  overflow: hidden;
+  // overflow: hidden;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
 
 html::-webkit-scrollbar {
   display: none;
-}
-
-@media screen and (max-width: 480px) {
-  h1{
-    font-size: 4em;
-  }
-  h3{
-    font-size: 1em;
-  }
 }
 </style>
