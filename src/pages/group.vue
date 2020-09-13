@@ -86,6 +86,7 @@ export default {
       } else {
         bar.classList.add('expanded');
         projectBar.classList.remove('black');
+        window.dispatchEvent(new Event('resize'));
         setTimeout(() => {
           groupWork[e].classList.add('relative');
         }, 500);
