@@ -34,6 +34,7 @@ export default {
 
 button {
   margin-top: 50px;
+  margin-left: 0;
   border-color: white;
   padding: 10px 15px;
 }
