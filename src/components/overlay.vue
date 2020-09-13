@@ -23,8 +23,16 @@ export default {
   },
   computed: {
     getSrc() {
-      const s = this.$store.state.overlayImg;
-      return require(s); // eslint-disable-line
+      if (this.$store.state.overlayImg) {
+        try {
+          const s = this.$store.state.overlayImg;
+          return require(s); // eslint-disable-line
+        } catch (e) {
+          if (e.name !== 'ModuleNotFoundError') throw e;
+          return require('@/assets/chan.jpg'); // eslint-disable-line
+        }
+      }
+      return require('@/assets/chan.jpg'); // eslint-disable-line
     },
   },
 };

@@ -136,7 +136,7 @@ GOH SZE CHIEN
         {
           path: 'szechien',
           name: 'Goh Sze Chien',
-          email: 'szech8ien960@gmail.com',
+          email: 'szechien960@gmail.com',
           behance: 'be.net/szechien096',
           linkedin: 'linkedin.com/in/sze-chien-goh-/',
           bio: 'She is the rainbow after the rain. She will always keep a positive mindset even during the toughest of times. Challenges are her friends as she takes them as opportunities to grow and to&nbsp;learn.',

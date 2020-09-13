@@ -68,8 +68,8 @@
       <div style='display: flex; align-items: center; margin-bottom: 50px'>
         <img
         style='width: 40%; height: auto'
-        src='@/assets/posters/1.jpg'>
-        <p style='margin-left: auto; width: 45%'>
+        src='@/assets/posters/4.jpg'>
+        <p style='margin-left: 4vw; width: 45%'>
           <span class='red'>The 12 New Blood</span>
           <br>
           we are the 12 fresh graduate,
@@ -81,7 +81,7 @@
           <img
           class='photo'
           style='height: 35vw'
-          src='@/assets/posters/2.jpg'>
+          src='@/assets/posters/1.jpg'>
           <p class='red' style='margin:0'>Heated Designers</p>
           <p style='margin:0'>the ones with burning passion</p>
         </div>
@@ -89,7 +89,7 @@
           <img
           class='photo'
           style='height: 35vw'
-          src='@/assets/posters/3.jpg'>
+          src='@/assets/posters/2.jpg'>
           <p class='red' style='margin:0'>Excited Designers</p>
           <p style='margin:0'>the ones pounding with creativity</p>
         </div>
@@ -97,7 +97,7 @@
           <img
           class='photo'
           style='height: 35vw'
-          src='@/assets/posters/4.jpg'>
+          src='@/assets/posters/3.jpg'>
           <p class='red' style='margin:0'>Strong Designers</p>
           <p style='margin:0'>the ones with unlimited idea boost</p>
         </div>
