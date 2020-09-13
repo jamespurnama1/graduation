@@ -1,14 +1,16 @@
 <template>
   <div id='notFound' class='center'>
+    <div class='center sub'>
     <lottie-player class='lottie'
     src='/meds.json'
     autoplay
     loop />
-    <div class='center' style='transform: translateY(-10vw)'>
+    <div class='center' style='transform: translateY(-7vw)'>
     <h3>weird, there's no cure here</h3>
     <p>(404 error not found)</p>
 
     <a href='/'><button><p>take me home</p></button></a>
+    </div>
     </div>
   </div>
 </template>
@@ -23,6 +25,11 @@ export default {
 
 <style lang="scss" scoped>
 @import './src/styles/fonts.module.scss';
+
+.sub {
+  width: 90vw;
+  height: 90vh;
+}
 
 .lottie {
   height: 80%;
@@ -44,8 +51,6 @@ button:hover p {
 }
 
 #notFound {
-  display: flex;
-  // align-items: center;
   background-color: $primary;
   width: 100vw;
   height: 100vh;
