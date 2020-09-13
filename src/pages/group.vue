@@ -74,10 +74,13 @@ export default {
       const bar = document.getElementById(`project${e}`);
       const groupWork = document.querySelectorAll('.groupWork');
       const projectBar = document.getElementById(`projectBar${e}`);
+      const allProjectBar = document.getElementsByClassName('projectBar');
+      allProjectBar.forEach((el) => {
+        el.classList.add('black');
+      });
       // close the project & add black highlight hover
       if (bar.classList.contains('expanded')) {
         bar.classList.remove('expanded');
-        projectBar.classList.add('black');
         groupWork[e].classList.remove('relative');
         // expand the project & remove black highlight hover
       } else {
