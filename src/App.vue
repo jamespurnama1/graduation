@@ -1,44 +1,65 @@
 <template>
   <div id="app">
-    <main>
+    <splash style='z-index: 20'
+      v-show="(this.$store.state.splash) && (this.$route.name != '404')" />
+    <overlay
+    v-if='this.$store.state.overlay'
+    style='z-index: 15' />
+    <navbar v-if="renderSwitchSet && (this.$route.name != '404')" style='z-index: 10' />
+    <main v-if='renderSwitchSet'>
       <transition
         name="fade"
         mode="out-in">
-        <router-view/>
       </transition>
+      <transition
+        name="fade"
+        mode="out-in">
+        <router-view
+        :key='$route.fullPath' />
+      </transition>
+      <div id='footer'>
+        <p style='font-size: calc(5px + 1vw);'>Copyright 2020 TheCREAID</p>
+        <div style='display: flex; flex-direction: row'>
+          <a href='http://instagram.com/the_creaid' target='_blank' style='color: black; padding: 0 20%'>
+            <feather type='instagram' stroke-width='1.8' />
+          </a>
+          <a href='https://www.facebook.com/Creaid.GraduationExhibition/' target='_blank' style='color: black'>
+            <feather type='facebook' stroke-width='1.6' />
+          </a>
+        </div>
+      </div>
     </main>
-    <Navbar v-if="$route.name !== 'Splash'" />
-    <scrollTop v-show='scrollButton' @click.native='scrollToTop(); $refs.fullpage.api.moveTo(3)' />
   </div>
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue';
-import scrollTop from './components/scrollTop.vue';
+const navbar = () => import('@/components/nav.vue');
+const splash = () => import('@/pages/splash.vue');
+const overlay = () => import('@/components/overlay.vue');
 
 export default {
   name: 'Graduation',
   components: {
-    Navbar,
-    scrollTop,
+    navbar,
+    splash,
+    overlay,
   },
   data() {
     return {
       scrollButton: false,
+      renderSwitchSet: false,
     };
   },
   methods: {
     scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     },
-    // getPos() {
-    //   const scrollPos = window.scrollY ||
-    // window.scrollTop || document.getElementsByTagName('html')[0].scrollTop;
-    //   console.log(scrollPos);
-    // },
   },
   created() {
     window.addEventListener('scroll', this.getPos);
+    this.$on('start', () => {
+      this.renderSwitchSet = true;
+    });
   },
   destroyed() {
     window.removeEventListener('scroll', this.getPos);
@@ -48,47 +69,142 @@ export default {
 </script>
 
 <style lang="scss">
-@import './src/styles/buefy.module.scss';
 @import './src/styles/fonts.module.scss';
+@import './src/styles/transitions.module.scss';
 
-.page {
-  background-color: white;
-  width: 101.2%;
-  min-height: 100vh;
-  left: 0;
+.feather--instagram, .feather--facebook {
+  width: calc(10px + 1.5vw);
 }
 
-.right {
+.red {
+  color: $primary
+}
+
+#footer {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8vw;
+}
+
+.VueCarousel-pagination {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.VueCarousel-navigation-button {
+  font-family: "AXIS" !important;
+  font-size: calc(10px + 1vw) !important;
+  // color: $primary !important;
+  transform: translate(-25%, -70%) !important;
+}
+
+.VueCarousel-slide {
+  width: 100% !important;
+  // visibility: visible !important;
+  // flex-basis: 100% !important;
+}
+
+.VueCarousel-dot-container {
+  position: absolute !important;
+  transform: translateY(-200%) !important;
+}
+
+.VueCarousel-dot {
+  min-height: 5px;
+  min-width: 5px;
+  width: 0.5vw !important;
+  height: 0.5vw !important;
+  margin-left: 0;
+}
+
+.VueCarousel-dot {
+  padding: 0 10px !important;
+}
+
+button {
+  font-family: 'AXIS';
+  padding: 0 10px;
+  color: white;
+  background-color: $primary;
+  border: solid 3px $primary;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: white;
+  color: $primary;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  padding: 4%;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.line {
+  border-width: 3px;
+  border-bottom-style: solid;
+  border-color: $primary;
+  width: 100%;
+  height: 0;
+  margin: 4% 0;
+}
+
+.verticalLine {
+  position: absolute;
+  border-width: 3px;
+  border-right-style: solid;
+  width: 0;
+  height: 106.5%;
+  right: 38%;
+  top: -5.5%;
+}
+
+.card-list {
+  display: grid;
+  grid-gap: 1em;
+  list-style-type: none;
+  align-items: center;
+  justify-items: center;
+  margin: 0;
+}
+
+.videoMask {
+  overflow: hidden;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  // transform: translateY(-20%);
+  object-fit: cover;
+}
+
+.page {
   position: relative;
-  right: 0;
+  top: 6.46vh;
+  margin-bottom: 100px;
 }
 
 .bg{
   position: fixed;
-  z-index: -1;
+  z-index: 0;
 }
 
 .clickable {
   cursor: pointer;
 }
 
-button:active {
-  border:none
-}
-
-main {
-  position: relative;
-  // width: 94.45vw;
-  z-index: 1;
-}
-
 .block {
   display: flex;
   justify-content: center;
-  align-items: center;
-  // padding: 10%;
+  padding: 10px;
   flex-wrap: wrap;
-  height: 90vh;
+  overflow-y: hidden;
 }
 
 .center {
@@ -96,48 +212,62 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  left: 50%;
-  transform: translateX(-50%);
+}
+
+h1, h2 ,h3, h4 {
+  font-family: 'AXIS';
+  font-weight: 900;
+  color: $primary;
+  margin: 0.2em 0;
+  text-decoration: none;
 }
 
 h1 {
-  font-family: 'AXIS';
-  font-weight: 800;
-  text-align: left;
-  font-size: calc(12px + 10vw);
-  color: black;
-  font-weight: 700;
+  text-align: center;
+  font-size: calc(12px + 13.5vw);
   line-height: 0.7em;
   text-indent: -0.2em;
-  margin: 0.2em;
+  white-space: nowrap;
+}
+
+h2 {
+  widows: 3;
+  orphans: 3;
+  font-size: calc(10px + 5vw);
+  line-height: calc(10px + 4.5vw);
 }
 
 h3 {
-  font-family: 'AXIS';
-  font-weight: 800;
-  font-size: calc(6px + 1.5vw);
-  color:black;
+  font-size: calc(10px + 3vw);
+}
+
+h4 {
+  font-size: calc(7px + 1vw);
+  color: black;
+}
+
+a {
   text-decoration: none;
 }
 
 p {
-  width: 40%;
+  font-family: 'AXIS';
   color: black;
-  margin-bottom: 1em;
+  text-decoration: none;
+  font-size: calc(8px + 1vw);
+}
+
+body {
+  margin: 0;
+}
+
+body.noScroll {
+  overflow: hidden;
 }
 
 html {
   font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #575F6B;
 }
-
-#app {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-}
-
 </style>

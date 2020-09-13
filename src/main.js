@@ -1,48 +1,43 @@
 import Vue from 'vue';
-import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 import Buefy from 'buefy';
 import VueFeather from 'vue-feather';
-import VueCountdown from '@chenfengyuan/vue-countdown';
-import Landing from './Landing.vue';
 import App from './App.vue';
-import Individual from './pages/Individual.vue';
-import Splash from './pages/Splash.vue';
-import Group from './pages/Group.vue';
-import Personal from './pages/Personal.vue';
+import store from './store';
 
-// window.gsap = gsap;
-// Vue.use(gsap);
+const notFound = () => import('@/pages/notFound.vue');
+const Group = () => import('@/pages/group.vue');
+const Personal = () => import('@/pages/personal.vue');
+const landing = () => import('@/landing.vue');
+const Individual = () => import('@/pages/individual.vue');
+
 Vue.use(Buefy);
-Vue.use(Vuex);
 Vue.use(VueRouter);
 Vue.use(VueFeather);
-Vue.component(VueCountdown.name, VueCountdown);
 Vue.config.productionTip = false;
 
 const routes = [
-  { path: '/home', component: Landing },
-  { name: 'Splash', path: '/', component: Splash },
-  { path: '/infected', component: Individual },
-  { path: '/virus', component: Group },
-  { name: 'weihang', path: '/infected/weihang', component: Personal },
-  { path: '/infected/waiyee', component: Personal },
-  { path: '/infected/anh', component: Personal },
-  { path: '/infected/karmun', component: Personal },
-  { path: '/infected/szechien', component: Personal },
-  { path: '/infected/aurel', component: Personal },
-  { path: '/infected/sam', component: Personal },
-  { path: '/infected/huisan', component: Personal },
-  { path: '/infected/zhijian', component: Personal },
+  { path: '/', component: landing },
+  { path: '/aid', component: Individual },
+  { path: '/antidote', component: Group },
+  {
+    name: 'User', path: '/aid/:user', component: Personal, props: true,
+  },
+  { name: '404', path: '/404', component: notFound },
+  { path: '*', redirect: '/404' },
 ];
 
 const router = new VueRouter({
   mode: 'history',
   base: __dirname,
   routes,
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
 });
 
 new Vue({
   router,
+  store,
   render: (h) => h(App),
 }).$mount('#app');
