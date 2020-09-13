@@ -7,12 +7,12 @@
         <countdown :time='time'>
           <template slot-scope="props">
             <h1 style='display: flex; justify-content: center'>
-            {{ props.days }} day
+            {{ props.hours }} hours
             </h1>
             <div style='display: flex; justify-content: center'>
-            <h3>
+            <!-- <h3>
             {{ props.hours }}&nbsp;hours
-            </h3>
+            </h3> -->
             <h3>
             {{ props.minutes }}&nbsp;minutes
             </h3>
