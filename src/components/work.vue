@@ -1,7 +1,9 @@
 <template>
   <div class='block'>
     <div class='img'>
-      <img :src="require(`@/assets/group/project${img}/top.jpg`)">
+      <img
+      @click='overlay(`@/assets/group/project${img}/top.jpg`)'
+      :src="require(`@/assets/group/project${img}/top.jpg`)">
     </div>
     <h4 style='color: black'>
       Group Members:
@@ -85,13 +87,16 @@ export default {
     projects: Object,
     img: Number,
   },
-  // render: (h) => {
-  // const tag = this.tag ? 'video' : 'img'
-  // return h(tag, ... );
-  // },
   components: {
     Carousel,
     Slide,
+  },
+  methods: {
+    overlay(n) {
+      console.log(n);
+      this.$store.commit('overlay', n);
+      this.$store.commit('openOverlay');
+    },
   },
   data() {
     return {

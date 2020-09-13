@@ -8,6 +8,8 @@ export default new Vuex.Store({
   state: {
     splash: true,
     progress: '0%',
+    overlayImg: '',
+    overlay: false,
   },
   mutations: {
     removeSplash(state) {
@@ -17,6 +19,18 @@ export default new Vuex.Store({
     updateProgress(state, n) {
       state.progress = n;
       return state.progress;
+    },
+    overlay(state, n) {
+      state.overlayImg = n;
+      return state.overlayImg;
+    },
+    closeOverlay(state) {
+      state.overlay = false;
+      return state.overlay;
+    },
+    openOverlay(state) {
+      state.overlay = true;
+      return state.overlay;
     },
   },
 });

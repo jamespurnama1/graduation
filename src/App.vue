@@ -2,6 +2,9 @@
   <div id="app">
     <splash style='z-index: 20'
       v-show="(this.$store.state.splash) && (this.$route.name != '404')" />
+    <overlay
+    v-if='this.$store.state.overlay'
+    style='z-index: 15' />
     <navbar v-if='renderSwitchSet' style='z-index: 10' />
     <main v-if='renderSwitchSet'>
       <transition
@@ -32,12 +35,14 @@
 <script>
 const navbar = () => import('@/components/nav.vue');
 const splash = () => import('@/pages/splash.vue');
+const overlay = () => import('@/components/overlay.vue');
 
 export default {
   name: 'Graduation',
   components: {
     navbar,
     splash,
+    overlay,
   },
   data() {
     return {
