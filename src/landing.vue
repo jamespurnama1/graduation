@@ -71,7 +71,8 @@
       :navigation-enabled='true'
       :navigation-next-label='`>`'
       :navigation-prev-label='`<`'
-      :pagination-active-color='`#eb2027`'
+      :pagination-active-color='`#FFFFFF`'
+      :pagination-color='`#F89996`'
       :autoplay='true'
       :mouse-drag='true'>
       <slide
