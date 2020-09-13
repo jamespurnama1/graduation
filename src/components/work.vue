@@ -109,6 +109,7 @@ export default {
       document.querySelectorAll('.VueCarousel-navigation-button').forEach((e) => {
         e.style.color = '#eb2027';
       });
+      window.dispatchEvent(new Event('resize'));
     });
   },
 };

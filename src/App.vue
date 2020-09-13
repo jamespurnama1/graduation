@@ -101,8 +101,8 @@ export default {
 
 .VueCarousel-slide {
   width: 100% !important;
-  visibility: visible !important;
-  flex-basis: 100% !important;
+  // visibility: visible !important;
+  // flex-basis: 100% !important;
 }
 
 .VueCarousel-dot-container {

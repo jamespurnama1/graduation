@@ -18,13 +18,16 @@
       </div>
       <div class='margin'>
         <h3 class='desc red' style='font-weight: bold'>Behance</h3>
-        <a class='underline' :href='`http://www.${data[0].behance}`'>
+        <a class='underline'
+        target='_blank'
+        :href='`http://www.${data[0].behance}`'>
           <p class='desc'>{{ data[0].behance }}</p>
         </a>
       </div>
       <div class='margin'>
         <h3 class='desc red' style='font-weight: bold'>LinkedIn</h3>
         <a class='underline'
+        target='_blank'
         :href='`http://www.${data[0].linkedin}`'>
           <p class='desc'>{{ data[0].linkedin }}</p>
         </a>
