@@ -71,6 +71,10 @@ export default {
   width: calc(10px + 1.5vw);
 }
 
+.red {
+  color: $primary
+}
+
 #footer {
   display:flex;
   align-items: center;
@@ -86,7 +90,7 @@ export default {
 .VueCarousel-navigation-button {
   font-family: "AXIS" !important;
   font-size: calc(10px + 1vw) !important;
-  color: #eb2027 !important;
+  color: $primary !important;
   // transform: translate(0%, -100%) !important;
 }
 

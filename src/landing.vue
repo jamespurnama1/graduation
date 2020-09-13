@@ -15,14 +15,15 @@
         </li>
       </ul>
     </div>
+
     <div class='block center' style='margin-top:10%'>
       <h1 style='font-size: 8.4vw; white-space: nowrap'>What is CREAID?</h1>
       <div class='line' />
       <p id='about'>
         The world is currently sick and suffering from<span v-html='` the&nbsp;pandemic`'></span>.
-        <wbr>But eureka!
+        But eureka!
         The One Academy has successfully manifested a mind-altering, top grade creative cure.
-        <wbr>It is believed that once introduced,
+        It is believed that once introduced,
          this cure will impact the world of <span v-html='` design&nbsp;greatly`'></span>.
       </p>
       <img style='width: 28vw; height: 28vw; margin: 20px' src='@/assets/logo_red.svg'>
@@ -35,6 +36,7 @@
           The creative cure.
         </h2>
       </div>
+
       <div class='line' />
       <p>Board of Advisors</p>
       <div class='board'>
@@ -60,8 +62,49 @@
         <p style='margin:0'>Deanie Cham</p>
       </div>
       </div>
+
       <div class='line' />
       <p>Posters</p>
+      <div style='display: flex; align-items: center; margin-bottom: 50px'>
+        <img
+        style='width: 40%; height: auto'
+        src='@/assets/posters/1.jpg'>
+        <p style='margin-left: auto; width: 45%'>
+          <span class='red'>The 12 New Blood</span>
+          <br>and suffering from<span v-html='` the&nbsp;pandemic`'></span>.
+          But eureka!
+          The One Academy has successfully manifested a mind-altering, top grade creative cure.
+          It is believed that once introduced,
+          this cure will impact the world of <span v-html='` design&nbsp;greatly`'></span>.
+        </p>
+      </div>
+      <div class='board'>
+        <div>
+          <img
+          class='photo'
+          style='height: 35vw'
+          src='@/assets/posters/2.jpg'>
+          <p class='red' style='margin:0'>Heated Designers</p>
+          <p style='margin:0'>Lorem Ipsum Dolor Sit Amet</p>
+        </div>
+        <div>
+          <img
+          class='photo'
+          style='height: 35vw'
+          src='@/assets/posters/3.jpg'>
+          <p class='red' style='margin:0'>Excited Designers</p>
+          <p style='margin:0'>Lorem Ipsum Dolor Sit Amet</p>
+        </div>
+        <div>
+          <img
+          class='photo'
+          style='height: 35vw'
+          src='@/assets/posters/4.jpg'>
+          <p class='red' style='margin:0'>Strong Designers</p>
+          <p style='margin:0'>Lorem Ipsum Dolor Sit Amet</p>
+        </div>
+      </div>
+
       <div class='line' />
       <div class='center' style='flex-direction: column'>
       <p>Download Our Graduation Showcase Book</p>
