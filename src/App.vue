@@ -94,9 +94,9 @@ export default {
   width: 100% !important;
 }
 
-.VueCarousel-inner {
-  // height: 47vw !important;
-}
+// .VueCarousel-inner {
+//   height: 47vw !important;
+// }
 
 .VueCarousel-dot-container {
   position: absolute !important;
@@ -122,6 +122,7 @@ button {
   background-color: $primary;
   border: solid 3px $primary;
   margin-left: 15px;
+  cursor: pointer;
 }
 
 button:hover {

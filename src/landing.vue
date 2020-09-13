@@ -9,9 +9,6 @@
          class='videoMask'>
             <img
             :ref='`photo${i++}`'
-            muted
-            preload="auto"
-            autobuffer
             class='photo'
             :src="`/faces/${user.path}.jpg`">
          </div>
@@ -37,6 +34,40 @@
         <h2 style='font-size: 6.7vw; white-space: nowrap; text-align: center;'>
           The creative cure.
         </h2>
+      </div>
+      <div class='line' />
+      <p>Board of Advisors</p>
+      <div class='board'>
+      <div>
+        <img
+        class='photo'
+        style='height: 35vw'
+        src='@/assets/debbie.jpg'>
+        <p style='margin:0'>Debbie Chin</p>
+      </div>
+      <div>
+        <img
+        class='photo'
+        style='height: 35vw'
+        src='@/assets/chan.jpg'>
+        <p style='margin:0'>Chan Kon Loong</p>
+      </div>
+      <div>
+        <img
+        class='photo'
+        style='height: 35vw'
+        src='@/assets/deanie.jpg'>
+        <p style='margin:0'>Deanie Cham</p>
+      </div>
+      </div>
+      <div class='line' />
+      <p>Posters</p>
+      <div class='line' />
+      <div class='center' style='flex-direction: column'>
+      <p>Download Our Graduation Showcase Book</p>
+      <a href='/book.pdf' download>
+        <button><p>Download Book</p></button>
+      </a>
       </div>
     </div>
   </div>
@@ -87,6 +118,22 @@ export default {
 
 <style lang="scss" scoped>
 @import './src/styles/fonts.module.scss';
+
+button p {
+  color: white;
+  cursor: pointer;
+}
+
+button:hover p {
+  color: $primary;
+}
+
+.board {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-rows: 1fr;
+  grid-template-columns: auto auto auto;
+}
 
 .block {
   padding: 0;
