@@ -71,11 +71,9 @@
         src='@/assets/posters/1.jpg'>
         <p style='margin-left: auto; width: 45%'>
           <span class='red'>The 12 New Blood</span>
-          <br>and suffering from<span v-html='` the&nbsp;pandemic`'></span>.
-          But eureka!
-          The One Academy has successfully manifested a mind-altering, top grade creative cure.
-          It is believed that once introduced,
-          this cure will impact the world of <span v-html='` design&nbsp;greatly`'></span>.
+          <br>
+          we are the 12 fresh graduate,
+          ready to enter the world of art<span v-html='` and&nbsp;design`'></span>.
         </p>
       </div>
       <div class='board'>
@@ -85,7 +83,7 @@
           style='height: 35vw'
           src='@/assets/posters/2.jpg'>
           <p class='red' style='margin:0'>Heated Designers</p>
-          <p style='margin:0'>Lorem Ipsum Dolor Sit Amet</p>
+          <p style='margin:0'>the ones with burning passion</p>
         </div>
         <div>
           <img
@@ -93,7 +91,7 @@
           style='height: 35vw'
           src='@/assets/posters/3.jpg'>
           <p class='red' style='margin:0'>Excited Designers</p>
-          <p style='margin:0'>Lorem Ipsum Dolor Sit Amet</p>
+          <p style='margin:0'>the ones pounding with creativity</p>
         </div>
         <div>
           <img
@@ -101,7 +99,7 @@
           style='height: 35vw'
           src='@/assets/posters/4.jpg'>
           <p class='red' style='margin:0'>Strong Designers</p>
-          <p style='margin:0'>Lorem Ipsum Dolor Sit Amet</p>
+          <p style='margin:0'>the ones with unlimited idea boost</p>
         </div>
       </div>
 
