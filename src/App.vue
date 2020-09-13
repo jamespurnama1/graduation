@@ -5,7 +5,7 @@
     <overlay
     v-if='this.$store.state.overlay'
     style='z-index: 15' />
-    <navbar v-if='renderSwitchSet' style='z-index: 10' />
+    <navbar v-if="renderSwitchSet && (this.$route.name != '404')" style='z-index: 10' />
     <main v-if='renderSwitchSet'>
       <transition
         name="fade"
@@ -95,17 +95,15 @@ export default {
 .VueCarousel-navigation-button {
   font-family: "AXIS" !important;
   font-size: calc(10px + 1vw) !important;
-  color: $primary !important;
-  // transform: translate(0%, -100%) !important;
+  // color: $primary !important;
+  transform: translate(-25%, -70%) !important;
 }
 
 .VueCarousel-slide {
   width: 100% !important;
+  visibility: visible !important;
+  flex-basis: 100% !important;
 }
-
-// .VueCarousel-inner {
-//   height: 47vw !important;
-// }
 
 .VueCarousel-dot-container {
   position: absolute !important;

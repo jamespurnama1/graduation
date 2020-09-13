@@ -65,7 +65,23 @@
 
       <div class='line' />
       <p>Posters</p>
-      <div style='display: flex; align-items: center; margin-bottom: 50px'>
+      <carousel
+      :per-page='1'
+      :loop='true'
+      :navigation-enabled='true'
+      :navigation-next-label='`>`'
+      :navigation-prev-label='`<`'
+      :pagination-active-color='`#eb2027`'
+      :autoplay='true'
+      :mouse-drag='true'>
+      <slide
+        v-for='(img) in poster'
+        :key='img'
+        style='display: flex; justify-content: center; align-items: center; height: 47vw'>
+        <img class='slide' :src="require(`@/assets/posters/${img}.jpg`)" />
+      </slide>
+    </carousel>
+      <!-- <div style='display: flex; align-items: center; margin-bottom: 50px'>
         <img
         style='width: 40%; height: auto'
         src='@/assets/posters/4.jpg'>
@@ -101,15 +117,15 @@
           <p class='red' style='margin:0'>Strong Designers</p>
           <p style='margin:0'>the ones with unlimited idea boost</p>
         </div>
-      </div>
+      </div> -->
 
-      <div class='line' />
+      <!-- <div class='line' />
       <div class='center' style='flex-direction: column'>
       <p>Download Our Graduation Showcase Book</p>
       <a href='/book.pdf' download>
         <button><p>Download Book</p></button>
       </a>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -117,6 +133,7 @@
 <script>
 import gsap from 'gsap';
 import imagesLoaded from 'vue-images-loaded';
+import { Carousel, Slide } from 'vue-carousel';
 import users from '@/components/users';
 import loading from '@/components/loading';
 
@@ -127,6 +144,7 @@ export default {
     return {
       tl: gsap.timeline(),
       renderOverlay: false,
+      poster: [0, 1, 2, 3],
     };
   },
   directives: {
@@ -137,6 +155,10 @@ export default {
       const el = this.$el.getElementsByClassName('nextBlock')[e];
       el.scrollIntoView({ behavior: 'smooth' });
     },
+  },
+  components: {
+    Carousel,
+    Slide,
   },
   mounted() {
     this.tl.set('#overlay', {
@@ -152,6 +174,11 @@ export default {
         repeat: -1,
         duration: 5,
       });
+    this.$nextTick(() => {
+      document.querySelectorAll('.VueCarousel-navigation-button').forEach((e) => {
+        e.style.color = 'white';
+      });
+    });
   },
 };
 
@@ -200,9 +227,6 @@ button:hover p {
   position: absolute;
   z-index: 5;
   width: 50%;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
   mix-blend-mode: multiply;
 }
 
@@ -219,6 +243,12 @@ button:hover p {
 .card-list {
   grid-gap: 0;
   margin-top: 1%;
+}
+
+.slide {
+  width: 100%;
+  height: 47vw;
+  object-fit: cover;
 }
 
 #description {

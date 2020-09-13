@@ -5,7 +5,7 @@ import VueFeather from 'vue-feather';
 import App from './App.vue';
 import store from './store';
 
-// const notFound = () => import('@/pages/notFound.vue');
+const notFound = () => import('@/pages/notFound.vue');
 const Group = () => import('@/pages/group.vue');
 const Personal = () => import('@/pages/personal.vue');
 const landing = () => import('@/landing.vue');
@@ -23,7 +23,7 @@ const routes = [
   {
     name: 'User', path: '/aid/:user', component: Personal, props: true,
   },
-  { name: '404', path: '/404', component: landing },
+  { name: '404', path: '/404', component: notFound },
   { path: '*', redirect: '/404' },
 ];
 

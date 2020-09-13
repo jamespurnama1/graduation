@@ -48,7 +48,7 @@ export default {
             },
           ],
           heading: 'How it Works',
-          video: 'https://www.youtube.com/embed/Mz1bBupEnyE',
+          video: 'https://www.youtube-nocookie.com/embed/Mz1bBupEnyE',
         },
         {
           title: 'Mama Miss You',
@@ -84,7 +84,7 @@ export default {
             },
           ],
           heading: 'How it Works',
-          video: 'https://www.youtube.com/embed/bUmzTKpaa9Q',
+          video: 'https://www.youtube-nocookie.com/embed/bUmzTKpaa9Q',
         },
         {
           title: 'Unlock Your Space',
@@ -132,7 +132,7 @@ export default {
             },
           ],
           heading: 'How it Works',
-          video: 'https://www.youtube.com/embed/xW-VF1TqVWA',
+          video: 'https://www.youtube-nocookie.com/embed/xW-VF1TqVWA',
         },
         {
           title: 'ROCKTIFY',
@@ -180,7 +180,7 @@ export default {
             },
           ],
           heading: 'How it Works',
-          video: 'https://www.youtube.com/embed/tFSKYlMbRQQ',
+          video: 'https://www.youtube-nocookie.com/embed/tFSKYlMbRQQ',
         },
         {
           title: 'The Tigers That Won’t Return',
@@ -221,7 +221,7 @@ export default {
             },
           ],
           heading: 'How it Works',
-          video: 'https://www.youtube.com/embed/4cPV544y2Dc',
+          video: 'https://www.youtube-nocookie.com/embed/4cPV544y2Dc',
         },
         {
           title: 'Tree of Ash',
@@ -283,7 +283,7 @@ export default {
           brief: 'Pollution in Malaysia is one of the worst in the world. Smoking is one of the air pollution. So, we want to expose the truth to the&nbsp;smokers.',
           problem: 'Kuala Lumpur has more than 23 million vehicles moving on the road every day. The amount of polluted air released by the vehicles is causing the city to become one with the highest API in the region. Even though smokers hate pollution caused by vehicles. Sadly, they are unaware that smoking is&nbsp;worse.',
           insight: '',
-          idea: 'To tackle the insight and to reduce air pollution in Kuala Lumpur, Malaysia Quit Smoking Clinic has released a Youtube video to expose the truth that smokers contribute 10 times more to air pollution and eventually to convince smokers to quit smoking and reduce air&nbsp;pollution.',
+          idea: 'To tackle the insight and to reduce air pollution in Kuala Lumpur, Malaysia Quit Smoking Clinic has released a youtube video to expose the truth that smokers contribute 10 times more to air pollution and eventually to convince smokers to quit smoking and reduce air&nbsp;pollution.',
           carousel: [
             {
               id: 0,
@@ -293,7 +293,7 @@ export default {
             },
           ],
           heading: 'Youtube Ad',
-          video: 'https://www.youtube.com/embed/LXXwUPXFMuA',
+          video: 'https://www.youtube-nocookie.com/embed/LXXwUPXFMuA',
         },
         {
           title: 'Chari-Tiger-Able Logo of the Day',

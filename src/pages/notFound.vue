@@ -1,68 +1,58 @@
 <template>
-  <div>
-    <block class='page'>
-      <img src='@/assets/logo.svg' />
-      <div>
-        <br>
-        <h1>OH<br>NO!</h1>
-        <h3>
-          You are infected with COVID-12.
-        </h3>
-        <div class='center'>
-        <router-link tag='button' to='/home'>WHAT?</router-link>
-        </div>
-      </div>
-    </block>
+  <div id='notFound' class='center'>
+    <lottie-player class='lottie'
+    src='/meds.json'
+    autoplay
+    loop />
+    <div class='center' style='transform: translateY(-10vw)'>
+    <h3>weird, there's no cure here</h3>
+    <p>(404 error not found)</p>
+
+    <a href='/'><button><p>take me home</p></button></a>
+    </div>
   </div>
 </template>
 
 <script>
+import '@lottiefiles/lottie-player';
+
 export default {
-  Name: 'About',
+  Name: '404',
 };
 </script>
 
 <style lang="scss" scoped>
-.page {
-  padding-top: 0;
-  width: 100vw;
-  max-height: 100vh;
-  background-color: #ed1c24;
+@import './src/styles/fonts.module.scss';
+
+.lottie {
+  height: 80%;
+}
+
+.center {
+  flex-direction: column;
 }
 
 button {
-  font: 'AXIS';
-  font-weight: 800;
-  font-size: 2em;
-  padding: 0.5em 1em;
-  color: #ed1c24;
-  background-color: white;
-  border: 3px solid #ed1c24;
-  cursor: pointer;
+  margin-top: 50px;
+  border-color: white;
+  padding: 10px 15px;
 }
 
-button:hover {
-  background-color: #ed1c24;
-  border: 3px solid white;
-  color: white;
+button:hover p {
+  color: $primary;
 }
 
-h3, img {
-  margin: 1%;
+#notFound {
+  display: flex;
+  // align-items: center;
+  background-color: $primary;
+  width: 100vw;
+  height: 100vh;
+}
+
+h3, h1, p {
   text-align: center;
-}
-
-h1, h3 {
   color: white;
-}
-
-h1 {
-  font-size:20em;
-  line-height: 0.9em;
-}
-
-img:hover {
-  transform: rotate(360deg);
-  transition: 1s ease;
+  margin: 0px;
 }
 </style>

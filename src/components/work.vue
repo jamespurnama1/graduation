@@ -104,6 +104,13 @@ export default {
       currentIndex: 0,
     };
   },
+  mounted() {
+    this.$nextTick(() => {
+      document.querySelectorAll('.VueCarousel-navigation-button').forEach((e) => {
+        e.style.color = '#eb2027';
+      });
+    });
+  },
 };
 </script>
 
