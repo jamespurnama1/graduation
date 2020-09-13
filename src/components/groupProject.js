@@ -48,7 +48,7 @@ export default {
             },
           ],
           heading: 'How it Works',
-          video: 'https://www.youtube-nocookie.com/embed/Mz1bBupEnyE',
+          video: 'https://www.youtube.com/embed/Mz1bBupEnyE',
         },
         {
           title: 'Mama Miss You',
@@ -84,7 +84,7 @@ export default {
             },
           ],
           heading: 'How it Works',
-          video: 'https://www.youtube-nocookie.com/embed/bUmzTKpaa9Q',
+          video: 'https://www.youtube.com/embed/bUmzTKpaa9Q',
         },
         {
           title: 'Unlock Your Space',
@@ -132,7 +132,7 @@ export default {
             },
           ],
           heading: 'How it Works',
-          video: 'https://www.youtube-nocookie.com/embed/xW-VF1TqVWA',
+          video: 'https://www.youtube.com/embed/xW-VF1TqVWA',
         },
         {
           title: 'ROCKTIFY',
@@ -180,7 +180,7 @@ export default {
             },
           ],
           heading: 'How it Works',
-          video: 'https://www.youtube-nocookie.com/embed/tFSKYlMbRQQ',
+          video: 'https://www.youtube.com/embed/tFSKYlMbRQQ',
         },
         {
           title: 'The Tigers That Won’t Return',
@@ -221,7 +221,7 @@ export default {
             },
           ],
           heading: 'How it Works',
-          video: 'https://www.youtube-nocookie.com/embed/4cPV544y2Dc',
+          video: 'https://www.youtube.com/embed/4cPV544y2Dc',
         },
         {
           title: 'Tree of Ash',
@@ -293,7 +293,7 @@ export default {
             },
           ],
           heading: 'Youtube Ad',
-          video: 'https://www.youtube-nocookie.com/embed/LXXwUPXFMuA',
+          video: 'https://www.youtube.com/embed/LXXwUPXFMuA',
         },
         {
           title: 'Chari-Tiger-Able Logo of the Day',
