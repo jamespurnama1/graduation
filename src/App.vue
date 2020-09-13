@@ -20,7 +20,7 @@
           <a href='http://instagram.com/the_creaid' target='_blank' style='color: black; padding: 0 20%'>
             <feather type='instagram' stroke-width='1.8' />
           </a>
-          <a href='https://www.facebook.com/Cre-Aid-111544010687433/' target='_blank' style='color: black'>
+          <a href='https://www.facebook.com/Creaid.GraduationExhibition/' target='_blank' style='color: black'>
             <feather type='facebook' stroke-width='1.6' />
           </a>
         </div>

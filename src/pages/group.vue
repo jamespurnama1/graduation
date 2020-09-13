@@ -72,8 +72,6 @@ export default {
       const expanded = document.querySelector('.expanded');
       const relative = document.querySelector('.relative');
       const bar = document.getElementById(`project${e}`);
-      const plus = document.getElementById(`icon${e}`);
-      // const icon = this.$refs.icon[e];
       const groupWork = document.querySelectorAll('.groupWork');
       const projectBar = document.getElementById(`projectBar${e}`);
       // close the project & add black highlight hover
@@ -81,43 +79,18 @@ export default {
         bar.classList.remove('expanded');
         projectBar.classList.add('black');
         groupWork[e].classList.remove('relative');
-        // gsap.to(plus, {
-        //   rotation: 0,
-        //   ease: 'power3.out',
-        //   duration: 0.5,
-        // });
-        setTimeout(() => {
-          // plus.style.display = 'initial';
-          // minus.style.display = 'none';
-        }, 500);
         // expand the project & remove black highlight hover
       } else {
         bar.classList.add('expanded');
-        // gsap.to(plus, {
-        //   rotation: +45,
-        //   ease: 'power3.out',
-        //   duration: 0.5,
-        // });
         projectBar.classList.remove('black');
         setTimeout(() => {
           groupWork[e].classList.add('relative');
-          // plus.style.display = 'none';
-          // minus.style.display = 'initial';
         }, 500);
       }
       // if clicked on itself then close
       if (expanded != null) {
         expanded.classList.remove('expanded');
         relative.classList.remove('relative');
-        gsap.to(plus, {
-          rotation: 0,
-          ease: 'power3.out',
-          duration: 0.5,
-        });
-        // setTimeout(() => {
-        //   plus.style.display = 'initial';
-        //   minus.style.display = 'none';
-        // }, 500);
       }
     },
   },
@@ -222,7 +195,7 @@ h1, h2 {
   min-width: 5px;
   width: 35px;
   transition: transform .3s ease;
-  transform: rotate(45deg);
+  transform: rotate(45deg) !important;
 }
 
 .page {
@@ -230,7 +203,7 @@ h1, h2 {
 }
 
 .black .feather {
-  transform: rotate(0);
+  transform: rotate(0) !important;
 }
 
 @media (max-width: 736px){
