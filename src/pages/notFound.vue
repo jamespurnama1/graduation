@@ -6,7 +6,7 @@
     autoplay
     loop />
     <div class='center' style='transform: translateY(-7vw)'>
-    <h3>weird, there's no cure here</h3>
+    <h3>weird, there's no cure here.</h3>
     <p>(404 error not found)</p>
 
     <a href='/'><button><p>take me home</p></button></a>
