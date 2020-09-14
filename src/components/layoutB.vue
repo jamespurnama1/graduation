@@ -1,12 +1,17 @@
 <template>
-  <div class='block'>
-    <h3 style='margin: 5% 0 1% 0'>{{ works.sections.two.name }}</h3>
-    <div class='grid'>
-      <div v-for='(secondImg, i) in works.sections.two.img'
-      :key='i'
-      :id='`grid-item-${i}`'>
-      <img
-      :src="require(`@/assets/people/${path}/work${works.id}/two/${secondImg}`)">
+  <div class="block">
+    <h3 style="margin: 5% 0 1% 0">{{ works.sections.two.name }}</h3>
+    <div class="grid">
+      <div
+        v-for="(secondImg, i) in works.sections.two.img"
+        :key="i"
+        :id="`grid-item-${i}`"
+      >
+        <img
+          :src="
+            require(`@/assets/people/${path}/work${works.id}/two/${secondImg}`)
+          "
+        />
       </div>
     </div>
   </div>
@@ -23,13 +28,12 @@ export default {
     path: String,
   },
   data() {
-    return {
-    };
+    return {};
   },
 };
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 @import './src/styles/fonts.module.scss';
 
 #grid-item-0 {
@@ -65,9 +69,9 @@ export default {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: minmax(0, 47vw) minmax(0, 31.5vw) minmax(0, 31.5vw);
   grid-template-areas:
-    "top top"
-    "left rightone"
-    "left righttwo";
+    'top top'
+    'left rightone'
+    'left righttwo';
 }
 
 .block {
@@ -75,7 +79,8 @@ export default {
   // align-items: center;
 }
 
-img, video {
+img,
+video {
   width: 100%;
   min-height: 100%;
   max-height: 100%;

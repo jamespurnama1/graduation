@@ -1,87 +1,89 @@
 <template>
-  <div class='page' style='padding: 0 8vw' v-images-loaded:on.progress="imageProgress">
+  <div
+    class="page"
+    style="padding: 0 8vw"
+    v-images-loaded:on.progress="imageProgress"
+  >
     <h1>CREAID</h1>
-    <div class='block' style='position: relative'>
-      <img id='overlay' src='@/assets/logo_red.svg'>
+    <div class="block" style="position: relative">
+      <img id="overlay" src="@/assets/logo_red.svg" />
       <ul class="card-list grid">
-        <li v-for="(user, i) in allUsers" class="card-item" :key='`user${i}`'>
-         <div
-         class='videoMask'>
+        <li v-for="(user, i) in allUsers" class="card-item" :key="`user${i}`">
+          <div class="videoMask">
             <img
-            :ref='`photo${i++}`'
-            class='photo'
-            :src="`/faces/${user.path}.jpg`">
-         </div>
+              :ref="`photo${i++}`"
+              class="photo"
+              :src="`/faces/${user.path}.jpg`"
+            />
+          </div>
         </li>
       </ul>
     </div>
 
-    <div class='block center' style='margin-top:10%'>
-      <h1 style='font-size: 8.4vw; white-space: nowrap'>What is CREAID?</h1>
-      <div class='line' />
-      <p id='about'>
-        The world is currently sick and suffering from<span v-html='` the&nbsp;pandemic`'></span>.
-        But eureka!
-        The One Academy has successfully manifested a mind-altering, top grade creative cure.
-        It is believed that once introduced,
-         this cure will impact the world of <span v-html='` design&nbsp;greatly`'></span>.
+    <div class="block center" style="margin-top:10%">
+      <h1 style="font-size: 8.4vw; white-space: nowrap">What is CREAID?</h1>
+      <div class="line" />
+      <p id="about">
+        The world is currently sick and suffering from<span
+          v-html="` the&nbsp;pandemic`"
+        ></span
+        >. But eureka! The One Academy has successfully manifested a
+        mind-altering, top grade creative cure. It is believed that once
+        introduced, this cure will impact the world of
+        <span v-html="` design&nbsp;greatly`"></span>.
       </p>
-      <img style='width: 28vw; height: 28vw; margin: 20px' src='@/assets/logo_red.svg'>
-      <div class='line' />
+      <img
+        style="width: 28vw; height: 28vw; margin: 20px"
+        src="@/assets/logo_red.svg"
+      />
+      <div class="line" />
       <div>
-        <h2 style='font-size: 6.5vw; white-space: nowrap; text-align: center;'>
+        <h2 style="font-size: 6.5vw; white-space: nowrap; text-align: center;">
           We are the Cre-Aid,
         </h2>
-        <h2 style='font-size: 6.7vw; white-space: nowrap; text-align: center;'>
+        <h2 style="font-size: 6.7vw; white-space: nowrap; text-align: center;">
           The creative cure.
         </h2>
       </div>
 
-      <div class='line' />
+      <div class="line" />
       <p>Board of Advisors</p>
-      <div class='board'>
-      <div>
-        <img
-        class='photo'
-        style='height: 35vw'
-        src='@/assets/debbie.jpg'>
-        <p style='margin:0'>Debbie Chin</p>
-      </div>
-      <div>
-        <img
-        class='photo'
-        style='height: 35vw'
-        src='@/assets/chan.jpg'>
-        <p style='margin:0'>Chan Kon Loong</p>
-      </div>
-      <div>
-        <img
-        class='photo'
-        style='height: 35vw'
-        src='@/assets/deanie.jpg'>
-        <p style='margin:0'>Deanie Cham</p>
-      </div>
+      <div class="board">
+        <div>
+          <img class="photo" style="height: 35vw" src="@/assets/debbie.jpg" />
+          <p style="margin:0">Debbie Chin</p>
+        </div>
+        <div>
+          <img class="photo" style="height: 35vw" src="@/assets/chan.jpg" />
+          <p style="margin:0">Chan Kon Loong</p>
+        </div>
+        <div>
+          <img class="photo" style="height: 35vw" src="@/assets/deanie.jpg" />
+          <p style="margin:0">Deanie Cham</p>
+        </div>
       </div>
 
-      <div class='line' />
+      <div class="line" />
       <p>Posters</p>
       <carousel
-      :per-page='1'
-      :loop='true'
-      :navigation-enabled='true'
-      :navigation-next-label='`>`'
-      :navigation-prev-label='`<`'
-      :pagination-active-color='`#FFFFFF`'
-      :pagination-color='`#F89996`'
-      :autoplay='true'
-      :mouse-drag='true'>
-      <slide
-        v-for='(img) in poster'
-        :key='img'
-        style='display: flex; justify-content: center; align-items: center; height: 47vw'>
-        <img class='slide' :src="require(`@/assets/posters/${img}.jpg`)" />
-      </slide>
-    </carousel>
+        :per-page="1"
+        :loop="true"
+        :navigation-enabled="true"
+        :navigation-next-label="`>`"
+        :navigation-prev-label="`<`"
+        :pagination-active-color="`#FFFFFF`"
+        :pagination-color="`#F89996`"
+        :autoplay="true"
+        :mouse-drag="true"
+      >
+        <slide
+          v-for="img in poster"
+          :key="img"
+          style="display: flex; justify-content: center; align-items: center; height: 47vw"
+        >
+          <img class="slide" :src="require(`@/assets/posters/${img}.jpg`)" />
+        </slide>
+      </carousel>
 
       <!-- <div class='line' />
       <div class='center' style='flex-direction: column'>
@@ -125,12 +127,13 @@ export default {
     Slide,
   },
   mounted() {
-    this.tl.set('#overlay', {
-      xPercent: -50,
-      yPercent: -50,
-      left: '50%',
-      top: '50%',
-    })
+    this.tl
+      .set('#overlay', {
+        xPercent: -50,
+        yPercent: -50,
+        left: '50%',
+        top: '50%',
+      })
       .to('#overlay', {
         scale: 1.1,
         ease: 'power1.inOut',
@@ -139,14 +142,15 @@ export default {
         duration: 5,
       });
     this.$nextTick(() => {
-      document.querySelectorAll('.VueCarousel-navigation-button').forEach((e) => {
-        e.style.color = 'white';
-      });
+      document
+        .querySelectorAll('.VueCarousel-navigation-button')
+        .forEach((e) => {
+          e.style.color = 'white';
+        });
       window.dispatchEvent(new Event('resize'));
     });
   },
 };
-
 </script>
 
 <style lang="scss" scoped>
@@ -196,8 +200,8 @@ button:hover p {
 }
 
 .videoMask {
-    height: 20vw;
-    width: 20vw;
+  height: 20vw;
+  width: 20vw;
 }
 
 #close {

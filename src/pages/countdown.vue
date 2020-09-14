@@ -1,24 +1,20 @@
 <template>
   <div>
-    <div class='block page'>
-      <img src='@/assets/logo.svg' />
-      <div style='margin: 0 100px'>
-        <br>
-        <countdown :time='time'>
+    <div class="block page">
+      <img src="@/assets/logo.svg" />
+      <div style="margin: 0 100px">
+        <br />
+        <countdown :time="time">
           <template slot-scope="props">
-            <h1 style='display: flex; justify-content: center'>
-            {{ props.hours }} hours
+            <h1 style="display: flex; justify-content: center">
+              {{ props.hours }} hours
             </h1>
-            <div style='display: flex; justify-content: center'>
-            <!-- <h3>
+            <div style="display: flex; justify-content: center">
+              <!-- <h3>
             {{ props.hours }}&nbsp;hours
             </h3> -->
-            <h3>
-            {{ props.minutes }}&nbsp;minutes
-            </h3>
-            <h3>
-            {{ props.seconds }}&nbsp;seconds
-            </h3>
+              <h3>{{ props.minutes }}&nbsp;minutes</h3>
+              <h3>{{ props.seconds }}&nbsp;seconds</h3>
             </div>
           </template>
         </countdown>
@@ -76,7 +72,9 @@ button:hover {
   color: white;
 }
 
-h1, h3, img {
+h1,
+h3,
+img {
   margin: 0;
   color: white;
 }
@@ -103,11 +101,12 @@ h1 {
   line-height: 0.9em;
 }
 
-html, body {
+html,
+body {
   background-color: #ed1c24;
   // overflow: hidden;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 html::-webkit-scrollbar {

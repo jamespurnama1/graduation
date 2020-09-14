@@ -1,9 +1,6 @@
 <template>
-  <div class='darken'
-  @click='removeOverlay'>
-    <img
-    v-if='$store.state.overlayImg'
-    :src='getSrc'>
+  <div class="darken" @click="removeOverlay">
+    <img v-if="$store.state.overlayImg" :src="getSrc" />
   </div>
 </template>
 

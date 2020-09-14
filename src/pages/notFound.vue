@@ -1,16 +1,17 @@
 <template>
-  <div id='notFound' class='center'>
-    <div class='center sub'>
-    <lottie-player class='lottie'
-    src='/meds.json'
-    autoplay
-    loop />
-    <div class='center' style='transform: translateY(-7vw)'>
-    <h3>weird, there's no cure here.</h3>
-    <p>(404 error not found)</p>
+  <div id="notFound" class="center">
+    <div class="center sub">
+      <lottie-player class="lottie" src="/meds.json" autoplay loop />
+      <div class="center" style="transform: translateY(-7vw)">
+        <h3>weird, there's no cure here.</h3>
+        <p>(404 error not found)</p>
 
-    <a href='/'><button><p>take me home</p></button></a>
-    </div>
+        <a href="/">
+          <button>
+            <p>take me home</p>
+          </button>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -56,7 +57,9 @@ button:hover p {
   height: 100vh;
 }
 
-h3, h1, p {
+h3,
+h1,
+p {
   text-align: center;
   color: white;
   margin: 0px;

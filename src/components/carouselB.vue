@@ -1,31 +1,41 @@
 <template>
-  <div class='block'>
-    <h3 style='margin: 5% 0 1% 0'>{{ works.sections.one.name }}</h3>
-      <carousel
-      :per-page='1'
-      :loop='true'
-      :navigation-enabled='true'
-      :navigation-next-label='`>`'
-      :navigation-prev-label='`<`'
-      :pagination-active-color='`#eb2027`'
-      :autoplay='true'
-      :mouse-drag='true'>
-        <slide
-        v-for='(img) in works.sections.one.img'
-        style='display: flex; justify-content: center; align-items: center; height: 47vw'
-        :key='img'>
-          <img :src="require(`@/assets/people/${path}/work${works.id}/one/${img}`)" />
-        </slide>
-      </carousel>
+  <div class="block">
+    <h3 style="margin: 5% 0 1% 0">{{ works.sections.one.name }}</h3>
+    <carousel
+      :per-page="1"
+      :loop="true"
+      :navigation-enabled="true"
+      :navigation-next-label="`>`"
+      :navigation-prev-label="`<`"
+      :pagination-active-color="`#eb2027`"
+      :autoplay="true"
+      :mouse-drag="true"
+    >
+      <slide
+        v-for="img in works.sections.one.img"
+        style="display: flex; justify-content: center; align-items: center; height: 47vw"
+        :key="img"
+      >
+        <img
+          :src="require(`@/assets/people/${path}/work${works.id}/one/${img}`)"
+        />
+      </slide>
+    </carousel>
 
-      <h3 style='margin: 5% 0 1% 0'>{{ works.sections.two.name }}</h3>
-      <div class='grid'>
-        <div v-for='(secondImg, i) in works.sections.two.img'
-          :key='i'
-          :id='`grid-item-${i}`'>
-        <img :src="require(`@/assets/people/${path}/work${works.id}/two/${secondImg}`)">
-        </div>
+    <h3 style="margin: 5% 0 1% 0">{{ works.sections.two.name }}</h3>
+    <div class="grid">
+      <div
+        v-for="(secondImg, i) in works.sections.two.img"
+        :key="i"
+        :id="`grid-item-${i}`"
+      >
+        <img
+          :src="
+            require(`@/assets/people/${path}/work${works.id}/two/${secondImg}`)
+          "
+        />
       </div>
+    </div>
   </div>
 </template>
 
@@ -46,16 +56,18 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      document.querySelectorAll('.VueCarousel-navigation-button').forEach((e) => {
-        e.style.color = '#eb2027';
-      });
+      document
+        .querySelectorAll('.VueCarousel-navigation-button')
+        .forEach((e) => {
+          e.style.color = '#eb2027';
+        });
       window.dispatchEvent(new Event('resize'));
     });
   },
 };
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 @import './src/styles/fonts.module.scss';
 
 #grid-item-0 {
@@ -97,16 +109,17 @@ export default {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: minmax(0, 47vw) minmax(0, 31.5vw) minmax(0, 63vw);
   grid-template-areas:
-    "top top"
-    "leftone rightone"
-    "lefttwo righttwo";
+    'top top'
+    'leftone rightone'
+    'lefttwo righttwo';
 }
 
 .block {
   flex-direction: column;
 }
 
-img, video {
+img,
+video {
   width: 100%;
   min-height: 100%;
   max-height: 100%;

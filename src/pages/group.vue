@@ -1,44 +1,47 @@
 <template>
-  <div class='block page' v-images-loaded:on.progress="imageProgress">
-    <div class='title'>
-      <img class='smallLogo' src='@/assets/logo_red.svg'>
-      <div id='titleLogo'>
-      <h2>The</h2>
-      <h2>Antidote</h2>
+  <div class="block page" v-images-loaded:on.progress="imageProgress">
+    <div class="title">
+      <img class="smallLogo" src="@/assets/logo_red.svg" />
+      <div id="titleLogo">
+        <h2>The</h2>
+        <h2>Antidote</h2>
       </div>
-      <div class='center mutation'>
-      <p>
-        The remedy specialised in counteracting particular
-        <span v-html='` creative&nbsp;briefs`'></span>.
-        <br>
-        [Click to view our group works]
-      </p>
+      <div class="center mutation">
+        <p>
+          The remedy specialised in counteracting particular
+          <span v-html="` creative&nbsp;briefs`"></span>.
+          <br />
+          [Click to view our group works]
+        </p>
       </div>
     </div>
     <div
-    class='work'
-    :id='`project${i}`'
-    v-for='(projects, i) in projects'
-    :key='i'>
+      class="work"
+      :id="`project${i}`"
+      v-for="(projects, i) in projects"
+      :key="i"
+    >
       <div
-      style='display: flex'
-      :id='`projectBar${i}`'
-      class='projectBar black clickable'
-      @click='expand(i)'>
-      <h3 style='padding-left: 10%'>{{ projects.title }}</h3>
-      <feather
-      v-show='plus'
-      :id='`icon${i}`'
-      style='margin-left: auto'
-      type='plus'
-      stroke='red'
-      stroke-width='3' />
+        style="display: flex"
+        :id="`projectBar${i}`"
+        class="projectBar black clickable"
+        @click="expand(i)"
+      >
+        <h3 style="padding-left: 10%">{{ projects.title }}</h3>
+        <feather
+          v-show="plus"
+          :id="`icon${i}`"
+          style="margin-left: auto"
+          type="plus"
+          stroke="red"
+          stroke-width="3"
+        />
       </div>
       <work
-      v-show='`projects.expand${i}`'
-      class='block groupWork'
-      :projects='projects'
-      :img='i'
+        v-show="`projects.expand${i}`"
+        class="block groupWork"
+        :projects="projects"
+        :img="i"
       />
     </div>
   </div>
@@ -103,11 +106,11 @@ export default {
 
 <style lang="scss" scoped>
 .title {
-    padding: 0 2%;
-    min-height: 170px;
-    height: 20vw;
-    width: 100vw;
-    flex-wrap: nowrap;
+  padding: 0 2%;
+  min-height: 170px;
+  height: 20vw;
+  width: 100vw;
+  flex-wrap: nowrap;
 }
 
 .mutation {
@@ -145,7 +148,7 @@ export default {
   width: 100%;
   min-height: 0vh;
   max-height: 3%;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   overflow: hidden;
   position: relative;
   border-width: 3px;
@@ -153,10 +156,10 @@ export default {
 }
 
 .projectBar {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 10px 0;
 }
 
 .black:hover {
@@ -171,7 +174,8 @@ export default {
   padding: 3% 3% 3% 0;
 }
 
-h3, p {
+h3,
+p {
   color: black;
   margin: 0;
 }
@@ -185,7 +189,8 @@ h3 {
   margin: 0 30px;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin: 0;
 }
 
@@ -198,7 +203,7 @@ h1, h2 {
   margin: auto 10px auto 0;
   min-width: 5px;
   width: 35px;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
   transform: rotate(45deg) !important;
 }
 
@@ -210,7 +215,7 @@ h1, h2 {
   transform: rotate(0) !important;
 }
 
-@media (max-width: 736px){
+@media (max-width: 736px) {
   .grid {
     grid-template-columns: repeat(1, minmax(100px, 2fr));
   }
@@ -233,7 +238,7 @@ h1, h2 {
     text-align: center;
     padding: 0;
   }
-  .smallLogo{
+  .smallLogo {
     width: 18vw;
     height: 18vw;
   }

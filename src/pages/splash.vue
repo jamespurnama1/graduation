@@ -1,24 +1,24 @@
 <template>
-  <div id='red' class='center'>
-    <transition name='fade'>
-      <div v-show='first'>
-        <img id='logoAnim' src='@/assets/logo.svg'>
+  <div id="red" class="center">
+    <transition name="fade">
+      <div v-show="first">
+        <img id="logoAnim" src="@/assets/logo.svg" />
         <p>
           Creative Cure is in Process...
         </p>
-      <div class="border">
-        <div class="progress"></div>
-      </div>
-      <p>
-        {{ $store.state.progress }}
-      </p>
-      </div>
-    </transition>
-      <div v-show='!first' class='anim'>
+        <div class="border">
+          <div class="progress"></div>
+        </div>
         <p>
-          The cure has been found!
+          {{ $store.state.progress }}
         </p>
       </div>
+    </transition>
+    <div v-show="!first" class="anim">
+      <p>
+        The cure has been found!
+      </p>
+    </div>
   </div>
 </template>
 

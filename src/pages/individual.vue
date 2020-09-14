@@ -1,32 +1,33 @@
 <template>
-  <div class='page' v-images-loaded:on.progress="imageProgress">
-    <div class='title'>
-      <img class='smallLogo' src='@/assets/logo_red.svg'>
+  <div class="page" v-images-loaded:on.progress="imageProgress">
+    <div class="title">
+      <img class="smallLogo" src="@/assets/logo_red.svg" />
       <div>
-      <h2>The Aid</h2>
-      <p>
-        The 12 cures that are ready to<span /> help the creative industry.
-        <br>
-         [Click to view our individual works]
-      </p>
+        <h2>The Aid</h2>
+        <p>
+          The 12 cures that are ready to<span /> help the creative industry.
+          <br />
+          [Click to view our individual works]
+        </p>
       </div>
     </div>
     <div>
       <ul class="card-list grid">
-        <li v-for="(user, i) in allUsers" class="card-item" :key='`user${i}`'>
-         <router-link
-         @mouseover.native="$set(face,i,'1')"
-         @mouseleave.native="$set(face,i,'')"
-         :to="'aid/' + user.path">
-         <div
-         class='videoMask'>
-            <img
-            :ref='`photo${i}`'
-            class='photo'
-            :id='`photo${i}`'
-            :src="`./faces/${user.path}${face[i]}.jpg`">
-         </div>
-            <p class='name'>{{i+1}}. {{ user.name }}</p>
+        <li v-for="(user, i) in allUsers" class="card-item" :key="`user${i}`">
+          <router-link
+            @mouseover.native="$set(face, i, '1')"
+            @mouseleave.native="$set(face, i, '')"
+            :to="'aid/' + user.path"
+          >
+            <div class="videoMask">
+              <img
+                :ref="`photo${i}`"
+                class="photo"
+                :id="`photo${i}`"
+                :src="`./faces/${user.path}${face[i]}.jpg`"
+              />
+            </div>
+            <p class="name">{{ i + 1 }}. {{ user.name }}</p>
           </router-link>
         </li>
       </ul>
@@ -56,7 +57,8 @@ export default {
 <style lang="scss" scoped>
 @import './src/styles/fonts.module.scss';
 
-.name:hover, a:hover .name {
+.name:hover,
+a:hover .name {
   color: $primary;
 }
 
@@ -68,19 +70,21 @@ export default {
   margin: 0 30px;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin: 0;
 }
 
-h3, p {
+h3,
+p {
   color: black;
   margin: 0;
   padding-top: 10px;
 }
 
 .videoMask {
-    height: 70vw;
-    width: 70vw;
+  height: 70vw;
+  width: 70vw;
 }
 
 .grid {
@@ -99,16 +103,16 @@ p {
   text-align: center;
 }
 
-@media (min-width: 480px){
+@media (min-width: 480px) {
   .grid {
     grid-template-columns: repeat(1, minmax(100px, 2fr));
   }
   p span::before {
-    content: "\A";
+    content: '\A';
   }
 }
 
-@media (min-width: 736px){
+@media (min-width: 736px) {
   .grid {
     grid-template-columns: repeat(2, minmax(100px, 1fr));
   }
@@ -124,7 +128,7 @@ p {
   }
 }
 
-@media (min-width: 980px){
+@media (min-width: 980px) {
   .grid {
     grid-template-columns: repeat(3, minmax(100px, 1fr));
   }
@@ -134,7 +138,7 @@ p {
   }
 }
 
-@media(min-width: 1280px){
+@media (min-width: 1280px) {
   .grid {
     grid-template-columns: repeat(3, minmax(100px, 1fr));
   }

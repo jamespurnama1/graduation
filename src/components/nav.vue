@@ -1,16 +1,16 @@
 <template>
-  <div class='navbar'>
-    <transition name='navbar'>
+  <div class="navbar">
+    <transition name="navbar">
       <nav>
         <ul>
-          <router-link tag='li' to='/' class='margin'>
+          <router-link tag="li" to="/" class="margin">
             <h4>About Us</h4>
           </router-link>
-          <router-link tag='li' to='/aid' class='margin'>
-            <h4 class='unexact'>The Aid</h4>
+          <router-link tag="li" to="/aid" class="margin">
+            <h4 class="unexact">The Aid</h4>
           </router-link>
-          <router-link tag='li' to='/antidote' class='margin'>
-            <h4 class='unexact'>The Antidote</h4>
+          <router-link tag="li" to="/antidote" class="margin">
+            <h4 class="unexact">The Antidote</h4>
           </router-link>
         </ul>
       </nav>
@@ -46,7 +46,6 @@ export default {
     window.removeEventListener('scroll', this.onScroll);
   },
 };
-
 </script>
 
 <style lang="scss" scoped>
@@ -119,18 +118,22 @@ li:hover {
   color: $primary;
 }
 
-.slide-enter, .slide-leave-to {
+.slide-enter,
+.slide-leave-to {
   opacity: 0;
   transform: translateY(-150%);
   max-height: 0;
 }
 
-.slide-enter-active, .slide-leave-active,
-.navbar-enter-active, .navbar-leave-active {
-  transition: all .5s;
+.slide-enter-active,
+.slide-leave-active,
+.navbar-enter-active,
+.navbar-leave-active {
+  transition: all 0.5s;
 }
 
-.navbar-enter, .navbar-leave-to {
+.navbar-enter,
+.navbar-leave-to {
   transform: translateY(-100%);
 }
 
@@ -142,5 +145,4 @@ li:hover {
     padding: 0;
   }
 }
-
 </style>

@@ -21,7 +21,10 @@ const routes = [
   { path: '/aid', component: Individual },
   { path: '/antidote', component: Group },
   {
-    name: 'User', path: '/aid/:user', component: Personal, props: true,
+    name: 'User',
+    path: '/aid/:user',
+    component: Personal,
+    props: true,
   },
   { name: '404', path: '/404', component: notFound },
   { path: '*', redirect: '/404' },

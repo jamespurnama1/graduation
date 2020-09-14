@@ -1,30 +1,35 @@
 <template>
   <div id="app">
-    <splash style='z-index: 20'
-      v-show="(this.$store.state.splash) && (this.$route.name != '404')" />
-    <overlay
-    v-if='this.$store.state.overlay'
-    style='z-index: 15' />
-    <navbar v-if="renderSwitchSet && (this.$route.name != '404')" style='z-index: 10' />
-    <main v-if='renderSwitchSet'>
-      <transition
-        name="fade"
-        mode="out-in">
+    <splash
+      style="z-index: 20"
+      v-show="this.$store.state.splash && this.$route.name != '404'"
+    />
+    <overlay v-if="this.$store.state.overlay" style="z-index: 15" />
+    <navbar
+      v-if="renderSwitchSet && this.$route.name != '404'"
+      style="z-index: 10"
+    />
+    <main v-if="renderSwitchSet">
+      <transition name="fade" mode="out-in"> </transition>
+      <transition name="fade" mode="out-in">
+        <router-view :key="$route.fullPath" />
       </transition>
-      <transition
-        name="fade"
-        mode="out-in">
-        <router-view
-        :key='$route.fullPath' />
-      </transition>
-      <div id='footer'>
-        <p style='font-size: calc(5px + 1vw);'>Copyright 2020 TheCREAID</p>
-        <div style='display: flex; flex-direction: row'>
-          <a href='http://instagram.com/the_creaid' target='_blank' style='color: black; padding: 0 20%'>
-            <feather type='instagram' stroke-width='1.8' />
+      <div id="footer">
+        <p style="font-size: calc(5px + 1vw);">Copyright 2020 TheCREAID</p>
+        <div style="display: flex; flex-direction: row">
+          <a
+            href="http://instagram.com/the_creaid"
+            target="_blank"
+            style="color: black; padding: 0 20%"
+          >
+            <feather type="instagram" stroke-width="1.8" />
           </a>
-          <a href='https://www.facebook.com/Creaid.GraduationExhibition/' target='_blank' style='color: black'>
-            <feather type='facebook' stroke-width='1.6' />
+          <a
+            href="https://www.facebook.com/Creaid.GraduationExhibition/"
+            target="_blank"
+            style="color: black"
+          >
+            <feather type="facebook" stroke-width="1.6" />
           </a>
         </div>
       </div>
@@ -65,23 +70,23 @@ export default {
     window.removeEventListener('scroll', this.getPos);
   },
 };
-
 </script>
 
 <style lang="scss">
 @import './src/styles/fonts.module.scss';
 @import './src/styles/transitions.module.scss';
 
-.feather--instagram, .feather--facebook {
+.feather--instagram,
+.feather--facebook {
   width: calc(10px + 1.5vw);
 }
 
 .red {
-  color: $primary
+  color: $primary;
 }
 
 #footer {
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 8vw;
@@ -93,7 +98,7 @@ export default {
 }
 
 .VueCarousel-navigation-button {
-  font-family: "AXIS" !important;
+  font-family: 'AXIS' !important;
   font-size: calc(10px + 1vw) !important;
   // color: $primary !important;
   transform: translate(-25%, -70%) !important;
@@ -190,7 +195,7 @@ button:hover {
   margin-bottom: 100px;
 }
 
-.bg{
+.bg {
   position: fixed;
   z-index: 0;
 }
@@ -214,7 +219,10 @@ button:hover {
   align-items: center;
 }
 
-h1, h2 ,h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: 'AXIS';
   font-weight: 900;
   color: $primary;

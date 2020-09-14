@@ -1,110 +1,122 @@
 <template>
-  <div class='page personal' style='grid-area: img' v-images-loaded:on.progress="imageProgress">
-    <h2 class='desc red' style='font-weight: bold'>{{ data[0].name }}</h2>
-    <div class='line' />
-    <div class='data'>
-    <div class='mask'>
-    <img
-      :src="`../faces/${data[0].path}.jpg`"
-      class='photo'>
-    </div>
+  <div
+    class="page personal"
+    style="grid-area: img"
+    v-images-loaded:on.progress="imageProgress"
+  >
+    <h2 class="desc red" style="font-weight: bold">{{ data[0].name }}</h2>
+    <div class="line" />
+    <div class="data">
+      <div class="mask">
+        <img :src="`../faces/${data[0].path}.jpg`" class="photo" />
+      </div>
 
-    <div class='bio'>
-      <div class='margin' style='margin-top: 0'>
-        <h3 class='desc red' style='font-weight: bold'>Email</h3>
-        <a class='underline' :href='`mailto:${data[0].email}`'>
-          <p class='desc'>{{ data[0].email }}</p>
-        </a>
+      <div class="bio">
+        <div class="margin" style="margin-top: 0">
+          <h3 class="desc red" style="font-weight: bold">Email</h3>
+          <a class="underline" :href="`mailto:${data[0].email}`">
+            <p class="desc">{{ data[0].email }}</p>
+          </a>
+        </div>
+        <div class="margin">
+          <h3 class="desc red" style="font-weight: bold">Behance</h3>
+          <a
+            class="underline"
+            target="_blank"
+            :href="`http://www.${data[0].behance}`"
+          >
+            <p class="desc">{{ data[0].behance }}</p>
+          </a>
+        </div>
+        <div class="margin">
+          <h3 class="desc red" style="font-weight: bold">LinkedIn</h3>
+          <a
+            class="underline"
+            target="_blank"
+            :href="`http://www.${data[0].linkedin}`"
+          >
+            <p class="desc">{{ data[0].linkedin }}</p>
+          </a>
+        </div>
+        <button>
+          <a :href="`/resume/${data[0].path}_resume.pdf`" download>
+            <p style="font-size: calc(10px+5vw);margin: 1vw 0">
+              Download resume
+            </p>
+          </a>
+        </button>
       </div>
-      <div class='margin'>
-        <h3 class='desc red' style='font-weight: bold'>Behance</h3>
-        <a class='underline'
-        target='_blank'
-        :href='`http://www.${data[0].behance}`'>
-          <p class='desc'>{{ data[0].behance }}</p>
-        </a>
-      </div>
-      <div class='margin'>
-        <h3 class='desc red' style='font-weight: bold'>LinkedIn</h3>
-        <a class='underline'
-        target='_blank'
-        :href='`http://www.${data[0].linkedin}`'>
-          <p class='desc'>{{ data[0].linkedin }}</p>
-        </a>
-      </div>
-      <button>
-        <a :href='`/resume/${data[0].path}_resume.pdf`' download>
-          <p style='font-size: calc(10px+5vw);margin: 1vw 0'>
-            Download resume
-          </p>
-        </a>
-      </button>
-    </div>
 
-    <p style='grid-area: desc'
-    v-html='data[0].bio'
-    class='desc'>
-    </p>
+      <p style="grid-area: desc" v-html="data[0].bio" class="desc"></p>
     </div>
-    <div class='line' />
-    <div class='intro'>
-      <h4 class='desc' style='font-weight: bold;color: black'>{{ data[0].works.one.name }}</h4>
-      <h4 class='desc'
-      style='font-style: oblique'>
-      {{ data[0].works.one.type }}
-    </h4>
+    <div class="line" />
+    <div class="intro">
+      <h4 class="desc" style="font-weight: bold;color: black">
+        {{ data[0].works.one.name }}
+      </h4>
+      <h4 class="desc" style="font-style: oblique">
+        {{ data[0].works.one.type }}
+      </h4>
       <p
-      v-html='data[0].works.one.desc'
-      class='desc' style='max-width: 900px; text-align: center'>
-      </p>
+        v-html="data[0].works.one.desc"
+        class="desc"
+        style="max-width: 900px; text-align: center"
+      ></p>
     </div>
     <div>
       <component
-        :is='data[0].works.one.layout'
-        :works='data[0].works.one'
-        :path='data[0].path'
-        style='width: 100%' />
-      <div class='line' />
-      <div class='intro'>
-      <h4 class='desc' style='font-weight: bold;color: black'>{{ data[0].works.two.name }}</h4>
-      <h4 class='desc'
-      style='font-style: oblique'>
-        {{ data[0].works.two.type }}
-      </h4>
-      <p
-      v-html='data[0].works.two.desc'
-      class='desc' style='max-width: 900px; text-align: center'>
-      </p>
+        :is="data[0].works.one.layout"
+        :works="data[0].works.one"
+        :path="data[0].path"
+        style="width: 100%"
+      />
+      <div class="line" />
+      <div class="intro">
+        <h4 class="desc" style="font-weight: bold;color: black">
+          {{ data[0].works.two.name }}
+        </h4>
+        <h4 class="desc" style="font-style: oblique">
+          {{ data[0].works.two.type }}
+        </h4>
+        <p
+          v-html="data[0].works.two.desc"
+          class="desc"
+          style="max-width: 900px; text-align: center"
+        ></p>
       </div>
 
       <component
-        :is='data[0].works.two.layout'
-        :works='data[0].works.two'
-        :path='data[0].path'
-        style='width: 100%' />
-      <div class='line' />
-      <div class='intro'>
-      <h4 class='desc' style='font-weight: bold;color: black'>{{ data[0].works.three.name }}</h4>
-      <h4 class='desc'
-      style='font-style: oblique'>
-        {{ data[0].works.three.type }}
-      </h4>
-      <p
-      v-html='data[0].works.three.desc'
-      class='desc' style='max-width: 900px; text-align: center'>
-      </p>
+        :is="data[0].works.two.layout"
+        :works="data[0].works.two"
+        :path="data[0].path"
+        style="width: 100%"
+      />
+      <div class="line" />
+      <div class="intro">
+        <h4 class="desc" style="font-weight: bold;color: black">
+          {{ data[0].works.three.name }}
+        </h4>
+        <h4 class="desc" style="font-style: oblique">
+          {{ data[0].works.three.type }}
+        </h4>
+        <p
+          v-html="data[0].works.three.desc"
+          class="desc"
+          style="max-width: 900px; text-align: center"
+        ></p>
       </div>
 
       <component
-        :is='data[0].works.three.layout'
-        :works='data[0].works.three'
-        :path='data[0].path'
-        style='width: 100%' />
+        :is="data[0].works.three.layout"
+        :works="data[0].works.three"
+        :path="data[0].path"
+        style="width: 100%"
+      />
 
-      <router-link :to='`/aid/${allUsers[next].path}`'>
-      <p class='desc underline' style='text-align: right; margin-top: 50px'>
-        Next - {{ allUsers[next].name }} >
-      </p>
+      <router-link :to="`/aid/${allUsers[next].path}`">
+        <p class="desc underline" style="text-align: right; margin-top: 50px">
+          Next - {{ allUsers[next].name }} >
+        </p>
       </router-link>
     </div>
   </div>
@@ -182,7 +194,7 @@ export default {
   color: $primary;
 }
 
-button{
+button {
   margin: 0;
 }
 
@@ -225,8 +237,8 @@ button:hover p {
   // margin-left: 20px;
   align-items: start;
   grid-template-areas:
-    "img data"
-    "desc desc";
+    'img data'
+    'desc desc';
 }
 
 img {
@@ -265,17 +277,17 @@ a:hover p {
   color: $primary;
 }
 
-@media (max-width: 480px){
+@media (max-width: 480px) {
   .data {
     grid-template-columns: 100%;
     grid-template-rows: 126vw auto auto;
     grid-template-areas:
-    "img"
-    "data"
-    "desc";
+      'img'
+      'data'
+      'desc';
     grid-gap: 10px;
   }
-  .bio{
+  .bio {
     max-width: initial;
     width: 100%;
   }
@@ -296,13 +308,12 @@ a:hover p {
   }
 }
 
-@media (min-width: 980px){
+@media (min-width: 980px) {
   .data {
     width: 85%;
     grid-template-columns: 22% 30% 35%;
     grid-template-rows: minmax(300px, 25vw);
-    grid-template-areas:
-    "img data desc";
+    grid-template-areas: 'img data desc';
   }
   .photo {
     top: 0;
