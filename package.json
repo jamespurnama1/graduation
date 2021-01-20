@@ -12,7 +12,7 @@
     "buefy": "^0.9.3",
     "core-js": "^3.6.5",
     "feather-icons": "^4.28.0",
-    "gsap": "^3.5.1",
+    "gsap": "^3.6.0",
     "turbolinks": "^5.2.0",
     "vue": "^2.6.12",
     "vue-carousel": "^0.18.0",
