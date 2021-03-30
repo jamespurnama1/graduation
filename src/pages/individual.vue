@@ -51,6 +51,12 @@ export default {
   directives: {
     imagesLoaded,
   },
+  mounted() {
+    this.allUsers.forEach((user) => {
+      const image = new Image();
+      image.src = `./faces/${user.path}1.jpg`;
+    });
+  },
 };
 </script>
 
